@@ -28,13 +28,25 @@ def reduce_function(llm):
     reduce_prompt = PromptTemplate.from_template(reduce_template)
     return LLMChain(llm=llm, prompt=reduce_prompt)
 
-
-def process_map_results(file_content, llm, chunk_size,chunk_overlap):
-    text_splitter = CharacterTextSplitter.from_tiktoken_encoder(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
-    file_content=text_splitter.create_documents([file_content])
-    split_docs = text_splitter.split_documents(file_content)
+# Process the map
+def process_map_results(split_docs, llm):
     map_chain = map_function(llm)
     return [map_chain.run(doc) for doc in split_docs]
+
+# Process the reduce
+def process_reduce_results(combined_map_results, llm,token_max):
+    reduce_chain = reduce_function(llm)
+    combine_documents_chain = StuffDocumentsChain(llm_chain=reduce_chain, document_variable_name="docs")
+    reduce_documents_chain = ReduceDocumentsChain(combine_documents_chain=combine_documents_chain,collapse_documents_chain=combine_documents_chain,token_max=token_max)
+    documents = [Document(page_content=content) for content in combined_map_results]
+    return reduce_documents_chain.run(documents)
+
+# Split the text into chunks
+def split_text(text, chunk_size, chunk_overlap):
+    text_splitter = CharacterTextSplitter.from_tiktoken_encoder(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
+    file_content=text_splitter.create_documents([text])
+    split_docs = text_splitter.split_documents(file_content)
+    return split_docs
 
 # Process the file
 def process_file(uploaded_file, chunk_size_1, chunk_overlap_1, chunk_size_2, chunk_overlap_2, temperature, token_max):
@@ -44,21 +56,20 @@ def process_file(uploaded_file, chunk_size_1, chunk_overlap_1, chunk_size_2, chu
     llm = init_llm(temperature)
 
     # First map stage
-    first_map_results = process_map_results(file_content,llm, chunk_size_1, chunk_overlap_1)
+    split_docs = split_text(file_content, chunk_size_1, chunk_overlap_1)
+    first_map_results = process_map_results(split_docs,llm)
     st.text_area("Map 1:",first_map_results[0], height=200)
+
     # Second map stage
-    second_map_results = process_map_results(file_content,llm, chunk_size_2, chunk_overlap_2)
+    split_docs = split_text(file_content, chunk_size_2, chunk_overlap_2)
+    second_map_results = process_map_results(split_docs,llm)
     st.text_area("Map 2:",second_map_results[0], height=200)
     # Merge map results
     combined_map_results = first_map_results + second_map_results
 
     # Reduce stage
-    reduce_chain = reduce_function(llm)
+    response=process_reduce_results(combined_map_results, llm,token_max)
 
-    combine_documents_chain = StuffDocumentsChain(llm_chain=reduce_chain, document_variable_name="docs")
-    reduce_documents_chain = ReduceDocumentsChain(combine_documents_chain=combine_documents_chain,collapse_documents_chain=combine_documents_chain,token_max=token_max,)
-    documents = [Document(page_content=content) for content in combined_map_results]
-    response = reduce_documents_chain.run(documents)
     return response, file_name
 
 # Main function to run the Streamlit app
