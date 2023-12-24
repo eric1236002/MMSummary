@@ -43,7 +43,7 @@ def process_reduce_results(combined_map_results, llm,token_max):
 
 # Split the text into chunks
 def split_text(text, chunk_size, chunk_overlap):
-    text_splitter = CharacterTextSplitter.from_tiktoken_encoder(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
+    text_splitter = CharacterTextSplitter.(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     file_content=text_splitter.create_documents([text])
     split_docs = text_splitter.split_documents(file_content)
     return split_docs
