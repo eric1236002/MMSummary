@@ -9,21 +9,25 @@ from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.document_loaders import TextLoader
 from langchain_core.documents import Document
 import os
-
+import eval
 # Initialize the LLM chain
-def init_llm(temperature):
-    return ChatOpenAI(temperature=temperature, model="gpt-4-1106-preview", api_key=os.environ['OPENAI_API_KEY'])
+def init_llm(temperature,model):
+    if model=="gpt-4-1106-preview":
+        return ChatOpenAI(temperature=temperature, model=model, api_key=os.environ['OPENAI_API_KEY'])
+    else:
+        return ChatOpenAI(openai_api_base="http://0.0.0.0:8000/v1",model="Taiwan-LLM-7B-v2.1-chat",temperature=0,api_key=os.environ['OPENAI_API_KEY'])
+
 
 # Map function for LLM chain
 def map_function(llm):
-    with open("MMSummary/map_template.txt", "r") as f:
+    with open("./map_template.txt", "r") as f:
         map_template = f.read()
     map_prompt = PromptTemplate.from_template(map_template)
     return LLMChain(llm=llm, prompt=map_prompt)
 
 # Reduce function for LLM chain
 def reduce_function(llm):
-    with open("MMSummary/reduce_template.txt", "r") as f:
+    with open("./reduce_template.txt", "r") as f:
         reduce_template = f.read()
     reduce_prompt = PromptTemplate.from_template(reduce_template)
     return LLMChain(llm=llm, prompt=reduce_prompt)
@@ -49,11 +53,11 @@ def split_text(text, chunk_size, chunk_overlap):
     return split_docs
 
 # Process the file
-def process_file(uploaded_file, chunk_size_1, chunk_overlap_1, chunk_size_2, chunk_overlap_2, temperature, token_max):
+def process_file(model,uploaded_file, chunk_size_1, chunk_overlap_1, chunk_size_2, chunk_overlap_2, temperature, token_max):
     file_name = uploaded_file.name.split(".")[0]
     file_content = uploaded_file.getvalue().decode("utf-8")
 
-    llm = init_llm(temperature)
+    llm = init_llm(temperature,model)
 
     # First map stage
     split_docs = split_text(file_content, chunk_size_1, chunk_overlap_1)
@@ -79,8 +83,11 @@ def main():
         st.session_state['response'] = None
         st.session_state['file_name'] = ""
 
-    tab1, tab2 = st.tabs(["GPT-4-16k", "參數調整"])
+    tab1, tab2,tab3 = st.tabs(["Summary", "Settings","Evaluation"])
+    with tab3:
+        eval.main()
     with tab2:
+        model=st.selectbox("Choose model",["gpt-4-1106-preview","Taiwan-LLM-7B-v2.1-chat"])
         chunk_size_1 = st.number_input("Chunk size 1", value=4000, min_value=1, max_value=10000, step=100)
         chunk_overlap_1 = st.number_input("Chunk overlap 1", value=1000, min_value=0, max_value=10000, step=100)
         chunk_size_2 = st.number_input("Chunk size 2", value=2000, min_value=1, max_value=10000, step=100)
@@ -93,7 +100,7 @@ def main():
         if uploaded_file is not None and (uploaded_file.name.split(".")[0] != st.session_state['file_name']):
             with st.spinner("處理中..."):
                 start = time.time()
-                st.session_state['response'], st.session_state['file_name'] = process_file(uploaded_file, chunk_size_1, chunk_overlap_1, chunk_size_2, chunk_overlap_2, temperature, token_max)
+                st.session_state['response'], st.session_state['file_name'] = process_file(model,uploaded_file, chunk_size_1, chunk_overlap_1, chunk_size_2, chunk_overlap_2, temperature, token_max)
                 end=time.time()
                 st.success(f"處理完成!耗時{round(end-start)}秒")
 
