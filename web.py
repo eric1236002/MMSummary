@@ -33,11 +33,11 @@ def reduce_function(llm):
     return LLMChain(llm=llm, prompt=reduce_prompt)
 
 # Process the map
-def process_map_results(split_docs):
+def process_map_results(split_docs,model):
     temp=[]
     start = time.time()
     # map_chain = map_function(llm)
-    map_chain = map_function(init_llm(0,"gpt-4-1106-preview",1000))
+    map_chain = map_function(init_llm(0,model,1000))
 
     st.write(f"共{len(split_docs)}個chunks")
     bar = st.progress(0, text=" ")
@@ -49,11 +49,11 @@ def process_map_results(split_docs):
     return temp
 
 # Process the reduce
-def process_reduce_results(combined_map_results,token_max):
-    reduce_chain = reduce_function(init_llm(0,"gpt-4-1106-preview",4000))
+def process_reduce_results(combined_map_results,token_max,model):
+    reduce_chain = reduce_function(init_llm(0,model,4000))
 
     prompt = PromptTemplate.from_template("折疊此內容: {docs}")
-    llm_chain = LLMChain(llm=init_llm(0,"gpt-4-1106-preview",4000), prompt=prompt)
+    llm_chain = LLMChain(llm=init_llm(0,model,4000), prompt=prompt)
 
     collapse_documents_chain = StuffDocumentsChain(llm_chain=llm_chain,   document_separator="docs")
     combine_documents_chain  = StuffDocumentsChain(llm_chain=reduce_chain, document_variable_name="docs")
@@ -77,25 +77,25 @@ def process_file(button,model,uploaded_file, chunk_size_1, chunk_overlap_1, chun
     file_name = uploaded_file.name.split(".")[0]
     file_content = uploaded_file.getvalue().decode("utf-8")
     st.write(f"文件長度: {len(file_content)}")
-    llm = init_llm(temperature,model)
+    
 
     # First map stage
     split_docs1 = split_text(file_content, chunk_size_1, chunk_overlap_1)
     # Second map stage
     split_docs2 = split_text(file_content, chunk_size_2, chunk_overlap_2)
     if button==False:
-        first_map_results = process_map_results(split_docs1)
+        first_map_results = process_map_results(split_docs1,model)
         st.text_area("Map 1:",first_map_results, height=200)
 
-        second_map_results = process_map_results(split_docs2)
+        second_map_results = process_map_results(split_docs2,model)
         st.text_area("Map 2:",second_map_results, height=200)
         combined_map_results = first_map_results + second_map_results
     else:
         combined_map_results = split_docs1+split_docs2
-    st.write(len(combined_map_results))
+    # st.write(len(combined_map_results))
 
     # Reduce stage
-    response=process_reduce_results(combined_map_results,token_max)
+    response=process_reduce_results(combined_map_results,token_max,model)
 
     return response, file_name
 
@@ -112,9 +112,9 @@ def main():
     with tab2:
         button=st.checkbox("不使用Map",value=False,help="不使用Map，將所有chunck合併直接使用Reduce")
         model=st.selectbox("Choose model",["gpt-4-1106-preview","Taiwan-LLM-7B-v2.1-chat","openbuddy-deepseek-67b-v15.2"])
-        chunk_size_1 = st.number_input("Chunk size 1", value=16000, min_value=1, max_value=100000, step=100)
+        chunk_size_1 = st.number_input("Chunk size 1", value=16000, min_value=0, max_value=100000, step=100)
         chunk_overlap_1 = st.number_input("Chunk overlap 1", value=4000, min_value=0, max_value=100000, step=100)
-        chunk_size_2 = st.number_input("Chunk size 2", value=8000, min_value=1, max_value=100000, step=100)
+        chunk_size_2 = st.number_input("Chunk size 2", value=8000, min_value=0, max_value=100000, step=100, help="Chunk size  0 為不使用")
         chunk_overlap_2 = st.number_input("Chunk overlap 2", value=0, min_value=0, max_value=100000, step=100)
         token_max = st.number_input("Token max", value=16000, min_value=1, max_value=100000, step=100, help="將Map生成的內容長度再次進行分割，避免超過LLM的長度限制")
         temperature = st.slider('Temperature', 0.0, 2.0, step=0.1)
@@ -130,12 +130,15 @@ def main():
 
         if st.session_state['response']:
             st.text_area("Summary", st.session_state['response'], height=300)
+            if not button:
+                file_name = f"{st.session_state['file_name']}_output_{chunk_size_1}_{chunk_overlap_1}_{chunk_size_2}_{chunk_overlap_2}_{temperature}.txt"
+            else:
+                file_name = f"{st.session_state['file_name']}_output_{chunk_size_1}_{chunk_overlap_1}_{chunk_size_2}_{chunk_overlap_2}_{temperature}_nomap.txt"
             st.download_button(
                 label="下載摘要",
                 data=st.session_state['response'],
-                file_name=f"{st.session_state['file_name']}_output_{chunk_size_1}_{chunk_overlap_1}_{chunk_size_2}_{chunk_overlap_2}_{temperature}.txt",
+                file_name=file_name,
                 mime="text/plain",
             )
-
 if __name__ == "__main__":
     main()

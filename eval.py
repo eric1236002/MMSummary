@@ -4,7 +4,7 @@ from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
 def calculate_rouge_scores(original, summary):
     scorer = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
-    scores = scorer.score(original, summary)
+    scores = scorer.score(" ".join(original), " ".join(summary))
     return scores
 
 def calculate_bleu_score(original, summary):
@@ -29,13 +29,13 @@ def main():
         if original and summary:
             # 計算 ROUGE 和 BLEU 分數
             rouge_scores = calculate_rouge_scores(original, summary)
-            bleu_score = calculate_bleu_score(original, summary)
+            # bleu_score = calculate_bleu_score(original, summary)
             
             st.write("ROUGE Scores:")
             for key, score in rouge_scores.items():
                 st.write(f"{key}: {score}")
 
-            st.write(f"BLEU Score: {bleu_score}")
+            # st.write(f"BLEU Score: {bleu_score}")
         else:
             st.write("Please input both original file and summary.")
 
