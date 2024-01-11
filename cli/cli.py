@@ -32,7 +32,6 @@ def reduce_function(llm):
 def process_map_results(split_docs,args):
     temp=[]
     map_chain = map_function(init_llm(args,1000))
-    print(f"共{len(split_docs)}個chunks")
     for i, doc in enumerate(split_docs):
         temp.append(map_chain.run(doc))
     return temp
@@ -49,6 +48,8 @@ def process_reduce_results(combined_map_results,args):
 
 # Split the text into chunks
 def split_text(text, chunk_size, chunk_overlap):
+    if chunk_size == 0:
+        return []
     text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
         separator=" ",
         chunk_size=chunk_size,
@@ -64,26 +65,25 @@ def process_file(args):
     #read file
     with open(args.file, "r",encoding="utf-8") as f:
         file_content = f.read()
-    print(f"文件長度: {len(file_content)}")
+    print(f"檔名:{file_name} 文件長度: {len(file_content)}")
 
     # First map stage
     split_docs1 = split_text(file_content, args.chunk_size_1, args.chunk_overlap_1)
     # Second map stage
-    if args.chunk_size_2==0:
-        split_docs2 = []
-    else:
-        split_docs2 = split_text(file_content, args.chunk_size_2, args.chunk_overlap_2)
-    if args.withoutmap==False:
+    split_docs2 = split_text(file_content, args.chunk_size_2, args.chunk_overlap_2)
+    if args.without_map==False:
+        print(f"第一階段共{len(split_docs1)}個chunks")
         first_map_results = process_map_results(split_docs1,args)
-        print("Map 1:",first_map_results)
+        # print("Map 1:",first_map_results)
 
+        print(f"第二階段共{len(split_docs2)}個chunks")
         second_map_results = process_map_results(split_docs2,args)
-        print("Map 2:",second_map_results)
+        # print("Map 2:",second_map_results)
         combined_map_results = first_map_results + second_map_results
     else:
         combined_map_results = split_docs1+split_docs2
-    # print(len(combined_map_results))
 
+    
     # Reduce stage
     response=process_reduce_results(combined_map_results,args)
 
@@ -92,15 +92,15 @@ def process_file(args):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--key", type=str, default=None, help="OpenAI API key")
-    parser.add_argument("--file", type=str, default='/home/nips24/CCP/MMSummary/map_template.txt', help="File to summarize")
+    parser.add_argument("--file", type=str, default=None, help="File to summarize")
     parser.add_argument("--model", type=str, default="gpt-4-1106-preview", help="Model to use")
     parser.add_argument("--chunk_size_1", type=int, default=16000, help="Chunk size 1")
     parser.add_argument("--chunk_overlap_1", type=int, default=4000, help="Chunk overlap 1")
     parser.add_argument("--chunk_size_2", type=int, default=8000, help="Chunk size 2")
     parser.add_argument("--chunk_overlap_2", type=int, default=0, help="Chunk overlap 2")
     parser.add_argument("--token_max", type=int, default=16000, help="Token max")
-    parser.add_argument("--temperature", type=float, default=0.9, help="Temperature")
-    parser.add_argument("--withoutmap", type=bool, default=False, help="without use map method")
+    parser.add_argument("--temperature", type=float, default=0, help="Temperature")
+    parser.add_argument("--without_map", action='store_true', help="without use map method")
     parser.add_argument("--output_dir", type=str, default="./cli/output/", help="output path")
     args = parser.parse_args()
         
@@ -110,7 +110,7 @@ def main():
         end=time.time()
         print(f"處理完成!耗時{round(end-start)}秒")
 
-        if not args.withoutmap:
+        if not args.without_map:
             file_name = f"{args.output_dir}{file_name}_output_{args.chunk_size_1}_{args.chunk_overlap_1}_{args.chunk_size_2}_{args.chunk_overlap_2}_{args.temperature}.txt"
         else:
             file_name = f"{args.output_dir}{file_name}_output_{args.chunk_size_1}_{args.chunk_overlap_1}_{args.chunk_size_2}_{args.chunk_overlap_2}_{args.temperature}_nomap.txt"

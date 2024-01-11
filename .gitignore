@@ -13,3 +13,5 @@ map_template2.txt
 data
 output
 ins.sh
+claude
+model_worker*
