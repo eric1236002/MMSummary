@@ -15,3 +15,7 @@ output
 ins.sh
 claude
 model_worker*
+cli_local.py
+local_inf.sh
+test.ipynb
+link.sh
