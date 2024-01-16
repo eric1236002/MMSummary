@@ -16,6 +16,6 @@ do
     --chunk_overlap_2 0 \
     --token_max 16000 \
     --temperature 0 \
-    --withoutmap false \
+    --without_map \
     --output_dir "./cli/output"
 done
