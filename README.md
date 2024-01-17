@@ -11,7 +11,7 @@ Finally, we use the file's map chain once to extract the summary of the entire f
 
 <!-- 插入圖片LLM.png -->
 
-![struct](LLM.png)
+![struct](jpg/LLM.png)
 
 ## Environment
 Install requirements
@@ -28,14 +28,16 @@ OPENAI_API_KEY=<Your_API_KEY>
 
 ## Prompt file
 
-map_template and reduce_template is the prompt file for the LLM.
+map_template and reduce_template is the prompt template file for the LLM.
 
 ## Run
 ```
 streamlit run ./web.py
 ```
-## Cli interface
-If you want to use cli interface, you can use the following command
+
+![web](jpg/web.jpg)
+## Command-Line Interface
+If you want to use cli, you can use the following command
 ```
 python3 ./cli/cli.py \
     --key "" \ opai key
@@ -50,7 +52,7 @@ python3 ./cli/cli.py \
     --without_map \
     --output_dir "./cli/output/"
 ```
-## Cli Evaluation
+## Command-Line Interface Evaluation
 ``` 
 python3 ./cli/eval.py \
     --orginal_file file \

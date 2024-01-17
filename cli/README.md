@@ -1,5 +1,5 @@
-# Cli interface
-single file use cli interface
+# Command-Line Interface
+single file use Command-Line Interface
 ```
 python3 ./cli/cli.py \
     --key "" \ opai key
