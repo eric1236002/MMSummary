@@ -29,13 +29,18 @@ def main():
         if original and summary:
             # 計算 ROUGE 和 BLEU 分數
             rouge_scores = calculate_rouge_scores(original, summary)
-            # bleu_score = calculate_bleu_score(original, summary)
+            bleu_score = calculate_bleu_score(original, summary)
             
             st.write("ROUGE Scores:")
             for key, score in rouge_scores.items():
                 st.write(f"{key}: {score}")
 
-            # st.write(f"BLEU Score: {bleu_score}")
+            st.write(f"BLEU Score: {bleu_score}")
+            st.download_button(
+                    label="Download",
+                    data=f"ROUGE Scores:\n{rouge_scores}\nBLEU Score: {bleu_score}",
+                    file_name="scores.txt",
+                    mime="text/plain",)
         else:
             st.write("Please input both original file and summary.")
 

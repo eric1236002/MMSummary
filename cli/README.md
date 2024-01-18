@@ -1,5 +1,5 @@
 # Command-Line Interface
-single file use Command-Line Interface
+Single file use Command-Line Interface.
 ```
 python3 ./cli/cli.py \
     --key "" \ opai key
@@ -14,7 +14,7 @@ python3 ./cli/cli.py \
     --without_map \
     --output_dir "./cli/output/"
 ```
-If you want to input multiple files, you can use the following command
+If you want to input multiple files, you can use the following command and fix the arguments in the script.
 ```
 bash mutifile_inf.sh /PATH/file folder
 ```
@@ -27,7 +27,7 @@ python3 ./cli/eval.py \
     --output_dir result_file
 ```
 
-If you want to input multiple files, you can use the following command
+If you want to input multiple files, you can use the following command.
 ```
-bash mutifile_eval.sh /PATH/output folder
+bash mutifile_eval.sh /PATH/orginal_file_folder /PATH/summary_file_folder /PATH/output_dir_result_file
 ```

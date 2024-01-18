@@ -36,6 +36,11 @@ streamlit run ./web.py
 ```
 
 ![web](jpg/web.jpg)
+
+## Evaluation
+Upload the original file and the summary file and click the evaluation button.
+
+![Alt text](jpg/web_eval.jpg)
 ## Command-Line Interface
 If you want to use cli, you can use the following command
 ```
