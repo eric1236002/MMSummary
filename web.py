@@ -112,6 +112,9 @@ def main():
     with tab2:
         button=st.checkbox("不使用Map",value=False,help="不使用Map，將所有chunck合併直接使用Reduce")
         model=st.selectbox("Choose model",["gpt-4-1106-preview","Taiwan-LLM-7B-v2.1-chat","openbuddy-deepseek-67b-v15.2"])
+        openai_api_key = st.text_input("OpenAI API key", type="password", value=os.environ['OPENAI_API_KEY'], help="請填入OpenAI API key")
+        if openai_api_key:
+            os.environ['OPENAI_API_KEY'] = openai_api_key
         chunk_size_1 = st.number_input("Chunk size 1", value=16000, min_value=0, max_value=100000, step=100)
         chunk_overlap_1 = st.number_input("Chunk overlap 1", value=4000, min_value=0, max_value=100000, step=100)
         chunk_size_2 = st.number_input("Chunk size 2", value=8000, min_value=0, max_value=100000, step=100, help="Chunk size  0 為不使用")
