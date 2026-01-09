@@ -20,7 +20,7 @@ def init_llm(temperature,model,max_tokens=1000):
 
 # Map function for LLM chain
 def map_function(llm):
-    with open("./map_template2.txt", "r") as f:
+    with open("./map_template.txt", "r") as f:
         map_template = f.read()
     map_prompt = PromptTemplate.from_template(map_template)
     return LLMChain(llm=llm, prompt=map_prompt)

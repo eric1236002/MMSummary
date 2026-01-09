@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+langchain==0.1.0
+langchain-community
+langchain-core
+langchain-openai
+openai
+tiktoken
+requests
