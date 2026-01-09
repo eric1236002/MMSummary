@@ -1,0 +1,109 @@
+import os
+import time
+from langchain.chains import MapReduceDocumentsChain, ReduceDocumentsChain
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.chains.llm import LLMChain
+from langchain.prompts import PromptTemplate
+from langchain.chains.combine_documents.stuff import StuffDocumentsChain
+from langchain_core.documents import Document
+from langchain_openai import ChatOpenAI
+
+def init_llm(temperature, model, max_tokens=1000):
+    if model.lower().startswith("gpt"):
+        return ChatOpenAI(
+            temperature=temperature, 
+            model=model, 
+            api_key=os.environ.get('OPENAI_API_KEY'), 
+            max_tokens=max_tokens
+        )
+    else:
+        return ChatOpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            model=model, 
+            temperature=temperature, 
+            api_key=os.environ.get('OPENROUTER_API_KEY'), 
+            max_tokens=max_tokens,
+            default_headers={
+                "HTTP-Referer": "http://localhost:3000",
+                "X-Title": "MMSummary React"
+            }
+        )
+
+# Map function for LLM chain
+def map_function(llm):
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    template_path = os.path.join(base_dir, "map_template.txt")
+    
+    with open(template_path, "r", encoding="utf-8") as f:
+        map_template = f.read()
+            
+    map_prompt = PromptTemplate.from_template(map_template)
+    return LLMChain(llm=llm, prompt=map_prompt)
+
+# Reduce function for LLM chain
+def reduce_function(llm):
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    template_path = os.path.join(base_dir, "reduce_template.txt")
+
+    with open(template_path, "r", encoding="utf-8") as f:
+        reduce_template = f.read()
+
+    reduce_prompt = PromptTemplate.from_template(reduce_template)
+    return LLMChain(llm=llm, prompt=reduce_prompt)
+
+def process_map_results(split_docs, model):
+    temp = []
+    map_chain = map_function(init_llm(0, model, 1000))
+
+    for doc in split_docs:
+        temp.append(map_chain.run(doc))
+    
+    return temp
+
+def process_reduce_results(combined_map_results, token_max, model):
+    reduce_chain = reduce_function(init_llm(0, model, 4000))
+
+    prompt = PromptTemplate.from_template("折疊此內容: {docs}")
+    llm_chain = LLMChain(llm=init_llm(0, model, 4000), prompt=prompt)
+
+    collapse_documents_chain = StuffDocumentsChain(llm_chain=llm_chain, document_separator="docs")
+    combine_documents_chain = StuffDocumentsChain(llm_chain=reduce_chain, document_variable_name="docs")
+    reduce_documents_chain = ReduceDocumentsChain(combine_documents_chain=combine_documents_chain, collapse_documents_chain=collapse_documents_chain, token_max=token_max)
+    
+    documents = []
+    for content in combined_map_results:
+        if isinstance(content, str):
+            documents.append(Document(page_content=content))
+        else:
+            documents.append(content)
+            
+    return reduce_documents_chain.run(documents)
+
+def split_text(text, chunk_size, chunk_overlap):
+    text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
+        separator=" ",
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap,
+    )
+    file_content = text_splitter.create_documents([text])
+    split_docs = text_splitter.split_documents(file_content) 
+    return split_docs
+
+def generate_summary(text: str, model: str, chunk_size_1: int, chunk_overlap_1: int, 
+                     chunk_size_2: int, chunk_overlap_2: int, token_max: int, 
+                     use_map: bool) -> str:
+    
+    split_docs1 = split_text(text, chunk_size_1, chunk_overlap_1)
+    split_docs2 = split_text(text, chunk_size_2, chunk_overlap_2)
+    
+    combined_map_results = []
+    
+    if use_map:
+        map1_results = process_map_results(split_docs1, model)
+        map2_results = process_map_results(split_docs2, model)
+        combined_map_results = map1_results + map2_results
+    else:
+        combined_map_results = split_docs1 + split_docs2
+
+    response = process_reduce_results(combined_map_results, token_max, model)
+    return response
