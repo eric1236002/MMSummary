@@ -10,7 +10,7 @@ import './App.css';
 
 function App() {
   const [text, setText] = useState("");
-  const [summary, setSummary] = useState("");
+  const [result, setResult] = useState({ summary: "", processing_time: 0 });
   const [loading, setLoading] = useState(false);
   const [settings, setSettings] = useState({
     model: "google/gemma-3-27b-it:free",
@@ -18,7 +18,8 @@ function App() {
     chunk_size_2: 8000,
     token_max: 16000,
     temperature: 0.0,
-    map: "map"
+    strategy: "map",
+    test_mode: false
   });
 
   const location = useLocation();
@@ -38,9 +39,15 @@ function App() {
         chunk_size_2: settings.chunk_size_2,
         token_max: settings.token_max,
         temperature: settings.temperature,
-        use_map: settings.map === "map"
+        use_map: settings.strategy === "map",
+        test_mode: settings.test_mode
       });
-      setSummary(response.data.summary);
+      setResult({
+        summary: response.data.summary,
+        processing_time: response.data.processing_time
+      });
+      setText("");
+      setLoading(false);
     } catch (err) {
       console.error(err);
       alert("API Error: " + (err.response?.data?.detail || err.message));
@@ -79,7 +86,7 @@ function App() {
                 </div>
               </div>
               <div className="right-panel">
-                <ResultSection content={summary} loading={loading} />
+                <ResultSection result={result} loading={loading} />
               </div>
             </div>
           } />

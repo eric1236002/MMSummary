@@ -98,6 +98,9 @@ def generate_summary(text: str, model: str, chunk_size_1: int, chunk_overlap_1: 
                      chunk_size_2: int, chunk_overlap_2: int, token_max: int, 
                      use_map: bool, test_mode: bool = False) -> str:
     
+    if test_mode:
+        return f"【測試模式】這是一段自動生成的摘要測試文字。\n\n*   模型：{model}\n*   輸入長度：{len(text)} 字\n*   這是為了確認資料庫儲存功能是否正常而生成的佔位符。"
+    
     split_docs1 = split_text(text, chunk_size_1, chunk_overlap_1)
     split_docs2 = split_text(text, chunk_size_2, chunk_overlap_2)
     
