@@ -62,7 +62,10 @@ def api_summarize(request: SummarizeRequest):
             chunk_overlap_2=request.chunk_overlap_2,
             token_max=request.token_max,
             use_map=request.use_map,
-            test_mode=request.test_mode
+            test_mode=request.test_mode,
+            map_template=request.map_temple,
+            reduce_template=request.reduce_temple,
+            reduce_temperature=request.reduce_temperature
         )
         
         duration = time.time() - start_time
@@ -78,7 +81,10 @@ def api_summarize(request: SummarizeRequest):
                 "token_max": request.token_max,
                 "use_map": request.use_map,
                 "summary": summary,
-                "processing_time": duration
+                "processing_time": duration,
+                "map_temple": request.map_temple,
+                "reduce_temple": request.reduce_temple,
+                "reduce_temperature": request.reduce_temperature
             })
         return SummarizeResponse(summary=summary, processing_time=duration)
         
