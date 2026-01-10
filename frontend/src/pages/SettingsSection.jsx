@@ -1,17 +1,18 @@
 import React from 'react';
-import { 
-  Box, 
-  FormControl, 
-  InputLabel, 
-  Select, 
-  MenuItem, 
-  TextField, 
-  Slider, 
-  Typography 
+import {
+  Box,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  TextField,
+  Slider,
+  Typography,
+  Switch,
+  FormControlLabel
 } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-// 建立一個深色主題來適應您的背景
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -21,7 +22,9 @@ const darkTheme = createTheme({
 
 function SettingsSection({ settings, onChange }) {
   const handleChange = (key, value) => {
-    onChange({ ...settings, [key]: value });
+    const newSettings = { ...settings, [key]: value };
+    onChange(newSettings);
+    console.log("Settings Updated:", newSettings);
   };
 
   return (
@@ -29,43 +32,42 @@ function SettingsSection({ settings, onChange }) {
       <Box className="section settings-section" sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
         <h2>設定參數</h2>
 
-        {/* 1. Model 選擇器 (MUI Select) */}
         <FormControl fullWidth>
-          <TextField 
+          <TextField
             labelId="model-select-label"
             label="Model"
             type="text"
             value={settings.model}
             onChange={(e) => handleChange('model', e.target.value)}
-            slotProps={{ input: { sx: { borderRadius: '12px' , padding: '10px 12px' } } }}
+            slotProps={{ input: { sx: { borderRadius: '12px', padding: '10px 12px' } } }}
           />
         </FormControl>
 
         <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
-          <TextField 
+          <TextField
             label="Chunk Size 1"
             type="number"
             value={settings.chunk_size_1}
             onChange={(e) => handleChange('chunk_size_1', parseInt(e.target.value) || 0)}
-            slotProps={{ input: { sx: { borderRadius: '12px' , padding: '10px 12px' } } }}
+            slotProps={{ input: { sx: { borderRadius: '12px', padding: '10px 12px' } } }}
           />
-          <TextField 
+          <TextField
             label="Chunk Size 2"
             type="number"
             value={settings.chunk_size_2}
             onChange={(e) => handleChange('chunk_size_2', parseInt(e.target.value) || 0)}
-            slotProps={{ input: { sx: { borderRadius: '12px' , padding: '10px 12px' } } }}
+            slotProps={{ input: { sx: { borderRadius: '12px', padding: '10px 12px' } } }}
           />
         </Box>
 
-        
+
         <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 2 }}>
-          <TextField 
+          <TextField
             label="Token Max"
             type="number"
             value={settings.token_max}
             onChange={(e) => handleChange('token_max', parseInt(e.target.value) || 0)}
-            slotProps={{ input: { sx: { borderRadius: '12px' , padding: '10px 12px' ,fontSize: '16px'   } } }}
+            slotProps={{ input: { sx: { borderRadius: '12px', padding: '10px 12px', fontSize: '16px' } } }}
           />
         </Box>
 
@@ -98,9 +100,28 @@ function SettingsSection({ settings, onChange }) {
             </Select>
           </FormControl>
         </Box>
+
+        <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 2 }}>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={settings.test_mode}
+                onChange={(e) => handleChange('test_mode', e.target.checked)}
+                color="primary"
+              />
+            }
+            label={
+              <Box>
+                <Typography variant="body1" sx={{ color: 'var(--text-main)' }}>測試模式 (Test Mode)</Typography>
+                <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.5)' }}>開啟後將不消耗 API Token，僅回傳測試文字並存入資料庫</Typography>
+              </Box>
+            }
+          />
+        </Box>
       </Box>
     </ThemeProvider>
   );
 }
+
 
 export default SettingsSection;

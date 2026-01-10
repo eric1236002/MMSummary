@@ -95,7 +95,8 @@ def api_history():
 @app.delete("/history/{id}")
 def api_delete_history(id: str):
     try:
-        return database.delete_history(id)
+        result = database.delete_history(id)
+        return {"status": "ok", "deleted_count": result.deleted_count}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
