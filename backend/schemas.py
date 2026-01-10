@@ -21,8 +21,17 @@ class SummarizeRequest(BaseModel):
     token_max: int = 16000
     temperature: float = 0.0
     model: str = "gpt-5-mini"
-    use_map: bool = True # 對應 UI 上的 button (False = 使用 Map, True = 不使用 Map -> 變數名稱有點反直覺，這裡我定義正向參數)
+    use_map: bool = True
+    test_mode: bool = False
 
 class SummarizeResponse(BaseModel):
     summary: str
     processing_time: float
+
+class HistoryResponse(BaseModel):
+    id: str
+    original_text: str
+    summary: str
+    model: str
+    processing_time: float
+    created_at: str

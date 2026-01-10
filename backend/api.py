@@ -1,14 +1,15 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from backend.schemas import TextSplitRequest, TextSplitResponse, SummarizeRequest, SummarizeResponse
+from backend.schemas import TextSplitRequest, TextSplitResponse, SummarizeRequest, SummarizeResponse, HistoryResponse
 from backend.core import split_text, generate_summary
+from backend.database import Database
 import time
 import os
 import dotenv
 dotenv.load_dotenv()
 app = FastAPI(title="MMSummary API", description="API for meeting minutes summarization")
 
-# 新增 CORS 中端點設定
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], # 在開發環境允許所有來源，生產環境應限制網域
@@ -16,15 +17,24 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+database = Database()
 
 @app.get("/")
 def read_root():
     return {"message": "Welcome to MMSummary API"}
 
+@app.get("/DB_health")
+def health_check():
+    try:
+        database.client.admin.command('ping')
+        return {"status": "ok"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.post("/split", response_model=TextSplitResponse)
 def api_split_text(request: TextSplitRequest):
     """
-    測試用 Endpoint：僅執行文本切分
+    Split the text into chunks
     """
     try:
         docs = split_text(request.text, request.chunk_size, request.chunk_overlap)
@@ -36,7 +46,7 @@ def api_split_text(request: TextSplitRequest):
 @app.post("/summarize", response_model=SummarizeResponse)
 def api_summarize(request: SummarizeRequest):
     """
-    執行完整的摘要流程
+    Summarize the text
     """
     start_time = time.time()
     try:
@@ -51,12 +61,41 @@ def api_summarize(request: SummarizeRequest):
             chunk_size_2=request.chunk_size_2,
             chunk_overlap_2=request.chunk_overlap_2,
             token_max=request.token_max,
-            use_map=request.use_map
+            use_map=request.use_map,
+            test_mode=request.test_mode
         )
         
         duration = time.time() - start_time
+        
+        if not request.test_mode:
+            database.insert_history({
+                "text": request.text,
+                "model": request.model,
+                "chunk_size_1": request.chunk_size_1,
+                "chunk_overlap_1": request.chunk_overlap_1,
+                "chunk_size_2": request.chunk_size_2,
+                "chunk_overlap_2": request.chunk_overlap_2,
+                "token_max": request.token_max,
+                "use_map": request.use_map,
+                "summary": summary,
+                "processing_time": duration
+            })
         return SummarizeResponse(summary=summary, processing_time=duration)
         
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/history", response_model=list[HistoryResponse])
+def api_history():
+    try:
+        return database.get_history()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.delete("/history/{id}")
+def api_delete_history(id: str):
+    try:
+        return database.delete_history(id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

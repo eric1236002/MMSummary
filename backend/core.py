@@ -7,6 +7,9 @@ from langchain.prompts import PromptTemplate
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain_core.documents import Document
 from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def init_llm(temperature, model, max_tokens=1000):
     if model.lower().startswith("gpt"):
@@ -32,7 +35,7 @@ def init_llm(temperature, model, max_tokens=1000):
 # Map function for LLM chain
 def map_function(llm):
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    template_path = os.path.join(base_dir, "map_template.txt")
+    template_path = os.path.join(base_dir, "template", "map_template.txt")
     
     with open(template_path, "r", encoding="utf-8") as f:
         map_template = f.read()
@@ -43,7 +46,7 @@ def map_function(llm):
 # Reduce function for LLM chain
 def reduce_function(llm):
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    template_path = os.path.join(base_dir, "reduce_template.txt")
+    template_path = os.path.join(base_dir, "template", "reduce_template.txt")
 
     with open(template_path, "r", encoding="utf-8") as f:
         reduce_template = f.read()
@@ -56,7 +59,8 @@ def process_map_results(split_docs, model):
     map_chain = map_function(init_llm(0, model, 1000))
 
     for doc in split_docs:
-        temp.append(map_chain.run(doc))
+        result = map_chain.invoke(doc)
+        temp.append(result["text"] if "text" in result else str(result))
     
     return temp
 
@@ -77,7 +81,8 @@ def process_reduce_results(combined_map_results, token_max, model):
         else:
             documents.append(content)
             
-    return reduce_documents_chain.run(documents)
+    result = reduce_documents_chain.invoke(documents)
+    return result["output_text"] if "output_text" in result else str(result)
 
 def split_text(text, chunk_size, chunk_overlap):
     text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
@@ -91,7 +96,7 @@ def split_text(text, chunk_size, chunk_overlap):
 
 def generate_summary(text: str, model: str, chunk_size_1: int, chunk_overlap_1: int, 
                      chunk_size_2: int, chunk_overlap_2: int, token_max: int, 
-                     use_map: bool) -> str:
+                     use_map: bool, test_mode: bool = False) -> str:
     
     split_docs1 = split_text(text, chunk_size_1, chunk_overlap_1)
     split_docs2 = split_text(text, chunk_size_2, chunk_overlap_2)

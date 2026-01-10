@@ -1,0 +1,1 @@
+.\venv\Scripts\python -m uvicorn backend.api:app --reload --port 8001
