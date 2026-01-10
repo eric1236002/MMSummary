@@ -92,8 +92,8 @@ function SettingsSection({ settings, onChange }) {
               onChange={(e) => handleChange('strategy', e.target.value)}
               sx={{ borderRadius: '12px' }}
             >
-              <MenuItem value="map">Map</MenuItem>
-              <MenuItem value="nomap">NoMap</MenuItem>
+              <MenuItem value="map">Map-Reduce</MenuItem>
+              <MenuItem value="nomap">NoMap-Reduce</MenuItem>
               <MenuItem value="original">Original</MenuItem>
             </Select>
           </FormControl>
