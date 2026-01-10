@@ -23,6 +23,9 @@ class SummarizeRequest(BaseModel):
     model: str = "gpt-5-mini"
     use_map: bool = True
     test_mode: bool = False
+    reduce_temple: Optional[str] = None
+    map_temple: Optional[str] = None
+    reduce_temperature: float = 0.0
 
 class SummarizeResponse(BaseModel):
     summary: str

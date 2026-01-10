@@ -19,7 +19,10 @@ function App() {
     token_max: 16000,
     temperature: 0.0,
     strategy: "map",
-    test_mode: false
+    test_mode: false,
+    map_temple: "", // read from temple dir
+    reduce_temple: "", // read from temple
+    reduce_temperature: 0.0
   });
 
   const location = useLocation();
@@ -40,6 +43,9 @@ function App() {
         token_max: settings.token_max,
         temperature: settings.temperature,
         use_map: settings.strategy === "map",
+        reduce_temple: settings.reduce_temple,
+        map_temple: settings.map_temple,
+        reduce_temperature: settings.reduce_temperature,
         test_mode: settings.test_mode
       });
       setResult({

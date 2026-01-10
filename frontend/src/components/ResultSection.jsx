@@ -100,7 +100,7 @@ function ResultSection({ result, loading }) {
                 {summary ? (
                     <ReactMarkdown>{summary}</ReactMarkdown>
                 ) : (
-                    <Box sx={{ py: 100, textAlign: 'center' }}>
+                    <Box sx={{ py: 20, textAlign: 'center' }}>
                         <Typography className="placeholder">
                             請在左側上傳文件並點擊按鈕開始...
                         </Typography>
