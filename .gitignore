@@ -20,3 +20,5 @@ local_inf.sh
 test.ipynb
 link.sh
 *.md
+!README.md
+!README_ZH.md

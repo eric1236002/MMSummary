@@ -6,13 +6,13 @@ import TimerIcon from '@mui/icons-material/Timer';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import DownloadIcon from '@mui/icons-material/Download';
 
-function ResultSection({ result, loading }) {
+function ResultSection({ result, loading, t }) {
     const { summary, processing_time } = result;
 
     const handleCopy = () => {
         if (!summary) return;
         navigator.clipboard.writeText(summary);
-        alert("摘要已複製到剪貼簿");
+        alert(t.copySuccess);
     };
 
     const handleDownload = () => {
@@ -21,7 +21,7 @@ function ResultSection({ result, loading }) {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `摘要_${new Date().toLocaleDateString()}.md`;
+        a.download = `${t.downloadName}_${new Date().toLocaleDateString()}.md`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -33,10 +33,10 @@ function ResultSection({ result, loading }) {
             <div className="section result-section loading">
                 <CircularProgress size={40} sx={{ color: 'var(--primary)', mb: 2 }} />
                 <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}>
-                    正在努力生成摘要中...
+                    {t.summarizing}
                 </Typography>
                 <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.4)', mt: 1 }}>
-                    這通常需要 10-20 秒，請稍候
+                    {t.summarizingDesc}
                 </Typography>
             </div>
         );
@@ -48,7 +48,7 @@ function ResultSection({ result, loading }) {
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                     <AutoAwesomeIcon sx={{ color: 'var(--primary)', fontSize: 24 }} />
-                    <Typography variant="h6" sx={{ color: 'var(--text-main)', fontWeight: 700 }}>摘要結果</Typography>
+                    <Typography variant="h6" sx={{ color: 'var(--text-main)', fontWeight: 700 }}>{t.resultTitle}</Typography>
                 </Box>
                 {processing_time > 0 && (
                     <Chip 
@@ -88,7 +88,7 @@ function ResultSection({ result, loading }) {
                             }
                         }}
                     >
-                        儲存摘要 (.md)
+                        {t.saveSummary}
                     </Button>
                 </Box>
             </Box>
@@ -102,7 +102,7 @@ function ResultSection({ result, loading }) {
                 ) : (
                     <Box sx={{ py: 20, textAlign: 'center' }}>
                         <Typography className="placeholder">
-                            請在左側上傳文件並點擊按鈕開始...
+                            {t.placeholderResult}
                         </Typography>
                     </Box>
                 )}

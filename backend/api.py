@@ -12,7 +12,7 @@ app = FastAPI(title="MMSummary API", description="API for meeting minutes summar
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # 在開發環境允許所有來源，生產環境應限制網域
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

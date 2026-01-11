@@ -1,94 +1,125 @@
-# MMSummary
+# MMSummary - Meeting Minutes Summarization Tool
 
-In this project, three different methods can be used to extract article abstracts. 
+[中文版 (Chinese Version)](./README_ZH.md)
 
-For example, frist we cut the document using two different chunk sizes, merge the results into a single file, and then use the reduce chain for output.
+MMSummary is a powerful, full-stack web application designed to automatically summarize long text documents, such as meeting minutes, transcripts, and comprehensive reports. Leveraging the power of Large Language Models (LLMs) and a Map-Reduce strategy, it can process extensive content that exceeds typical token limits, delivering concise and accurate summaries.
 
-Secondly, we use the file's map chain twice to extract each chunck's summary and then use the reduce chain to output.
+![MMSummary Home](./jpg/home.png)
 
-Finally, we use the file's map chain once to extract the summary of the entire file and then use the reduce chain to output.
+## Key Features
 
+*   **Intelligent Text Summarization**:
+    *   **Map-Reduce Architecture**: Effectively handles large documents by splitting them into manageable chunks ("Map" phase) and then synthesizing the results ("Reduce" phase).
+    *   **Customizable Strategies**: Configure chunk sizes, overlaps, and token limits to fine-tune the summarization process for different document types.
+    *   **Model Flexibility**: Support for various LLMs via OpenRouter and OpenAI (e.g., Google Gemma, GPT-4o).
+*   **Custom Prompt Templates**:
+    *   Full control over the summarization output by customizing the "Map" (chunk summary) and "Reduce" (final synthesis) prompts.
+    *   Adjust `temperature` to control the creativity/determinism of the model.
+*   **History & Persistence**:
+    *   Automatically saves all summarization results to a MongoDB database.
+    *   View, track, and delete past summaries, complete with processing metrics.
+*   **Modern User Interface**:
+    *   Clean, responsive frontend built with **React** and **Material-UI**.
+    *   Easy file upload setup for `.txt` and `.md` files.
+    *   Dedicated settings page for granular control over the AI parameters.
 
-<!-- 插入圖片LLM.png -->
+## Technology Stack
 
-![struct](jpg/LLM.png)
+### Backend
+*   **Framework**: [FastAPI](https://fastapi.tiangolo.com/) - High-performance web framework for building APIs.
+*   **AI Orchestration**: [LangChain](https://python.langchain.com/) - Framework for developing applications powered by language models.
+*   **Database**: [MongoDB](https://www.mongodb.com/) - NoSQL database for flexible data storage.
+*   **Runtime**: Python 3.x
 
-## Environment
-Install requirements
+### Frontend
+*   **Framework**: [React](https://react.dev/) (via [Vite](https://vitejs.dev/))
+*   **UI Library**: [Material-UI (MUI)](https://mui.com/) - Comprehensive suite of UI tools.
+*   **Routing**: React Router
+*   **HTTP Client**: Axios
+
+## Project Structure
+
 ```
-conda create -n MMSummary python=3.10
-conda activate MMSummary
-pip install -r requirements.txt
-```
-
-create .env file in the directory
-```
-OPENAI_API_KEY=<Your_API_KEY>
-```
-
-## Prompt file
-
-map_template and reduce_template is the prompt template file for the LLM.
-
-## Run
-```
-streamlit run ./web.py
-```
-
-![web](jpg/web.jpg)
-
-## Evaluation
-Upload the original file and the summary file and click the evaluation button.
-
-![Alt text](jpg/web_eval.jpg)
-## Command-Line Interface
-If you want to use cli, you can use the following command
-```
-python3 ./cli/cli.py \
-    --key "" \ opai key
-    --file <your file name> \
-    --model "gpt-4-1106-preview" \
-    --chunk_size_1 16000 \
-    --chunk_overlap_1 0 \
-    --chunk_size_2 8000 \
-    --chunk_overlap_2 0 \
-    --token_max 16000 \
-    --temperature 0 \
-    --without_map \
-    --output_dir "./cli/output/"
-```
-## Command-Line Interface Evaluation
-``` 
-python3 ./cli/eval.py \
-    --orginal_file file \
-    --summary_file file2 \
-    --output_dir result_file
-```
-## Use local model
-If you want to use local model, you can use the following command.
-
-#### 1. Fastchat server start
-```
-python -m fastchat.serve.controller --host 0.0.0.0
-```
-#### 2. Use FastChat as a local drop-in replacement for OpenAI APIs
-```
-python -m fastchat.serve.openai_api_server --host 0.0.0.0 --controller-address http://localhost:21001
+MMSummary/
+├── backend/            # FastAPI application
+│   ├── api.py          # API endpoints and route logic
+│   ├── core.py         # Core summarization logic (LangChain integration)
+│   ├── database.py     # MongoDB connection and CRUD operations
+│   └── schemas.py      # Pydantic models for request/response validation
+├── frontend/           # React application
+│   ├── src/
+│   │   ├── components/ # Reusable UI components (InputSection, ResultSection)
+│   │   ├── pages/      # Page components (SettingsSection, HistoryPage)
+│   │   └── App.jsx     # Main application layout and state
+├── template/           # Default prompt templates for Map/Reduce
+├── requirements.txt    # Python dependencies
+└── README.md           # Project documentation
 ```
 
-#### 3. Use the local model as a model worker for the Fastchat server.
+## Getting Started
 
-Here we use yentinglin/Taiwan-LLM-7B-v2.1-chat as an example, you can also replace it with another huggingface repo id or local model path. In addition, you can create multiple model workers to the Fastchat server.
-```
-python -m fastchat.serve.model_worker --model-path yentinglin/Taiwan-LLM-7B-v2.1-chat --controller-address http://localhost:21001 --host 0.0.0.0 --port 21002 --worker-address http://localhost:21002 --num-gpus 1 --max-gpu-memory 24Gib
-```
+### Prerequisites
+*   Node.js (v16+)
+*   Python (v3.8+)
+*   MongoDB (Running locally or accessible via URL)
 
-#### 4. Fix the streamlit selectbox in web.py 114 line.
-```
-model=st.selectbox("Choose model",["gpt-4-1106-preview","Taiwan-LLM-7B-v2.1-chat","your_new_model_name"])
-```
+### 1. Backend Setup
 
-#### 5. Run web.py
-So you can see the model you just added in the selectbox.
+1.  Create and activate a virtual environment:
+    ```bash
+    python -m venv venv
+    # Windows
+    .\venv\Scripts\activate
+    # Mac/Linux
+    source venv/bin/activate
+    ```
 
-![Alt text](./jpg/selectbox.png)
+2.  Install Python dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  Configure environment variables:
+    Create a `.env` file in the root directory and add your API keys:
+    ```env
+    OPENAI_API_KEY=your_openai_key
+    OPENROUTER_API_KEY=your_openrouter_key
+    MONGODB_URL=mongodb://localhost:27017
+    ```
+
+4.  Start the Backend Server:
+    ```bash
+    python -m backend.api
+    ```
+    The API will be available at `http://localhost:8000` (or `8001` depending on config).
+
+### 2. Frontend Setup
+
+1.  Navigate to the frontend directory:
+    ```bash
+    cd frontend
+    ```
+
+2.  Install Javascript dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  Start the Development Server:
+    ```bash
+    npm run dev
+    ```
+    Access the web interface typically at `http://localhost:5173`.
+
+## Usage Guide
+
+1.  **Home / Summarize**:
+    *   Upload a text file or paste text directly.
+    *   Click "Start Summarize" to process the text.
+2.  **Settings**:
+    *   Navigate to the "Settings" tab to adjust Model type, Token limits, Chunk sizes, and Custom Prompts.
+    *   Enable "Test Mode" to verify the flow without consuming API credits.
+3.  **History**:
+    *   View previously generated summaries in the "History" tab.
+
+
