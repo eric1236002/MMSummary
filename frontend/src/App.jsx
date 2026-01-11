@@ -6,6 +6,7 @@ import InputSection from './components/InputSection';
 import SettingsSection from './pages/SettingsSection';
 import ResultSection from './components/ResultSection';
 import HistoryPage from './pages/HistoryPage';
+import { translations } from './translations';
 import './App.css';
 
 function App() {
@@ -22,10 +23,12 @@ function App() {
     test_mode: false,
     map_temple: "", // read from temple dir
     reduce_temple: "", // read from temple
-    reduce_temperature: 0.0
+    reduce_temperature: 0.0,
+    language: "en"
   });
 
   const location = useLocation();
+  const t = translations[settings.language] || translations.en;
 
   const handleTextChange = (newText) => {
     setText(newText);
@@ -67,9 +70,9 @@ function App() {
       <header>
         <h1>MMSummary</h1>
         <nav className="navbar">
-          <Link to="/" className={`nav-button ${location.pathname === '/' ? 'active' : ''}`}>摘要工具 </Link>
-          <Link to="/settings" className={`nav-button ${location.pathname === '/settings' ? 'active' : ''}`}>偏好設定</Link>
-          <Link to="/history" className={`nav-button ${location.pathname === '/history' ? 'active' : ''}`}>歷史紀錄</Link>
+          <Link to="/" className={`nav-button ${location.pathname === '/' ? 'active' : ''}`}>{t.nav_tool} </Link>
+          <Link to="/settings" className={`nav-button ${location.pathname === '/settings' ? 'active' : ''}`}>{t.nav_settings}</Link>
+          <Link to="/history" className={`nav-button ${location.pathname === '/history' ? 'active' : ''}`}>{t.nav_history}</Link>
         </nav>
       </header>
 
@@ -79,33 +82,33 @@ function App() {
             <div className="summary-grid">
               <div className="left-panel">
                 <div className="section">
-                  <InputSection onTextLoad={handleTextChange} />
+                  <InputSection onTextLoad={handleTextChange} t={t} />
                   <div style={{ marginTop: '2rem' }}>
                     <button
                       className="action-button"
                       onClick={handleSummarize}
                       disabled={loading || !text}
                     >
-                      {loading ? "處理中..." : "開始摘要內容"}
+                      {loading ? t.processing : t.startSummarize}
                     </button>
                   </div>
                 </div>
               </div>
               <div className="right-panel">
-                <ResultSection result={result} loading={loading} />
+                <ResultSection result={result} loading={loading} t={t} />
               </div>
             </div>
           } />
 
           <Route path="/settings" element={
             <div className="centered-view">
-              <SettingsSection settings={settings} onChange={setSettings} />
+              <SettingsSection settings={settings} onChange={setSettings} t={t} />
             </div>
           } />
 
           <Route path="/history" element={
             <div className="centered-view">
-              <HistoryPage />
+              <HistoryPage t={t} />
             </div>
           } />
         </Routes>

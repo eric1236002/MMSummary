@@ -33,7 +33,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-function HistoryPage() {
+function HistoryPage({ t }) {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedId, setExpandedId] = useState(null);
@@ -54,13 +54,14 @@ function HistoryPage() {
   }, []);
 
   const handleDelete = async (id) => {
-    if (!window.confirm("確定要刪除這筆紀錄嗎？")) return;
+    if (!window.confirm(t.confirm_delete)) return;
     try {
       await axios.delete(`http://127.0.0.1:8001/history/${id}`);
       setHistory(history.filter(item => item.id !== id));
+      alert(t.deleteSuccess);
     } catch (err) {
       console.error("Delete failed:", err);
-      alert("刪除失敗");
+      alert("Error deleting record");
     }
   };
 
@@ -72,7 +73,7 @@ function HistoryPage() {
     const summary = history.find(item => item.id === id)?.summary;
     if (!summary) return;
     navigator.clipboard.writeText(summary);
-    alert("摘要已複製到剪貼簿");
+    alert(t.copySuccess);
   };
 
   const handleDownload = (id) => {
@@ -82,7 +83,7 @@ function HistoryPage() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `摘要_${new Date().toLocaleDateString()}.md`;
+      a.download = `${t.downloadName}_${new Date().toLocaleDateString()}.md`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -102,13 +103,13 @@ function HistoryPage() {
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 4 }}>
         <HistoryIcon sx={{ fontSize: 32, color: 'var(--primary)' }} />
         <Typography variant="h4" sx={{ fontWeight: 800, background: 'linear-gradient(45deg, var(--primary), var(--secondary))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-          歷史紀錄
+          {t.nav_history}
         </Typography>
       </Box>
 
       {history.length === 0 ? (
         <Box className="section" sx={{ textAlign: 'center', py: 8 }}>
-          <Typography color="var(--text-main)">目前尚無任何紀錄</Typography>
+          <Typography color="var(--text-main)">{t.noHistory}</Typography>
         </Box>
       ) : (
         <Stack spacing={2}>
@@ -198,14 +199,14 @@ function HistoryPage() {
                     endIcon={<ExpandMoreIcon sx={{ transform: expandedId === item.id ? 'rotate(180deg)' : 'none', transition: '0.3s' }} />}
                     sx={{ color: 'var(--primary)', fontWeight: 600 }}
                   >
-                    {expandedId === item.id ? "收合內容" : "閱讀完整摘要"}
+                    {expandedId === item.id ? t.collapse_content : t.expand_content}
                   </Button>
                 </Box>
 
                 {/*原始文本*/}
                 <Collapse in={expandedId === item.id}>
                   <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.05)' }} />
-                  <Typography variant="subtitle2" sx={{ color: 'var(--primary)', mb: 1, fontWeight: 700 }}>原始文本片段 (前 200 字):</Typography>
+                  <Typography variant="subtitle2" sx={{ color: 'var(--primary)', mb: 1, fontWeight: 700 }}>{t.originalText} (First 200 chars):</Typography>
                   <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', fontStyle: 'italic', lineHeight: 1.5 }}>
                     {item.original_text.substring(0, 200)}...
                   </Typography>

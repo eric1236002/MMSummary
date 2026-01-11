@@ -15,7 +15,7 @@ const VisuallyHiddenInput = styled('input')({
     width: 1,
 });
 
-function InputSection({ onTextLoad }) {
+function InputSection({ onTextLoad, t }) {
     const [fileName, setFileName] = useState("");
 
     const handleFileChange = (e) => {
@@ -36,7 +36,7 @@ function InputSection({ onTextLoad }) {
     return (
         <Box className="input-content-wrapper" sx={{ textAlign: 'center', p: 4, border: '2px dashed rgba(255,255,255,0.1)', borderRadius: '20px' }}>
             <Typography variant="h5" sx={{ mb: 2, fontWeight: 700, color: 'var(--text-main)' }}>
-                上傳文件
+                {t.uploadTitle}
             </Typography>
 
             <Button
@@ -53,7 +53,7 @@ function InputSection({ onTextLoad }) {
                     fontSize: '1rem'
                 }}
             >
-                選擇檔案
+                {t.chooseFile}
                 <VisuallyHiddenInput
                     type="file"
                     accept=".txt,.md"
@@ -63,12 +63,12 @@ function InputSection({ onTextLoad }) {
 
             {fileName && (
                 <Typography variant="body2" sx={{ mt: 2, color: 'var(--primary)', fontWeight: 600 }}>
-                    已選擇：{fileName}
+                    {t.selectedFile}{fileName}
                 </Typography>
             )}
 
             <Typography className="hint" variant="caption" sx={{ display: 'block', mt: 2, color: 'rgba(255,255,255,0.5)' }}>
-                僅支援 .txt 和 .md 檔案
+                {t.hintFile}
             </Typography>
         </Box>
     );
