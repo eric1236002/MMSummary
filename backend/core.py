@@ -62,7 +62,11 @@ def process_map_results(split_docs, model, map_template=None):
 
     for doc in split_docs:
         result = map_chain.invoke(doc)
-        temp.append(result["text"] if "text" in result else str(result))
+        if isinstance(result, dict):
+            content = result.get("text", result.get("output", result.get("output_text", str(result))))
+        else:
+            content = str(result)
+        temp.append(content)
     
     return temp
 
@@ -83,8 +87,11 @@ def process_reduce_results(combined_map_results, token_max, model, reduce_templa
         else:
             documents.append(content)
             
-    result = reduce_documents_chain.invoke(documents)
-    return result["output_text"] if "output_text" in result else str(result)
+    res = reduce_documents_chain.invoke(documents)
+    # Extract string from result dict if necessary
+    if isinstance(res, dict):
+        return res.get("output_text", res.get("text", res.get("output", str(res))))
+    return res
 
 def split_text(text, chunk_size, chunk_overlap):
     text_splitter = CharacterTextSplitter.from_tiktoken_encoder(

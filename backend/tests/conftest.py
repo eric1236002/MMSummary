@@ -5,6 +5,9 @@ from types import ModuleType
 
 @pytest.fixture(autouse=True)
 def mock_db(monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "sk-fake-key-for-testing")
+    monkeypatch.setenv("MONGODB_URL", "mongodb://localhost:27017")
+    
     # Create a mock database instance
     mock_db_instance = MagicMock()
     mock_db_instance.insert_history.return_value = MagicMock(inserted_id="fake_id")
