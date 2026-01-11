@@ -15,6 +15,8 @@ MMSummary is a powerful, full-stack web application designed to automatically su
 *   **Custom Prompt Templates**:
     *   Full control over the summarization output by customizing the "Map" (chunk summary) and "Reduce" (final synthesis) prompts.
     *   Adjust `temperature` to control the creativity/determinism of the model.
+*   **Multi-language Interface**:
+    *   Switch between **English** and **Traditional Chinese** seamlessly via the settings menu.
 *   **History & Persistence**:
     *   Automatically saves all summarization results to a MongoDB database.
     *   View, track, and delete past summaries, complete with processing metrics.
@@ -22,6 +24,8 @@ MMSummary is a powerful, full-stack web application designed to automatically su
     *   Clean, responsive frontend built with **React** and **Material-UI**.
     *   Easy file upload setup for `.txt` and `.md` files.
     *   Dedicated settings page for granular control over the AI parameters.
+*   **Production Ready**:
+    *   Containerized with **Docker** and orchestrated with **Kubernetes** for high availability and scalability.
 
 ## Technology Stack
 
@@ -29,13 +33,17 @@ MMSummary is a powerful, full-stack web application designed to automatically su
 *   **Framework**: [FastAPI](https://fastapi.tiangolo.com/) - High-performance web framework for building APIs.
 *   **AI Orchestration**: [LangChain](https://python.langchain.com/) - Framework for developing applications powered by language models.
 *   **Database**: [MongoDB](https://www.mongodb.com/) - NoSQL database for flexible data storage.
-*   **Runtime**: Python 3.x
+*   **Runtime**: Python 3.10
 
 ### Frontend
 *   **Framework**: [React](https://react.dev/) (via [Vite](https://vitejs.dev/))
 *   **UI Library**: [Material-UI (MUI)](https://mui.com/) - Comprehensive suite of UI tools.
 *   **Routing**: React Router
 *   **HTTP Client**: Axios
+
+### Infrastructure
+*   **Containerization**: Docker
+*   **Orchestration**: Kubernetes (K8s)
 
 ## Project Structure
 
@@ -45,13 +53,20 @@ MMSummary/
 │   ├── api.py          # API endpoints and route logic
 │   ├── core.py         # Core summarization logic (LangChain integration)
 │   ├── database.py     # MongoDB connection and CRUD operations
-│   └── schemas.py      # Pydantic models for request/response validation
+│   ├── schemas.py      # Pydantic models for validation
+│   └── Dockerfile      # Backend container definition
 ├── frontend/           # React application
 │   ├── src/
-│   │   ├── components/ # Reusable UI components (InputSection, ResultSection)
-│   │   ├── pages/      # Page components (SettingsSection, HistoryPage)
-│   │   └── App.jsx     # Main application layout and state
-├── template/           # Default prompt templates for Map/Reduce
+│   │   ├── components/ # Reusable UI components
+│   │   ├── pages/      # Page components
+│   │   ├── translations.js # Multi-language translations
+│   │   └── App.jsx     # Main entry point
+│   └── Dockerfile      # Frontend container definition (Multi-stage)
+├── k8s/                # Kubernetes manifests
+│   ├── README.md       # K8s specific deployment guide
+│   ├── backend.yaml    # Backend deployment & service
+│   └── frontend.yaml   # Frontend deployment & service
+├── template/           # Default prompt templates
 ├── requirements.txt    # Python dependencies
 └── README.md           # Project documentation
 ```
@@ -59,9 +74,10 @@ MMSummary/
 ## Getting Started
 
 ### Prerequisites
-*   Node.js (v16+)
+*   Node.js (v20+)
 *   Python (v3.8+)
 *   MongoDB (Running locally or accessible via URL)
+*   Docker & Kubernetes (Optional, for production deployment)
 
 ### 1. Backend Setup
 
@@ -91,7 +107,7 @@ MMSummary/
     ```bash
     python -m backend.api
     ```
-    The API will be available at `http://localhost:8000` (or `8001` depending on config).
+    The API will be available at `http://localhost:8000`.
 
 ### 2. Frontend Setup
 
@@ -109,7 +125,16 @@ MMSummary/
     ```bash
     npm run dev
     ```
-    Access the web interface typically at `http://localhost:5173`.
+    Access the web interface at `http://localhost:5173`.
+
+## Production Deployment (Docker & K8s)
+
+For production environments, we utilize Docker for containerization and Kubernetes for orchestration.
+
+See the [Kubernetes Deployment Guide](./k8s/README.md) for detailed instructions on:
+- Building container images.
+- Configuring K8s Secrets and ConfigMaps.
+- Deploying the full stack to a cluster.
 
 ## Usage Guide
 
@@ -117,9 +142,7 @@ MMSummary/
     *   Upload a text file or paste text directly.
     *   Click "Start Summarize" to process the text.
 2.  **Settings**:
-    *   Navigate to the "Settings" tab to adjust Model type, Token limits, Chunk sizes, and Custom Prompts.
+    *   Adjust Language, Model type, Token limits, Chunk sizes, and Custom Prompts.
     *   Enable "Test Mode" to verify the flow without consuming API credits.
 3.  **History**:
-    *   View previously generated summaries in the "History" tab.
-
-
+    *   View and management previously generated summaries.

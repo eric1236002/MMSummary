@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mmsummary
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mmsummary-config
+  namespace: mmsummary
+data:
+  MONGODB_URL: "mongodb://mongodb-service:27017" # Default internal URL
+  BACKEND_URL: "http://backend-service:8000"

@@ -22,3 +22,5 @@ link.sh
 *.md
 !README.md
 !README_ZH.md
+*.secret.yaml
+k8s/secrets.yaml
