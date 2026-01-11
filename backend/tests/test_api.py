@@ -35,7 +35,8 @@ def test_summarize_endpoint():
         "chunk_size_2": 100,
         "chunk_overlap_2": 0,
         "token_max": 4000,
-        "use_map": False
+        "use_map": False,
+        "test_mode": True
     }
     response = client.post("/summarize", json=payload)
     assert response.status_code == 200, f"Detail: {response.json()}"
