@@ -51,38 +51,39 @@ function ResultSection({ result, loading, t }) {
                     <Typography variant="h6" sx={{ color: 'var(--text-main)', fontWeight: 700 }}>{t.resultTitle}</Typography>
                 </Box>
                 {processing_time > 0 && (
-                    <Chip 
+                    <Chip
                         icon={<TimerIcon style={{ color: 'var(--primary)', fontSize: 16 }} />}
-                        label={`${processing_time.toFixed(1)}s`} 
+                        label={`${processing_time.toFixed(1)}s`}
                         size="small"
-                        sx={{ 
-                            background: 'rgba(99, 102, 241, 0.1)', 
+                        sx={{
+                            background: 'rgba(99, 102, 241, 0.1)',
                             color: 'rgba(255,255,255,0.7)',
                             border: '1px solid rgba(99, 102, 241, 0.2)'
-                        }} 
+                        }}
                     />
                 )}
                 <Box sx={{ display: 'flex', gap: 1 }}>
-                    <IconButton 
-                        size="small" 
-                        onClick={handleCopy} 
+                    <IconButton
+                        size="small"
+                        onClick={handleCopy}
                         disabled={!summary}
+                        aria-label={t.copy}
                         sx={{ color: 'rgba(255,255,255,0.3)', '&:hover': { color: 'var(--primary)' } }}
                     >
                         <ContentCopyIcon fontSize="small" />
                     </IconButton>
-                    <Button 
-                        size="small" 
+                    <Button
+                        size="small"
                         variant="outlined"
                         startIcon={<DownloadIcon />}
                         onClick={handleDownload}
                         disabled={!summary}
-                        sx={{ 
+                        sx={{
                             borderRadius: '12px',
-                            color: 'var(--primary)', 
+                            color: 'var(--primary)',
                             borderColor: 'rgba(99, 102, 241, 0.3)',
-                            fontWeight: 600, 
-                            '&:hover': { 
+                            fontWeight: 600,
+                            '&:hover': {
                                 borderColor: 'var(--primary)',
                                 backgroundColor: 'rgba(99, 102, 241, 0.1)'
                             }
