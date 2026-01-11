@@ -44,6 +44,13 @@ MMSummary is a powerful, full-stack web application designed to automatically su
 ### Infrastructure
 *   **Containerization**: Docker
 *   **Orchestration**: Kubernetes (K8s)
+*   **CI/CD**: GitHub Actions
+
+## CI/CD Pipeline
+
+The project includes an automated CI/CD pipeline via GitHub Actions:
+- **CI (ci.yml)**: Automatically runs on every Pull Request or push to `main`. It performs backend dependency checks, runs Python tests (pytest), and verifies that the frontend can build successfully.
+- **CD (cd.yml)**: Triggers when a new version tag (e.g., `v1.0.0`) is pushed. It builds Docker images for both backend and frontend and pushes them to Docker Hub.
 
 ## Project Structure
 

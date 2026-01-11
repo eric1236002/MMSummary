@@ -44,6 +44,13 @@ MMSummary 是一個強大的全端網頁應用程式，專為自動摘要長篇�
 ### 基礎設施
 *   **容器化**: Docker
 *   **編排**: Kubernetes (K8s)
+*   **CI/CD**: GitHub Actions
+
+## CI/CD 流程
+
+本專案透過 GitHub Actions 實現自動化 CI/CD：
+- **CI (ci.yml)**：每當有 Pull Request 或推送至 `main` 分支時自動執行。負責檢查後端依賴、執行 Python 測試 (pytest)，並驗證前端是否能成功建構。
+- **CD (cd.yml)**：當推送版本標籤（如 `v1.0.0`）或手動觸發時，自動建構 Docker 映像檔並推送至 Docker Hub。
 
 ## 專案結構
 
