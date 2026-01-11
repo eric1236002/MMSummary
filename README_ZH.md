@@ -1,5 +1,7 @@
 # MMSummary - 會議記錄摘要工具
 
+[English Version](./README.md)
+
 MMSummary 是一個強大的全端網頁應用程式，專為自動摘要長篇文本文件而設計，例如會議記錄、逐字稿和綜合報告。利用大型語言模型 (LLM) 的力量和 Map-Reduce 策略，它可以處理超過典型 Token 限制的大量內容，提供簡潔而準確的摘要。
 
 ![MMSummary 首頁](./jpg/home.png)
@@ -13,6 +15,8 @@ MMSummary 是一個強大的全端網頁應用程式，專為自動摘要長篇�
 *   **自定義提示模板**:
     *   通過自定義 "Map"（區塊摘要）和 "Reduce"（最終合成）提示，完全控制摘要輸出。
     *   調整 `temperature` 以控制模型的創造性/確定性。
+*   **多語系介面**:
+    *   可在設定選單中輕鬆切換 **繁體中文** 與 **英文**。
 *   **歷史記錄與持久化**:
     *   自動將所有摘要結果保存到 MongoDB 資料庫。
     *   查看、追蹤和刪除過去的摘要，包含處理指標。
@@ -20,6 +24,8 @@ MMSummary 是一個強大的全端網頁應用程式，專為自動摘要長篇�
     *   使用 **React** 和 **Material-UI** 建構的簡潔響應式前端。
     *   簡單的 `.txt` 和 `.md` 檔案上傳設定。
     *   專用的設定頁面，用於精細控制 AI 參數。
+*   **雲端原生部署**:
+    *   支援 **Docker** 容器化與 **Kubernetes (K8s)** 編排，具備高可用性與擴展性。
 
 ## 技術堆疊
 
@@ -27,13 +33,17 @@ MMSummary 是一個強大的全端網頁應用程式，專為自動摘要長篇�
 *   **框架**: [FastAPI](https://fastapi.tiangolo.com/) - 用於構建 API 的高性能 Web 框架。
 *   **AI 編排**: [LangChain](https://python.langchain.com/) - 用於開發由語言模型驅動的應用程式的框架。
 *   **資料庫**: [MongoDB](https://www.mongodb.com/) - 用於靈活數據存儲的 NoSQL 資料庫。
-*   **執行環境**: Python 3.x
+*   **執行環境**: Python 3.10
 
 ### 前端
 *   **框架**: [React](https://react.dev/) (via [Vite](https://vitejs.dev/))
 *   **UI 庫**: [Material-UI (MUI)](https://mui.com/) - 綜合 UI 工具套件。
 *   **路由**: React Router
 *   **HTTP 客戶端**: Axios
+
+### 基礎設施
+*   **容器化**: Docker
+*   **編排**: Kubernetes (K8s)
 
 ## 專案結構
 
@@ -43,13 +53,20 @@ MMSummary/
 │   ├── api.py          # API端點和路由邏輯
 │   ├── core.py         # 核心摘要邏輯 (LangChain 整合)
 │   ├── database.py     # MongoDB 連接和 CRUD 操作
-│   └── schemas.py      # 用於請求/響應驗證的 Pydantic 模型
+│   ├── schemas.py      # Pydantic 驗證模型
+│   └── Dockerfile      # 後端容器定義
 ├── frontend/           # React 應用程式
 │   ├── src/
-│   │   ├── components/ # 可重用的 UI 組件 (InputSection, ResultSection)
-│   │   ├── pages/      # 頁面組件 (SettingsSection, HistoryPage)
-│   │   └── App.jsx     # 主應用程式佈局和狀態
-├── template/           # Map/Reduce 的預設提示模板
+│   │   ├── components/ # 可重用的 UI 組件
+│   │   ├── pages/      # 頁面組件
+│   │   ├── translations.js # 多語系翻譯
+│   │   └── App.jsx     # 主要進入點
+│   └── Dockerfile      # 前端容器定義 (多階段構建)
+├── k8s/                # Kubernetes Manifests
+│   ├── README.md       # K8s 專屬部署指南
+│   ├── backend.yaml    # 後端部署與服務
+│   └── frontend.yaml   # 前端部署與服務
+├── template/           # 預設提示模板
 ├── requirements.txt    # Python 依賴項
 └── README.md           # 專案文檔
 ```
@@ -57,9 +74,10 @@ MMSummary/
 ## 開始使用
 
 ### 先決條件
-*   Node.js (v16+)
+*   Node.js (v20+)
 *   Python (v3.8+)
-*   MongoDB (在本地運行或通過 URL 訪問)
+*   MongoDB (本地運行或使用雲端 Atlas)
+*   Docker & Kubernetes (可選，用於生產環境部署)
 
 ### 1. 後端設定
 
@@ -82,14 +100,14 @@ MMSummary/
     ```env
     OPENAI_API_KEY=your_openai_key
     OPENROUTER_API_KEY=your_openrouter_key
-    MONGODB_URL=mongodb+srv://your_mongodb_username:your_mongodb_password@your_mongodb_cluster_url/?appName=your_app_name
+    MONGODB_URL=mongodb+srv://your_username:your_password@cluster.mongodb.net/
     ```
 
 4.  啟動後端伺服器:
     ```bash
     python -m backend.api
     ```
-    API 將在 `http://localhost:8000` (或 `8001`，取決於配置) 上可用。
+    API 將在 `http://localhost:8000` 上可用。
 
 ### 2. 前端設定
 
@@ -107,7 +125,16 @@ MMSummary/
     ```bash
     npm run dev
     ```
-    通常在 `http://localhost:5173` 訪問 Web 介面。
+    在 `http://localhost:5173` 訪問 Web 介面。
+
+## 生產環境部署 (Docker & K8s)
+
+針對生產環境，我們使用 Docker 進行容器化，並透過 Kubernetes 進行自動化編排。
+
+請參閱 [Kubernetes 部署指南](./k8s/README.md) 以獲取詳細指令：
+- 如何構建容器映像檔。
+- 如何配置 K8s Secrets 與 ConfigMaps。
+- 如何將全端服務部署至叢集。
 
 ## 使用指南
 
@@ -115,9 +142,7 @@ MMSummary/
     *   上傳文本文件或直接貼上文本。
     *   點擊 "開始摘要" 處理文本。
 2.  **設定**:
-    *   導航到 "設定" 標籤以調整模型類型、Token 限制、區塊大小和自定義提示。
+    *   調整語系、模型類型、Token 限制、區塊大小與自定義提示。
     *   啟用 "測試模式" 以驗證流程而不消耗 API 額度。
 3.  **歷史記錄**:
-    *   在 "歷史記錄" 標籤中查看以前生成的摘要。
-
-
+    *   查看與管理過往生成的摘要紀錄。

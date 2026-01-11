@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: mmsummary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: mmsummary-backend
+        image: mmsummary-backend:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: mmsummary-secrets
+              key: OPENAI_API_KEY
+        - name: OPENROUTER_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: mmsummary-secrets
+              key: OPENROUTER_API_KEY
+        - name: MONGODB_URL
+          valueFrom:
+            secretKeyRef:
+              name: mmsummary-secrets
+              key: MONGODB_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: mmsummary
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 8001
+      targetPort: 8000
+  type: LoadBalancer
