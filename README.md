@@ -50,7 +50,7 @@ MMSummary is a powerful, full-stack web application designed to automatically su
 
 The project includes an automated CI/CD pipeline via GitHub Actions:
 - **CI (ci.yml)**: Automatically runs on every Pull Request or push to `main`. It performs backend dependency checks, runs Python tests (pytest), and verifies that the frontend can build successfully.
-- **CD (cd.yml)**: Triggers when a new version tag (e.g., `v1.0.0`) is pushed. It builds Docker images for both backend and frontend and pushes them to Docker Hub.
+- **CD (cd.yml)**: Triggers when a new version tag (e.g., `v1.0.0`) is pushed. It builds Docker images for both backend and frontend and pushes them to GitHub Container Registry (GHCR).
 
 ## Project Structure
 
@@ -68,13 +68,16 @@ MMSummary/
 │   │   ├── pages/      # Page components
 │   │   ├── translations.js # Multi-language translations
 │   │   └── App.jsx     # Main entry point
+│   ├── nginx.conf      # Frontend Nginx config (Reverse proxy)
 │   └── Dockerfile      # Frontend container definition (Multi-stage)
 ├── k8s/                # Kubernetes manifests
 │   ├── README.md       # K8s specific deployment guide
-│   ├── backend.yaml    # Backend deployment & service
-│   └── frontend.yaml   # Frontend deployment & service
+│   ├── deploy.yaml     # Namespace, Configs, and all Deployments (including MongoDB)
+│   ├── services.yaml   # All Service definitions
+│   ├── ingress.yaml    # Ingress routing configuration
+│   └── secrets.yaml.example # Secrets template
 ├── template/           # Default prompt templates
-├── requirements.txt    # Python dependencies
+├── requirements_backend.txt # Backend Python dependencies
 └── README.md           # Project documentation
 ```
 
@@ -82,8 +85,8 @@ MMSummary/
 
 ### Prerequisites
 *   Node.js (v20+)
-*   Python (v3.8+)
-*   MongoDB (Running locally or accessible via URL)
+*   Python (v3.10+)
+*   MongoDB (Running locally, via Docker, or K8s deployment)
 *   Docker & Kubernetes (Optional, for production deployment)
 
 ### 1. Backend Setup
@@ -99,16 +102,19 @@ MMSummary/
 
 2.  Install Python dependencies:
     ```bash
-    pip install -r requirements.txt
+    pip install -r requirements_backend.txt
     ```
 
 3.  Configure environment variables:
-    Create a `.env` file in the root directory and add your API keys:
+    Create a `.env` file in the root directory and add your API keys. If using a local MongoDB, ensure it is running:
     ```env
     OPENAI_API_KEY=your_openai_key
     OPENROUTER_API_KEY=your_openrouter_key
     MONGODB_URL=mongodb://localhost:27017
     ```
+
+    > **Tip**: If you have Docker installed, you can quickly start a local MongoDB:
+    > `docker run -d --name mongodb-local -p 27017:27017 mongo:latest`
 
 4.  Start the Backend Server:
     ```bash
@@ -133,6 +139,8 @@ MMSummary/
     npm run dev
     ```
     Access the web interface at `http://localhost:5173`.
+
+> **Note**: If you are deploying via **Kubernetes (Docker Desktop)**, access the app at **`http://localhost`** (default port 80).
 
 ## Production Deployment (Docker & K8s)
 
