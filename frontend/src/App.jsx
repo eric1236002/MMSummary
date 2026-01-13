@@ -38,7 +38,7 @@ function App() {
     if (!text) return;
     setLoading(true);
     try {
-      const response = await axios.post("http://127.0.0.1:8001/summarize", {
+      const response = await axios.post("/api/summarize", {
         text: text,
         model: settings.model,
         chunk_size_1: settings.chunk_size_1,

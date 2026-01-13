@@ -28,15 +28,20 @@ docker build -t mmsummary-frontend:latest -f frontend/Dockerfile .
 ### 2. Configure Environment and Secrets
 Create a `secrets.yaml` file based on `k8s/secrets.yaml.example` and fill in your actual API keys. Then apply the configurations:
 ```bash
-kubectl apply -f k8s/base-config.yaml
 kubectl apply -f k8s/secrets.yaml
 ```
 
-### 3. Deploy the Application
-Deploy the backend and frontend components to your cluster:
+### 3. Deploy Everything
+Deploy all components to your cluster using the consolidated manifests:
 ```bash
-kubectl apply -f k8s/backend.yaml
-kubectl apply -f k8s/frontend.yaml
+# Apply Deployments (Namespace, ConfigMap, PVC, Deployments)
+kubectl apply -f k8s/deploy.yaml
+
+# Apply Services
+kubectl apply -f k8s/services.yaml
+
+# Apply Ingress (Optional, requires Ingress Controller)
+kubectl apply -f k8s/ingress.yaml
 ```
 
 ### 4. Verify Deployment
@@ -45,9 +50,23 @@ Check the status of your pods, services, and deployments:
 kubectl get all -n mmsummary
 ```
 
+### 5. Cleanup (How to Delete)
+To remove all deployed resources:
+```bash
+# Option 1: Delete using files (Sequential)
+kubectl delete -f k8s/ingress.yaml
+kubectl delete -f k8s/services.yaml
+kubectl delete -f k8s/deploy.yaml
+
+# Option 2: Delete the entire namespace (Total Cleanup)
+kubectl delete namespace mmsummary
+```
+
 ---
 
 ## Architecture Overview
 - **Namespace**: `mmsummary` (All resources are isolated here)
+- **MongoDB**: Deployed as a `ClusterIP` service on port 27017 with persistent storage (10Gi PVC)
 - **Backend**: Exposed internally as a `ClusterIP` on port 8000.
 - **Frontend**: Exposed via a `LoadBalancer` on port 80.
+- **Ingress**: Configured for `mmsummary.local` to route `/api` to backend and `/` to frontend.
