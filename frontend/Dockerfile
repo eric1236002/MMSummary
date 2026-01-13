@@ -17,10 +17,12 @@ RUN npm run build
 # Stage 2: Serve with Nginx
 FROM nginx:stable-alpine
 
+# Copy custom nginx config
+COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
+
 # Copy build files from stage 1
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copy custom nginx config if needed, or use default
 # EXPOSE 80
 EXPOSE 80
 
