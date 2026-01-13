@@ -26,6 +26,7 @@ class SummarizeRequest(BaseModel):
     reduce_temple: Optional[str] = None
     map_temple: Optional[str] = None
     reduce_temperature: float = 0.0
+    language: str = "Traditional Chinese"
 
 class SummarizeResponse(BaseModel):
     summary: str

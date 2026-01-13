@@ -38,6 +38,12 @@ function App() {
     if (!text) return;
     setLoading(true);
     try {
+      const languageMap = {
+        "zh": "Traditional Chinese",
+        "en": "English"
+      };
+      const targetLanguage = languageMap[settings.language] || "Traditional Chinese";
+
       const response = await axios.post("/api/summarize", {
         text: text,
         model: settings.model,
@@ -49,7 +55,8 @@ function App() {
         reduce_temple: settings.reduce_temple,
         map_temple: settings.map_temple,
         reduce_temperature: settings.reduce_temperature,
-        test_mode: settings.test_mode
+        test_mode: settings.test_mode,
+        language: targetLanguage
       });
       setResult({
         summary: response.data.summary,

@@ -12,28 +12,40 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def init_llm(temperature, model, max_tokens=1000):
+    is_new_openai = "o1" in model.lower() or "gpt-5" in model.lower()
+    
+    llm_params = {
+        "model": model,
+    }
+    
+    if is_new_openai:
+        llm_params["temperature"] = 1
+    else:
+        llm_params["temperature"] = temperature
+    
+    if is_new_openai:
+        llm_params["model_kwargs"] = {"max_completion_tokens": max_tokens}
+    else:
+        llm_params["max_tokens"] = max_tokens
+
     if model.lower().startswith("gpt"):
         return ChatOpenAI(
-            temperature=temperature, 
-            model=model, 
             api_key=os.environ.get('OPENAI_API_KEY'), 
-            max_tokens=max_tokens
+            **llm_params
         )
     else:
         return ChatOpenAI(
             base_url="https://openrouter.ai/api/v1",
-            model=model, 
-            temperature=temperature, 
             api_key=os.environ.get('OPENROUTER_API_KEY'), 
-            max_tokens=max_tokens,
             default_headers={
                 "HTTP-Referer": "http://localhost:3000",
                 "X-Title": "MMSummary React"
-            }
+            },
+            **llm_params
         )
 
 # Map function for LLM chain
-def map_function(llm, map_template=None):
+def map_function(llm, map_template=None, language="Traditional Chinese"):
     if not map_template:
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         template_path = os.path.join(base_dir, "template", "map_template.txt")
@@ -41,11 +53,13 @@ def map_function(llm, map_template=None):
         with open(template_path, "r", encoding="utf-8") as f:
             map_template = f.read()
             
+
+    map_template = map_template.replace("{language}", language)
     map_prompt = PromptTemplate.from_template(map_template)
     return LLMChain(llm=llm, prompt=map_prompt)
 
 # Reduce function for LLM chain
-def reduce_function(llm, reduce_template=None):
+def reduce_function(llm, reduce_template=None, language="Traditional Chinese"):
     if not reduce_template:
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         template_path = os.path.join(base_dir, "template", "reduce_template.txt")
@@ -53,12 +67,13 @@ def reduce_function(llm, reduce_template=None):
         with open(template_path, "r", encoding="utf-8") as f:
             reduce_template = f.read()
 
+    reduce_template = reduce_template.replace("{language}", language)
     reduce_prompt = PromptTemplate.from_template(reduce_template)
     return LLMChain(llm=llm, prompt=reduce_prompt)
 
-def process_map_results(split_docs, model, map_template=None):
+def process_map_results(split_docs, model, map_template=None, language="Traditional Chinese"):
     temp = []
-    map_chain = map_function(init_llm(0, model, 1000), map_template=map_template)
+    map_chain = map_function(init_llm(0, model, 1000), map_template=map_template, language=language)
 
     for doc in split_docs:
         result = map_chain.invoke(doc)
@@ -70,10 +85,10 @@ def process_map_results(split_docs, model, map_template=None):
     
     return temp
 
-def process_reduce_results(combined_map_results, token_max, model, reduce_template=None, reduce_temperature=0.0):
-    reduce_chain = reduce_function(init_llm(reduce_temperature, model, 4000), reduce_template=reduce_template)
+def process_reduce_results(combined_map_results, token_max, model, reduce_template=None, language="Traditional Chinese", reduce_temperature=0.0):
+    reduce_chain = reduce_function(init_llm(reduce_temperature, model, 4000), reduce_template=reduce_template, language=language)
 
-    prompt = PromptTemplate.from_template("折疊此內容: {docs}")
+    prompt = PromptTemplate.from_template("Collapse the following content: {docs}")
     llm_chain = LLMChain(llm=init_llm(0, model, 4000), prompt=prompt)
 
     collapse_documents_chain = StuffDocumentsChain(llm_chain=llm_chain, document_separator="docs")
@@ -88,7 +103,7 @@ def process_reduce_results(combined_map_results, token_max, model, reduce_templa
             documents.append(content)
             
     res = reduce_documents_chain.invoke(documents)
-    # Extract string from result dict if necessary
+        # Extract string from result dict if necessary
     if isinstance(res, dict):
         return res.get("output_text", res.get("text", res.get("output", str(res))))
     return res
@@ -107,10 +122,10 @@ def generate_summary(text: str, model: str, chunk_size_1: int, chunk_overlap_1: 
                      chunk_size_2: int, chunk_overlap_2: int, token_max: int, 
                      use_map: bool, test_mode: bool = False, 
                      map_template: str = None, reduce_template: str = None,
-                     reduce_temperature: float = 0.0) -> str:
+                     reduce_temperature: float = 0.0, language: str = "Traditional Chinese") -> str:
     
     if test_mode:
-        return f"【測試模式】這是一段自動生成的摘要測試文字。\n\n*   模型：{model}\n*   輸入長度：{len(text)} 字\n*   這是為了確認資料庫儲存功能是否正常而生成的佔位符。"
+        return f"【Test Mode】This is a test summary generated by the system.\n\n*    Model: {model}\n*    Target Language: {language}\n*    Input Length: {len(text)} characters\n*    This is a placeholder generated to ensure the database storage function is working properly."
     
     split_docs1 = split_text(text, chunk_size_1, chunk_overlap_1)
     split_docs2 = split_text(text, chunk_size_2, chunk_overlap_2)
@@ -118,13 +133,14 @@ def generate_summary(text: str, model: str, chunk_size_1: int, chunk_overlap_1: 
     combined_map_results = []
     
     if use_map:
-        map1_results = process_map_results(split_docs1, model, map_template=map_template)
-        map2_results = process_map_results(split_docs2, model, map_template=map_template)
+        map1_results = process_map_results(split_docs1, model, map_template=map_template, language=language)
+        map2_results = process_map_results(split_docs2, model, map_template=map_template, language=language)
         combined_map_results = map1_results + map2_results
     else:
         combined_map_results = split_docs1 + split_docs2
 
     response = process_reduce_results(combined_map_results, token_max, model, 
                                       reduce_template=reduce_template, 
+                                      language=language,
                                       reduce_temperature=reduce_temperature)
     return response

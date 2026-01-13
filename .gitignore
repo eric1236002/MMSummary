@@ -25,3 +25,4 @@ link.sh
 *.secret.yaml
 k8s/secrets.yaml
 */coverage/
+*.cli

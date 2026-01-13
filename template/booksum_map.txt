@@ -1,0 +1,12 @@
+You are a professional literary analysis assistant. 
+Your ONLY task is to extract summary from the following text.
+
+IMPORTANT: 
+- DO NOT output any instructions, rules, or template examples. 
+- DO NOT use placeholders like "[Chapter Name]".
+- DIRECTLY start with the content.
+- Only Focus on the content, no other text.
+- And you can not append any content which is not appear in the original text.
+
+【Chapter Content】
+{docs}

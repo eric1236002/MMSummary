@@ -2,15 +2,22 @@ from rouge_score import rouge_scorer
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import os,argparse
 def calculate_rouge_scores(original, summary):
-    scorer = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
-    scores = scorer.score(" ".join(original), " ".join(summary))
+    scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
+    scores = scorer.score(original, summary)
     return scores
 
+def calculate_stats(original, summary):
+    return {
+        "original_len": len(original),
+        "summary_len": len(summary),
+        "compression_ratio": round(len(summary) / len(original), 4) if len(original) > 0 else 0
+    }
+
 def calculate_bleu_score(original, summary):
-    # split text into word list
+    # Split text into word lists
     reference = [original.split()]
     candidate = summary.split()
-    # calculate BLEU score
+    # Calculate BLEU score
     smoothing = SmoothingFunction().method1
     score = sentence_bleu(reference, candidate, smoothing_function=smoothing)
     return score
@@ -32,15 +39,25 @@ def main():
 
     rouge_scores = calculate_rouge_scores(original, summary)
     bleu_score = calculate_bleu_score(original, summary)
+    stats = calculate_stats(original, summary)
             
     with open(args.output_dir, "a+", encoding="utf-8") as f:
-        f.write("\n")
-        f.write(f"file: {args.summary_file.split('/')[-1].split('.')[0]} \nROUGE Scores:\n")
-        print("ROUGE Scores:")
+        f.write("\n" + "="*50 + "\n")
+        f.write(f"File: {os.path.basename(args.summary_file)}\n")
+        
+        f.write("\n[Text Stats]\n")
+        for key, val in stats.items():
+            f.write(f"{key}: {val}\n")
+            print(f"{key}: {val}")
+
+        f.write("\n[ROUGE Scores]\n")
+        print("\nROUGE Scores:")
         for key, score in rouge_scores.items():
-            f.write(f"{key}: {score}\n")
-            print(f"{key}: {score}")
-        f.write(f"BLEU Score: {bleu_score}\n")
-        print(f"BLEU Score: {bleu_score}")
+            line = f"{key}: Precision={score.precision:.4f}, Recall={score.recall:.4f}, F1={score.fmeasure:.4f}"
+            f.write(line + "\n")
+            print(line)
+            
+        f.write(f"\nBLEU Score: {bleu_score:.4f}\n")
+        print(f"BLEU Score: {bleu_score:.4f}")
 if __name__ == "__main__":
     main()

@@ -106,7 +106,7 @@ MMSummary/
     ```
 
 3.  Configure environment variables:
-    Create a `.env` file in the root directory and add your API keys. If using a local MongoDB, ensure it is running:
+    Create a `.env` file in the root 用ory and add your API keys. If using a local MongoDB, ensure it is running:
     ```env
     OPENAI_API_KEY=your_openai_key
     OPENROUTER_API_KEY=your_openrouter_key

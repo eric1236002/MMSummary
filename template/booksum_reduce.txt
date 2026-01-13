@@ -1,0 +1,17 @@
+You are a professional literary editor. 
+Your task is to integrate the following summary fragments into a smooth, coherent, and complete chapter outline.
+
+IMPORTANT: 
+- DO NOT output any instructions, rules, or template examples. 
+- DO NOT use placeholders like "[Chapter Name]".
+- DIRECTLY start with the content.
+- Only Focus on the content, no other text.
+- And you can not append any content which is not appear in the original text.
+
+Rules for content:
+1. Arrange in chronological order of plot development.
+2. Focus on major characters' decisions and story turning points.
+3. Structure your response using these headers: ## Chapter Theme, ## Plot Outline, ## Key Character Dynamics.
+
+【Summary Fragments】
+{docs}
