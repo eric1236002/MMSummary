@@ -1,23 +1,32 @@
-name: MMSummary CD (Docker Push)
+name: MMSummary CD (Push to GHCR)
+
+permissions:
+  contents: read    # read-only for repo contents
+  packages: write   # allow pushing to GitHub Container Registry
 
 on:
   push:
     tags:
       - 'v*' # Trigger on version tags like v1.0.0
+  pull_request:
+    types: [closed]
+    branches: [main]
   workflow_dispatch: # Allow manual trigger
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Login to Docker Hub
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -30,8 +39,8 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/mmsummary-backend:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/mmsummary-backend:${{ github.ref_name }}
+            ghcr.io/${{ github.repository_owner }}/mmsummary-backend:latest
+            ghcr.io/${{ github.repository_owner }}/mmsummary-backend:${{ github.ref_name }}
 
       # Build and Push Frontend
       - name: Build and push Frontend
@@ -41,5 +50,5 @@ jobs:
           file: ./frontend/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/mmsummary-frontend:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/mmsummary-frontend:${{ github.ref_name }}
+            ghcr.io/${{ github.repository_owner }}/mmsummary-frontend:latest
+            ghcr.io/${{ github.repository_owner }}/mmsummary-frontend:${{ github.ref_name }}
