@@ -59,7 +59,7 @@ describe('HistoryPage Component', () => {
         fireEvent.click(deleteButton);
 
         expect(window.confirm).toHaveBeenCalledWith(t.confirm_delete);
-        expect(mockedAxios.delete).toHaveBeenCalledWith("http://127.0.0.1:8001/history/1");
+        expect(mockedAxios.delete).toHaveBeenCalledWith("/api/history/1");
         await waitFor(() => {
             expect(window.alert).toHaveBeenCalledWith(t.deleteSuccess);
         });
