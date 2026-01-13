@@ -43,6 +43,25 @@ def test_summarize_endpoint():
     assert "summary" in response.json()
 
 
+def test_summarize_endpoint_with_language():
+    payload = {
+        "text": "Hello mapping test.",
+        "model": "google/gemma-3-27b-it:free",
+        "chunk_size_1": 100,
+        "chunk_overlap_1": 0,
+        "chunk_size_2": 100,
+        "chunk_overlap_2": 0,
+        "token_max": 4000,
+        "use_map": False,
+        "test_mode": True,
+        "language": "English"
+    }
+    response = client.post("/summarize", json=payload)
+    assert response.status_code == 200, f"Detail: {response.json()}"
+    assert "summary" in response.json()
+    assert "Target Language: English" in response.json()["summary"]
+
+
 def test_history_endpoint():
     response = client.get("/history")
     assert response.status_code == 200, f"Detail: {response.json()}"

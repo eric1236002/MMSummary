@@ -20,7 +20,7 @@ def test_process_map_results(mock_invoke):
     model = "google/gemma-3-27b-it:free"
     # Ensure some text to split
     split_docs = split_text("This is test content", 100, 0)
-    results = process_map_results(split_docs, model)
+    results = process_map_results(split_docs, model, language="English")
     assert len(results) > 0
 
 @patch('langchain.chains.base.Chain.invoke')
@@ -28,5 +28,5 @@ def test_process_reduce_results(mock_invoke):
     mock_invoke.return_value = {"output": "Mocked Reduce Result"}
     model = "google/gemma-3-27b-it:free"
     split_docs = split_text("Test content for reduce", 100, 0)
-    summary = process_reduce_results(split_docs, 4000, model)
+    summary = process_reduce_results(split_docs, 4000, model, language="English")
     assert summary == "Mocked Reduce Result"
