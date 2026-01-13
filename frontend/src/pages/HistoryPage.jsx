@@ -40,7 +40,7 @@ function HistoryPage({ t }) {
 
   const fetchHistory = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8001/history');
+      const response = await axios.get('/api/history');
       setHistory(response.data);
     } catch (err) {
       console.error("Failed to fetch history:", err);
@@ -56,7 +56,7 @@ function HistoryPage({ t }) {
   const handleDelete = async (id) => {
     if (!window.confirm(t.confirm_delete)) return;
     try {
-      await axios.delete(`http://127.0.0.1:8001/history/${id}`);
+      await axios.delete(`/api/history/${id}`);
       setHistory(history.filter(item => item.id !== id));
       alert(t.deleteSuccess);
     } catch (err) {
