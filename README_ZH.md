@@ -50,7 +50,7 @@ MMSummary 是一個強大的全端網頁應用程式，專為自動摘要長篇�
 
 本專案透過 GitHub Actions 實現自動化 CI/CD：
 - **CI (ci.yml)**：每當有 Pull Request 或推送至 `main` 分支時自動執行。負責檢查後端依賴、執行 Python 測試 (pytest)，並驗證前端是否能成功建構。
-- **CD (cd.yml)**：當推送版本標籤（如 `v1.0.0`）或手動觸發時，自動建構 Docker 映像檔並推送至 Docker Hub。
+- **CD (cd.yml)**：當推送版本標籤（如 `v1.0.0`）或手動觸發時，自動建構 Docker 映像檔並推送至 GitHub Container Registry (GHCR)。
 
 ## 專案結構
 
@@ -68,13 +68,16 @@ MMSummary/
 │   │   ├── pages/      # 頁面組件
 │   │   ├── translations.js # 多語系翻譯
 │   │   └── App.jsx     # 主要進入點
+│   ├── nginx.conf      # 前端 Nginx 配置 (反向代理)
 │   └── Dockerfile      # 前端容器定義 (多階段構建)
 ├── k8s/                # Kubernetes Manifests
 │   ├── README.md       # K8s 專屬部署指南
-│   ├── backend.yaml    # 後端部署與服務
-│   └── frontend.yaml   # 前端部署與服務
+│   ├── deploy.yaml     # 命名空間、配置與所有部署 (含 MongoDB)
+│   ├── services.yaml   # 所有服務定義
+│   ├── ingress.yaml    # Ingress 路由配置
+│   └── secrets.yaml.example # 機密資訊範例
 ├── template/           # 預設提示模板
-├── requirements.txt    # Python 依賴項
+├── requirements_backend.txt # 後端 Python 依賴項
 └── README.md           # 專案文檔
 ```
 
@@ -82,8 +85,8 @@ MMSummary/
 
 ### 先決條件
 *   Node.js (v20+)
-*   Python (v3.8+)
-*   MongoDB (本地運行或使用雲端 Atlas)
+*   Python (v3.10+)
+*   MongoDB (本地運行、使用 Docker 啟動或 K8s 部署)
 *   Docker & Kubernetes (可選，用於生產環境部署)
 
 ### 1. 後端設定
@@ -99,16 +102,19 @@ MMSummary/
 
 2.  安裝 Python 依賴項:
     ```bash
-    pip install -r requirements.txt
+    pip install -r requirements_backend.txt
     ```
 
 3.  設定環境變數:
-    在根目錄中創建一個 `.env` 文件並添加您的 API 金鑰:
+    在根目錄中創建一個 `.env` 文件並添加您的 API 金鑰。若使用本地 MongoDB，請確保它已啟動：
     ```env
     OPENAI_API_KEY=your_openai_key
     OPENROUTER_API_KEY=your_openrouter_key
-    MONGODB_URL=mongodb+srv://your_username:your_password@cluster.mongodb.net/
+    MONGODB_URL=mongodb://localhost:27017
     ```
+
+    > **提示**：若電腦有 Docker，可快速啟動本地 MongoDB：
+    > `docker run -d --name mongodb-local -p 27017:27017 mongo:latest`
 
 4.  啟動後端伺服器:
     ```bash
@@ -133,6 +139,8 @@ MMSummary/
     npm run dev
     ```
     在 `http://localhost:5173` 訪問 Web 介面。
+
+> **注意**：如果您是使用 **Kubernetes (Docker Desktop)** 部署，請直接訪問 **`http://localhost`** (預設端口 80)。
 
 ## 生產環境部署 (Docker & K8s)
 
