@@ -21,10 +21,10 @@ describe('API outgoing requests', () => {
             temperature: 0.0
         };
 
-        await mockedAxios.post("http://127.0.0.1:8001/summarize", samplePayload);
+        await mockedAxios.post("/api/summarize", samplePayload);
 
         expect(mockedAxios.post).toHaveBeenCalledWith(
-            "http://127.0.0.1:8001/summarize",
+            "/api/summarize",
             expect.objectContaining({
                 text: "Hello World",
                 model: "google/gemma-3-27b-it:free"
