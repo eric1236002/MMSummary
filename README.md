@@ -12,6 +12,9 @@ MMSummary is a powerful, full-stack web application designed to automatically su
     *   **Map-Reduce Architecture**: Effectively handles large documents by splitting them into manageable chunks ("Map" phase) and then synthesizing the results ("Reduce" phase).
     *   **Customizable Strategies**: Configure chunk sizes, overlaps, and token limits to fine-tune the summarization process for different document types.
     *   **Model Flexibility**: Support for various LLMs via OpenRouter and OpenAI (e.g., Google Gemma, GPT-4o).
+*   **Agentic Orchestration**:
+    *   **Planner Agent**: Dynamically analyzes the input length to decide the best processing strategy (e.g., whether to use Map-Reduce, chunk sizes) to balance cost and quality.
+    *   **Reviewer Agent**: Automatically critiques the drafted summary to ensure factual accuracy, eliminate hallucinations, and revise missed points.
 *   **Custom Prompt Templates**:
     *   Full control over the summarization output by customizing the "Map" (chunk summary) and "Reduce" (final synthesis) prompts.
     *   Adjust `temperature` to control the creativity/determinism of the model.
@@ -26,6 +29,18 @@ MMSummary is a powerful, full-stack web application designed to automatically su
     *   Dedicated settings page for granular control over the AI parameters.
 *   **Production Ready**:
     *   Containerized with **Docker** and orchestrated with **Kubernetes** for high availability and scalability.
+
+## Ablation Study Results
+
+To validate the effectiveness of our text processing strategies, we conducted an ablation study using 65k-character meeting transcripts from the MeetingBank dataset. The results prove the superiority of the **Agent Mode**:
+
+| Strategy | ROUGE-1 | ROUGE-L | Latency (s) | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Agent Mode (`auto_on`)** | **0.564** | **0.226** | 63.7s | **Best Overall**. The Planner dynamically sets parameters while the Reviewer eliminates hallucinations. Highest quality at the cost of higher latency. |
+| **Map-Reduce (`map_off`)** | 0.562 | 0.217 | 35.5s | Stable and strong baseline. Chunking forces the model to carefully read details. |
+| **Direct Baseline (`direct_off`)**| 0.521 | 0.213 | 21.3s | Because modern LLMs have massive context windows (e.g., 128k), we can now feed the entire text directly. This actually outperforms legacy Map-Reduce/collapse methods that were originally designed to bypass context limits. |
+| **Legacy Collapse (`original_off`)**| 0.501 | 0.197 | 7.2s | The traditional LangChain collapse strategy, designed for older models with small contexts, performs poorly today and is prone to failure due to internal boundaries. |
+| **Concat (`nomap_off`)** | 0.457 | 0.181 | 17.7s | Naive concatenation causes failures and severe context loss. |
 
 ## Technology Stack
 
