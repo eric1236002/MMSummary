@@ -1,0 +1,56 @@
+## CCDF Program Overview and Reporting Requirements
+
+- The CCDBG Act and CCDF regulations govern state child-care programs for low-income working families.
+- States submit 3-year State Plans to OCC to request CCDF funding and describe program administration.
+- States are required to report CCDF expenditures and the number of children served by subsidies.
+- The fiscal years 2019–2021 Plan Preprint included new regulatory requirements and an added request for states to report results of program-integrity and fraud-fighting activities.
+
+## OCC Oversight and Monitoring
+
+- OCC and state lead agencies share responsibility for overseeing and protecting the integrity of the CCDF program.
+- OCC reviews and approves State Plans through its Program Operations Division and regional program staff.
+- OCC launched a formal Monitoring System in fiscal year 2019 to review selected states over the 3-year State Plan period.
+- The Monitoring System is intended to ensure compliance, identify technical-assistance needs, and identify promising practices.
+- The Monitoring System covers 11 topic areas, including program integrity and accountability.
+
+## Internal Controls and State Plan Review Process
+
+- OCC has not established finalized written policies to guide staff review and approval of State Plans.
+- OCC used training materials, draft documents, and a summary protocol, but these were not formal policies for continuous use.
+- OCC stated that flexibility is needed due to staffing changes and regional differences.
+- The lack of written policies limits consistency in State Plan review and retention of organizational knowledge.
+
+## Program-Integrity Results Reporting
+
+- OCC requested states to report results of program-integrity activities, but most approved State Plans did not include this information.
+- In a review of 51 approved State Plans, 43 plans did not report results of program-integrity activities as requested.
+- OCC has not defined what it considers to be the “results” of program-integrity activities.
+- OCC also did not communicate clear internal criteria or external guidance to states about this information request.
+- OCC officials said the information was requested on an informational basis and was not required for State Plan approval.
+
+## Improper Payment Reporting and Corrective Action
+
+- CCDF is designated as a high-priority program under improper-payment requirements.
+- States estimate and report improper payments on a 3-year rotational cycle, and HHS reports aggregate results.
+- The FY 2019 CCDF gross improper payment estimate was approximately $325 million, with an estimated rate of 4.53 percent.
+- OCC oversees the improper-payment reporting process by approving preliminary documents, case sample changes, Joint Case Reviews, and final reports.
+- States with error rates at or above 10 percent must submit Corrective Action Plans and updates if the error rate remains high.
+
+## Fraud Risk and Internal Control Standards
+
+- Federal standards require managers to consider fraud risk when identifying, analyzing, and responding to risks.
+- GAO’s Fraud Risk Framework and OMB guidance emphasize antifraud control activities and risk-based fraud prevention.
+- The transcript notes that fraud risk can exist even if fraud has not yet occurred.
+- OCC has not completed a fraud risk assessment for CCDF.
+
+## Action Items
+
+- OCC: Finalize written policies for the State Plan review and approval process.
+- OCC: Define what information is needed regarding the results of program-integrity activities.
+- OCC: Communicate program-integrity results reporting requirements to states.
+- OCC: Communicate internal criteria for reviewing program-integrity results to staff.
+- OCC: Develop written standards for reviewing Corrective Action Plans.
+- OCC: Finalize written policies for post-submission follow-up on Corrective Action Plans.
+- OCC: Develop criteria for evaluating whether state program-integrity activities are effective.
+- OCC: Evaluate whether the Self-Assessment Instrument and Fraud Toolkit can be used to collect monitoring information.
+- ACF: Complete a fraud risk assessment for the CCDF program.

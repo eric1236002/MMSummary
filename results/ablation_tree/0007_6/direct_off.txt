@@ -1,0 +1,94 @@
+## Medicare Hospice Benefit and Eligibility
+
+- To qualify for the Medicare hospice benefit, an individual must be enrolled in Medicare Part A and be medically certified as terminally ill with a life expectancy of 6 months or less if the illness follows its normal course.
+- Beneficiaries must elect the hospice benefit and waive Medicare payment for curative treatment related to the terminal illness.
+- Hospice care can be provided at home or in settings such as nursing homes, assisted living facilities, hospice facilities, and hospitals.
+- Beneficiaries may receive hospice care beyond 6 months if they continue to meet eligibility requirements, and they may disenroll and later re-enroll.
+
+## Hospice Services and Payment Structure
+
+- The Medicare hospice benefit covers services and supplies for palliation and management of the terminal illness, including physician and nursing services, medical equipment, drugs for pain and symptom management, hospice aide and homemaker services, therapy, and counseling.
+- Hospice interdisciplinary teams develop care plans with the beneficiary, family, caregiver(s), and primary care provider if applicable.
+- Hospice providers must make services available 24 hours a day, 7 days a week.
+- CMS pays hospices based on four levels of care, with payment rates adjusted for geographic wage differences and updated annually.
+- Routine home care was the most common level of care in 2017, accounting for 98 percent of Medicare hospice care.
+- CMS applies two payment caps: one on inpatient days and one on total annual Medicare payments.
+
+## Hospice Quality Reporting and Survey Oversight
+
+- CMS’s Hospice Quality Reporting Program includes provider-reported quality measures and caregivers’ experience survey data.
+- Providers must submit quality data for all patients, regardless of payer source.
+- CMS oversees hospice quality primarily through surveys conducted by state agencies or CMS-approved accrediting organizations.
+- Surveys assess compliance with hospice conditions of participation, including patient care and organizational requirements.
+- Survey types include initial certification, recertification, and complaint- or incident-based surveys.
+
+## Deficiencies and Enforcement
+
+- CMS classifies survey noncompliance as either condition-level deficiencies or standard-level deficiencies.
+- Condition-level deficiencies are the most serious and can place a hospice on a 90-day termination track, or 23 days in cases of immediate jeopardy.
+- Standard-level deficiencies require an acceptable plan of correction and follow-up.
+- If deficiencies are not corrected within required time frames, CMS may terminate the provider agreement.
+- CMS’s main enforcement remedy for hospice noncompliance is termination.
+
+## For-Profit vs. Non-Profit Hospice Providers
+
+- For-profit and non-profit hospices served roughly equal shares of Medicare hospice beneficiaries in 2017, despite for-profit hospices representing about two-thirds of providers.
+- In 2017, for-profit hospices treated about 50 percent of beneficiaries and non-profit hospices treated about 48 percent.
+- Beneficiary demographics were generally similar across provider types, with two noted differences: non-profit hospices served slightly higher percentages of white beneficiaries, and for-profit hospices served more dual Medicare-Medicaid beneficiaries.
+- For-profit hospices served a higher share of beneficiaries with non-cancer diagnoses: 77 percent versus 69 percent for non-profits in 2017.
+- For-profit providers received a larger share of Medicare hospice payments: $10.4 billion, or 58 percent, in 2017, compared with $7.2 billion, or 40 percent, for non-profits.
+
+## Length of Stay and Payment Differences
+
+- For-profit hospices had longer average lengths of stay than non-profits for both cancer and non-cancer beneficiaries.
+- Non-cancer beneficiaries at for-profit hospices averaged 108 days of stay, compared with 67 days at non-profit hospices.
+- Longer stays generally lead to higher payments because hospice is paid daily.
+- The report noted that non-cancer conditions can be harder to predict and may contribute to longer stays.
+
+## Quality Measure Results
+
+- For-profit and non-profit hospices had similar average scores on CMS’s provider-reported quality measures in 2017.
+- Both provider types also had similar scores on the composite quality measure implemented in 2017.
+- For-profit hospices were more likely to be among providers with the lowest composite scores.
+- Among providers in the 10th percentile or lower on the composite measure, 261 were for-profit and 68 were non-profit.
+- 130 providers had composite scores below 50 percent, including 112 for-profits and 18 non-profits.
+
+## Caregiver Experience Survey Results
+
+- Caregivers’ reported experiences were generally similar for for-profit and non-profit hospices.
+- For-profit providers were more often among the lowest-scoring providers on certain caregiver experience measures.
+- On the overall hospice rating measure, 248 for-profit providers and 42 non-profit providers were in the 10th percentile or lower.
+- 15 percent of for-profit providers were in the 10th percentile or lower on the rating measure, compared with 4 percent of non-profit providers.
+
+## Live Discharges and End-of-Life Visits
+
+- CMS claims data were used to assess additional quality indicators, including live discharge rates and end-of-life provider visits.
+- For-profit hospices had higher live discharge rates than non-profits in 2017: 22.1 percent versus 12.0 percent.
+- 472 hospices had live discharge rates of 50 percent or more in 2017, and 462 of them were for-profit.
+- For-profit and non-profit hospices averaged about 6 provider visits in the last 7 days of life.
+- Differences were found in specific visit measures near the end of life:
+  - 77 percent of for-profit beneficiaries and 85 percent of non-profit beneficiaries received at least one RN/physician/nurse practitioner visit in the last 3 days.
+  - 68 percent of for-profit beneficiaries and 57 percent of non-profit beneficiaries received at least two visits from certain staff in the last 7 days.
+- Some providers provided no visits in the last days of life:
+  - 83 providers did not provide RN/physician/nurse practitioner visits in the last 3 days of life.
+  - 58 providers did not provide visits from certain hospice staff in the last 7 days of life.
+
+## CMS Oversight Gaps and Recommendations
+
+- CMS does not instruct surveyors to review hospice quality measures or other quality indicators before conducting surveys.
+- Survey preparation currently focuses on licensure records, prior survey findings, complaints, media reports, and other publicly available information.
+- The report states that CMS could strengthen oversight by using quality measures and other currently available data to target survey focus.
+- CMS’s ability to respond to hospice risks is limited because it lacks enforcement remedies other than termination.
+- Other provider types, such as home health agencies and nursing homes, can be subject to additional remedies such as civil money penalties and denial of payment for new admissions.
+
+## Conclusions and Agency Response
+
+- The report concludes that hospice oversight should keep pace with the growth in beneficiaries and providers.
+- The report recommends that CMS incorporate additional information, such as quality measures, into the survey process.
+- HHS concurred with the recommendation and stated it would look into ways to incorporate these data into hospice surveys.
+- HHS also noted existing efforts such as the data-driven quality assessment and performance improvement program.
+
+## Action Items
+
+- CMS Administrator: Incorporate additional information, such as quality measures or other indicators of quality of care, into the hospice survey process.
+- Congress: Consider giving CMS authority to establish additional enforcement remedies for hospices that do not meet federal health and safety requirements.

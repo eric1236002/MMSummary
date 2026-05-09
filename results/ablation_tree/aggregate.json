@@ -1,0 +1,79 @@
+{
+  "created_at": "2026-05-09T06:09:05.771481+00:00",
+  "split": "local",
+  "n_examples": 10,
+  "ids_file": null,
+  "records_file": "scripts/test-00000-of-00001.parquet",
+  "matrix": "default",
+  "endpoint": "http://localhost:8000",
+  "model": "gpt-5.4-mini",
+  "planner_model": "gpt-5.4",
+  "reviewer_model": "gpt-5.4",
+  "aggregate": [
+    {
+      "condition": {
+        "name": "map_off",
+        "agent_mode": "off",
+        "strategy": "map"
+      },
+      "n": 10,
+      "ok": 10,
+      "rouge1_f_mean": 0.5623813886508797,
+      "rougeL_f_mean": 0.21750097390108353,
+      "bleu_mean": 0.08245969535327859,
+      "latency_mean": 35.54167418479919
+    },
+    {
+      "condition": {
+        "name": "nomap_off",
+        "agent_mode": "off",
+        "strategy": "nomap"
+      },
+      "n": 10,
+      "ok": 9,
+      "rouge1_f_mean": 0.4574297836228192,
+      "rougeL_f_mean": 0.1815625530056516,
+      "bleu_mean": 0.04815092936282542,
+      "latency_mean": 17.79619704352485
+    },
+    {
+      "condition": {
+        "name": "original_off",
+        "agent_mode": "off",
+        "strategy": "original"
+      },
+      "n": 10,
+      "ok": 9,
+      "rouge1_f_mean": 0.5015537932236797,
+      "rougeL_f_mean": 0.19714964957069042,
+      "bleu_mean": 0.07483009630654766,
+      "latency_mean": 7.237689097722371
+    },
+    {
+      "condition": {
+        "name": "direct_off",
+        "agent_mode": "off",
+        "strategy": "direct"
+      },
+      "n": 10,
+      "ok": 10,
+      "rouge1_f_mean": 0.521716243501755,
+      "rougeL_f_mean": 0.21302237490455128,
+      "bleu_mean": 0.06690965776540289,
+      "latency_mean": 21.37042725086212
+    },
+    {
+      "condition": {
+        "name": "auto_on",
+        "agent_mode": "on",
+        "strategy": "auto"
+      },
+      "n": 10,
+      "ok": 10,
+      "rouge1_f_mean": 0.5640226753670813,
+      "rougeL_f_mean": 0.22659821640244276,
+      "bleu_mean": 0.08327782749680115,
+      "latency_mean": 63.72877933979034
+    } 
+  ]
+}

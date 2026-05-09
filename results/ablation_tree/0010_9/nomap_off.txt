@@ -1,0 +1,76 @@
+## PMIAA Purpose and Federal Agency Requirements
+
+- PMIAA is intended to improve program and project management capability across large federal agencies.
+- The act requires OMB, OPM, and 24 CFO Act agencies to carry out related responsibilities.
+- OMB is responsible for government-wide standards, policies, guidance, and portfolio reviews.
+- OPM is responsible for occupational series, competency standards, and career pathways for program/project managers.
+
+## OMB Implementation Progress and Gaps
+
+- OMB has published a five-year PMIAA strategic plan.
+- OMB established 15 program and project management standards.
+- OMB created the Program Management Policy Council (PMPC).
+- OMB used existing GPRAMA processes to support PMIAA implementation.
+- The report stated that OMB’s standards are less complete and less detailed than established external standards.
+- The standards lack thresholds for assessing compliance, explanations of program versus project-level differences, relationships among standards, and lifecycle application guidance.
+- OMB’s governance structure for the standards was described as incomplete, with missing role definitions, stakeholder engagement mechanisms, revision and conflict-resolution processes, and enforcement/oversight mechanisms.
+
+## Portfolio Reviews and High-Risk Areas
+
+- PMIAA requires periodic portfolio reviews to assess cost, schedule, performance, and management maturity.
+- OMB piloted portfolio reviews using major non-IT acquisitions and aligned them with annual strategic reviews.
+- The report said the pilot approach helped agencies learn but did not fully follow best practices.
+- PMIAA also requires portfolio reviews for items on GAO’s High-Risk List.
+- OMB mainly addressed high-risk issues through strategic reviews, trilateral meetings, and ad hoc meetings.
+- Only a limited number of high-risk areas were addressed.
+- PMPC did not substantively discuss the High-Risk List as required.
+
+## Program Inventory and Definition Consistency
+
+- GPRAMA requires a federal program inventory, but OMB had not completed it at the time of the report.
+- Program definitions differ across PMIAA, GPRAMA, and the DATA Act.
+- The inconsistent definitions create confusion and additional burden for agencies.
+- A crosswalk and consistency explanation would improve transparency and management.
+
+## OPM Progress on Workforce and Career Development
+
+- OPM developed a skills and competency model for program and project managers.
+- OPM updated the 0340 program management occupational series.
+- OPM published project management guidance.
+- OPM planned a career path framework and a job identifier to help agencies identify program/project managers across occupational series.
+- Agencies still have difficulty identifying how many program/project managers they have because these employees are distributed across multiple occupational series.
+
+## Workforce Planning and Capability Development
+
+- Long-term success depends on identifying existing staff, skill gaps, training needs, hiring needs, retention strategies, and career development approaches.
+- OPM and agencies were still in the early stages of this work.
+- Agencies need to incorporate program-management-related strategies into their annual performance plans, including hiring and gap-closure actions.
+
+## PMPC and Agency Implementation
+
+- PMPC met at least as required and discussed OPM progress, standards, and agency implementation experiences.
+- PMPC did not discuss the High-Risk List and therefore did not fully meet PMIAA expectations.
+- Agencies were required to describe multiple implementation elements in their plans, including PMIO identification, acquisition portfolios, and training, hiring, and retention strategies.
+- Most agencies only partially met the implementation requirements.
+- Some agencies created task forces, new offices, or cross-functional teams to support implementation.
+- Agency PMIOs often held multiple responsibilities in addition to program management.
+
+## Measurement, Dashboards, and Evaluation
+
+- OMB and GSA developed a prototype dashboard for non-IT major acquisitions showing cost, schedule, and performance data.
+- Data quality remained a challenge.
+- OMB had not established specific measures for PMIAA effectiveness.
+- Suggested measures included milestone completion, baseline surveys, existing performance metrics, and maturity models.
+- The report stated that without outcome measures, it is difficult to evaluate PMIAA progress.
+
+## Action Items
+
+- OMB: Improve program and project management standards, including thresholds, lifecycle guidance, and relationships among standards.
+- OMB: Establish a complete governance structure for maintaining and enforcing PMIAA standards.
+- OMB: Redesign portfolio review pilots using better practices and clearer communication of scope and timing.
+- OMB: Expand trilateral meetings to cover all high-risk areas on a regular cycle.
+- OMB: Ensure PMPC discusses high-risk issues as required by PMIAA.
+- OMB: Develop specific measures to assess PMIAA implementation effectiveness.
+- OMB: Complete the federal program inventory and address definition inconsistencies across PMIAA, GPRAMA, and the DATA Act.
+- OPM: Continue developing competency frameworks, career paths, and job identifiers for program/project managers.
+- Federal agencies: Complete human-capital analyses and incorporate program-management staffing, training, hiring, and retention strategies into implementation plans.

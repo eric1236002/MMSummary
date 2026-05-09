@@ -1,0 +1,75 @@
+## Legal and Policy Framework
+
+- EPA advisory committee appointments are governed by FACA, federal ethics regulations, and guidance from GSA and OGE.
+- FACA requires balanced membership in terms of viewpoints and functions.
+- Federal ethics rules govern financial disclosure review and conflict-of-interest prevention for prospective members required to file disclosure forms.
+
+## EPA Offices and Appointment Roles
+
+- EPA’s Federal Advisory Committee Management Division is responsible for committee management and FACA compliance.
+- EPA’s Federal Advisory Committee Handbook documents the agency’s appointment process and is primarily intended for designated federal officers.
+- EPA’s Ethics Office, within the Office of General Counsel, oversees the agency’s ethics program, including financial disclosure reporting.
+- Deputy ethics officials review financial disclosure forms for prospective advisory committee members.
+- Final appointment decisions are made by the Administrator or Deputy Administrator after internal review and approval steps.
+
+## Committee Types and Member Categories
+
+- EPA can establish non-discretionary committees when required by statute or presidential direction.
+- EPA can establish discretionary committees when the Administrator determines they are needed.
+- EPA may appoint federal employees, special government employees (SGEs), and non-employee representatives.
+- SGEs are generally used when service is expected to be no more than 130 days in a 365-day period.
+- OGE guidance distinguishes SGEs from representatives, including the ethics obligations that apply to each category.
+
+## EPA’s Established Appointment Process
+
+- EPA’s handbook describes three main phases for appointing advisory committee members:
+  - Soliciting nominations
+  - Evaluating candidates
+  - Obtaining approvals
+- Soliciting nominations includes developing selection criteria, outreach plans, and membership balance plans for discretionary committees.
+- Candidate evaluation includes reviewing nominees against selection criteria, preparing a draft membership grid, and reviewing financial disclosure forms.
+- Approval steps include review by the Federal Advisory Committee Management Division, legal review by the Office of General Counsel, approval by an Assistant Administrator or Regional Administrator, and final appointment by the Administrator or Deputy Administrator.
+
+## Use of the Process in Fiscal Years 2017 and 2018
+
+- EPA generally followed its established process for most advisory committees during fiscal year 2017 through the first two quarters of fiscal year 2018.
+- All 14 discretionary committees reviewed developed membership balance plans.
+- 20 of 22 appointment packets contained draft membership grid documents.
+- 21 of 22 packets showed Office of General Counsel review.
+
+## Exception for SAB and CASAC Appointments
+
+- EPA did not follow a key step in its established process for 20 members appointed to the Science Advisory Board (SAB) and the Clean Air Scientific Advisory Committee (CASAC) in fiscal year 2018.
+- The appointment packets for those committees did not include draft membership grid documents showing staff rationales for recommended candidates.
+- EPA officials stated that management requested briefings and reviewed the full list of nominees instead of using membership grids.
+- The briefing materials and public comment summaries were not included in the appointment packets reviewed.
+
+## Financial Disclosure Review and Ethics Compliance
+
+- EPA did not consistently ensure that SGEs appointed or reappointed to advisory committees met federal financial disclosure requirements.
+- Of 74 financial disclosure forms reviewed, 57 were signed and dated by an ethics official as compliant with federal ethics rules.
+- 17 forms were not signed and dated as compliant.
+- For 42 forms, it could not be determined whether review occurred within 60 days because the receipt date was not documented.
+- EPA’s Ethics Office had not periodically evaluated the quality of financial disclosure reviews through audits or spot-checks.
+- EPA officials cited staffing limitations as a contributing factor.
+
+## Changes in Committee Characteristics Over Time
+
+- The review compared selected committee characteristics after January 2017 with similar periods after January 2009 and, in some cases, January 2013.
+- Notable changes were identified in several committees, including:
+  - A decrease in academic membership on the Board of Scientific Counselors (BOSC)
+  - An increase in southern-region affiliation on SAB
+  - Higher turnover on BOSC, the Clean Air Act Advisory Committee, and the Pesticide Program Dialogue Committee
+- The total number of meetings held across the 18 committees reviewed declined after January 2017.
+
+## EPA Response and Data/Methodology
+
+- EPA disagreed with a key finding related to the first recommendation and with some data analysis and data points.
+- EPA agreed with the findings and conclusions related to the second recommendation.
+- The review used EPA and GSA data from the FACA database and appointment records.
+- GAO reviewed appointment packets, ethics forms, committee data, and relevant documentation, and concluded the data were sufficiently reliable for the analysis.
+
+## Action Items
+
+- EPA Administrator: Direct officials responsible for advisory committee appointments to follow the established appointment process by including draft membership grids with staff rationales in appointment packets for all committees.
+- EPA Designated Agency Ethics Official: Direct EPA’s Ethics Office to periodically evaluate the quality of financial disclosure reviews for SGEs on advisory committees, including through audits or spot-checks.

@@ -1,0 +1,34 @@
+{
+  "mode": "on",
+  "effective_params": {
+    "model": "gpt-5.4-mini",
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1500,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "use_map": true,
+    "map_template": null,
+    "reduce_template": null,
+    "reduce_temperature": 0.0
+  },
+  "plan": {
+    "use_map": true,
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1500,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "reduce_temperature": 0.0,
+    "model": null,
+    "map_template": null,
+    "reduce_template": null,
+    "notes": "文本長度約 3.5 萬字元，屬長篇、資訊密集、結構偏報告型內容，含大量數據、比較、政策建議與重複段落。適合使用 map-reduce 以降低單次摘要遺漏關鍵統計與結論的風險。第一層 chunk 建議略小於目前設定，以減少跨段主題混雜；保留中度 overlap 以涵蓋段落銜接與表格/數據說明。第二層採較小 chunk 以利整合中間摘要。reduce_temperature 維持 0.0 以確保事實一致性與可重現性。"
+  },
+  "review": {
+    "verdict": "pass",
+    "revised_summary": null,
+    "issues": null,
+    "notes": null
+  }
+}

@@ -1,0 +1,74 @@
+## Legal and Regulatory Framework for Waste at INL
+
+- Mixed high-level waste (HLW) treatment and disposal at Idaho National Laboratory (INL) are governed by federal laws and DOE requirements, including the Atomic Energy Act, the Nuclear Waste Policy Act, and RCRA.
+- DOE treats calcine waste as HLW, and EM manages sodium-bearing waste (SBW) as mixed HLW.
+- HLW generally must be disposed of in a geologic repository unless the NRC approves an alternative site.
+- Hazardous components of mixed HLW are regulated under RCRA by EPA or authorized state programs.
+- Idaho is authorized to administer its own hazardous waste program, and New Mexico administers hazardous waste permitting related to WIPP.
+
+## IWTU Reengineering Project Status
+
+- As of March 2019, the IWTU reengineering project was in phase two of a four-phase effort to restore the facility to operational status.
+- Phase one focused on engineering analyses and chemistry studies to identify fixes.
+- Phase two focused on implementing fixes at the facility.
+- As of February 2019, phases one and two had cost about $150 million, about $64 million above the original combined estimate.
+- The project was more than one year behind schedule.
+- EM estimated phase three could begin in summer 2019 and include a six-month outage followed by a 60-day performance test using a simulated waste form.
+- Phase four could begin in early 2020, but EM and Fluor Idaho had not determined whether an outage would be needed before SBW testing.
+
+## EM Project Management Requirements
+
+- DOE Order 413.3B governs capital asset projects and requires cost and schedule baselines.
+- EM operations activities are managed under a different cleanup policy and have less stringent requirements.
+- EM site managers have discretion in classifying work because DOE and EM have not established clear classification requirements.
+- The IWTU was managed as a capital asset project during construction and later converted to an operations activity after construction ended in April 2012.
+- DOE generally agreed with recommendations to clarify classification requirements and align EM policy with project management leading practices.
+
+## DOE Oversight for Start-Up Risk Projects
+
+- DOE created the operational release milestone in August 2016 for selected projects expected to require an extended transition from construction to operations.
+- Program offices must develop an operational release plan and provide quarterly updates to the PMRC until full operational capability is achieved.
+- EM developed an operational release plan for IWTU in December 2016.
+- EM provided five progress briefings to the PMRC, but not on a quarterly basis as required.
+- The PMRC made recommendations during three of the briefings, including reviewing delegation documents before facility startup and radioactive material introduction.
+
+## Cost, Schedule, and EVM Best Practices
+
+- GAO found that EM only partially followed best practices for the IWTU cost and schedule estimates.
+- The cost estimate was based on technical information but was not organized around a standardized work breakdown structure.
+- Assumptions were documented, but their basis in technical expertise or specific risks was not always clear.
+- The estimate was incomplete because it did not include all life cycle costs, including phases three and four.
+- The schedule captured most activities and resources but had sequencing issues, long-duration critical-path activities, unusually large float values, and 14 activities with negative float.
+- EM generally followed some EVM best practices, but the data produced by the system were unreliable because of anomalies, including missing or negative values.
+
+## SBW Disposal Challenges
+
+- EM identified WIPP as the preferred disposal site for SBW in a 2005 Record of Decision, but no final disposal decision had been made as of March 2019.
+- Major barriers to SBW disposal at WIPP included permit restrictions, federal prohibition on HLW disposal at WIPP, and WIPP capacity limitations.
+- DOE and its contractor had requested a WIPP permit modification, but the process paused after WIPP operations were suspended in 2014.
+- EM also considered a waste classification approach under DOE Order 435.1 and Manual 435.1-1, but the SBW classification was not finalized.
+- EM published Federal Register notices in October 2018 and June 2019 seeking public comment on a proposed HLW interpretation.
+- Stakeholder comments were mixed, and EM officials stated there was no timeline for implementation.
+- DOE stated WIPP could potentially be expanded within the current land withdrawal boundary, and a December 2018 permit modification changed waste-volume calculations, but the change was challenged in lawsuits.
+
+## Calcine Waste Treatment and Disposal Challenges
+
+- EM selected hot isostatic pressing in 2009 as the preferred calcine waste treatment technology, but later identified major concerns related to maturity, cost, safety, and reliance on a repository path that no longer exists.
+- An independent analysis of alternatives published in 2016 led EM to suspend further development of hot isostatic pressing.
+- EM has been studying alternatives, including direct disposal, but there is regulatory uncertainty and no final strategy or timeline.
+- EM is working with Idaho regulators and EPA on possible approaches and milestone adjustments.
+- EM also initiated a pilot project to retrieve calcine waste from the oldest storage bin set and transfer it to a partially empty bin set to test technologies and reduce risk.
+
+## Main Conclusions
+
+- EM had made progress on technical and planning efforts, but major legal, regulatory, schedule, and cost uncertainties remained.
+- EM did not have a complete strategy or timeline for SBW disposal or calcine waste treatment and disposal.
+- The report emphasized the need for better cost estimates, schedule estimates, reliable EVM data, and clearer long-term waste disposition planning.
+
+## Action Items
+
+- DOE/EM: Develop comprehensive cost estimates for the IWTU reengineering project and SBW treatment operations.
+- DOE/EM: Develop well-constructed schedule estimates for the IWTU reengineering project and SBW treatment operations.
+- DOE/EM: Improve the reliability of the EVM system for the IWTU reengineering project.
+- DOE/EM: Develop a strategy, including a timeline, for the preferred or alternative disposal pathway for SBW.
+- DOE/EM: Develop a strategy, including a timeline, to identify and implement a treatment approach for calcine waste disposal by the December 31, 2035 milestone.

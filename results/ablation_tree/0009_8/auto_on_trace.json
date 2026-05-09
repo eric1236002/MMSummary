@@ -1,0 +1,39 @@
+{
+  "mode": "on",
+  "effective_params": {
+    "model": "gpt-5.4-mini",
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1500,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "use_map": true,
+    "map_template": null,
+    "reduce_template": null,
+    "reduce_temperature": 0.0
+  },
+  "plan": {
+    "use_map": true,
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1500,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "reduce_temperature": 0.0,
+    "model": null,
+    "map_template": null,
+    "reduce_template": null,
+    "notes": "文本長度接近 5 萬字元，屬於長篇、結構化、重複度中高的政策/審計報告，適合 map-reduce。建議比目前設定略縮小第一層 chunk，以降低單塊主題過多造成的摘要遺漏；保留適度 overlap 以避免章節與建議跨段切分。第二層可再壓縮整合各 chunk 的重點與建議。內容偏事實性與建議條列，reduce temperature 維持 0.0 以求一致與可追溯。"
+  },
+  "review": {
+    "verdict": "revise",
+    "revised_summary": "## Background\n- The CCDBG Act is the main federal law governing state child-care programs for low-income working families. Its 2014 reauthorization and the 2016 CCDF regulations emphasized child-care quality, program integrity, and state flexibility.\n- States must submit 3-year CCDF State Plans to OCC for approval, report expenditures and children served, and estimate/report improper payments on a 3-year cycle.\n- CCDF is designated a high-priority program for improper-payment oversight under IPERIA.\n\n## Key Findings\n\n### 1. State Plan review process lacked finalized written policies\n- OCC reviewed and approved the fiscal years 2019–2021 State Plans, but had not finalized written policies governing how staff should review and approve those plans.\n- Instead, OCC relied on draft procedures, training materials, and discussions. This limited consistency across reviews and regions and increased the risk of losing organizational knowledge when staff turnover occurs.\n\n### 2. Program-integrity results were requested but usually not provided\n- OCC added instructions in the 2019–2021 Plan Preprint asking states to report the results of their program-integrity and fraud-fighting activities.\n- However, 43 of 51 approved State Plans did not provide those results.\n- OCC had not defined what counts as “results,” had not clearly communicated its informational needs to states or staff, and approved plans without that information because it was requested on an informational rather than regulatory basis.\n\n### 3. Corrective Action Plan (CAP) oversight was weak\n- States with improper-payment error rates of 10 percent or more must submit CAPs.\n- Since 2013, seven states submitted 14 CAPs, but OCC lacked documented criteria for reviewing whether proposed corrective actions addressed the root causes of improper payments and were effectively implemented.\n- OCC also lacked written policies and documentation for CAP follow-up, which undermined consistent oversight.\n\n### 4. Monitoring system did not assess effectiveness using defined criteria\n- OCC launched a formal Monitoring System in fiscal year 2019 to review about one-third of states each year during the 3-year State Plan period.\n- The system aims to ensure compliance, identify technical-assistance needs, and identify promising practices.\n- Although program integrity and accountability are included in monitoring, OCC did not have specific criteria for assessing whether states’ program-integrity and fraud-fighting controls were actually effective; states also had broad flexibility in the evidence they submitted.\n\n### 5. OCC was not using technical-assistance tools as a monitoring information source\n- OCC offers the Grantee Internal Controls Self-Assessment Instrument and the Fraud Toolkit as voluntary technical-assistance tools.\n- OCC did not plan to collect data from these tools for monitoring purposes and had not evaluated the feasibility or benefits of doing so, even though such information could help assess and improve fraud risk management.\n\n### 6. ACF/OCC had not completed a fraud risk assessment or antifraud strategy\n- Although federal standards and GAO’s Fraud Risk Framework call for agencies to assess fraud risks and develop an antifraud strategy, ACF had not completed a fraud risk assessment or fraud risk profile for CCDF.\n- ACF was developing a fraud risk assessment template with CCDF as a pilot, but the effort was on hold due to competing priorities.\n\n## Overall Conclusion\n- OCC and states share responsibility for protecting CCDF program integrity, but OCC’s oversight had several gaps: lack of finalized written policies, weak information requirements for program-integrity results, insufficient CAP review and follow-up guidance, no defined criteria for assessing control effectiveness, limited use of available technical-assistance information, and no completed fraud risk assessment or antifraud strategy.\n\n## Recommendations\nGAO made nine recommendations, and HHS concurred:\n- **To the OCC Director:**\n  1. Finalize written policies for State Plan review and approval.\n  2. Define informational needs related to the results of program-integrity activities.\n  3. Communicate those informational needs to states.\n  4. Communicate those informational needs to OCC staff.\n  5. Develop documented criteria for reviewing CAPs to ensure actions address root causes and are effectively implemented.\n  6. Complete written policies for CAP follow-up.\n  7. Develop and document criteria for assessing the effectiveness of states’ program-integrity control activities.\n  8. Evaluate the feasibility of collecting information from the Self-Assessment Instrument and Fraud Toolkit, such as through the Monitoring System.\n- **To the Assistant Secretary for ACF:**\n  9. Ensure ACF conducts a fraud risk assessment to support development of a documented antifraud strategy for CCDF.",
+    "issues": [
+      "The draft summary is generally faithful, but it omits several important specifics that strengthen the key findings, including that 43 of 51 State Plans lacked the requested program-integrity results information.",
+      "The draft summary does not clearly state that GAO made nine recommendations in total; its action items list compresses recommendations 2, 3, and 4 into fewer bullets, reducing completeness.",
+      "The draft summary understates that OCC approved State Plans without the requested results information because the request was informational rather than required by regulation.",
+      "The draft summary would benefit from a clearer overall conclusion tying the oversight gaps together."
+    ],
+    "notes": "The draft is well structured and mostly accurate, but it should more fully capture the report’s principal findings and recommendations with a few key specifics."
+  }
+}

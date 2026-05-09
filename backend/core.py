@@ -127,11 +127,20 @@ def split_text(text, chunk_size, chunk_overlap):
 def generate_summary(text: str, model: str, chunk_size_1: int, chunk_overlap_1: int, 
                      chunk_size_2: int, chunk_overlap_2: int, token_max: int, 
                      use_map: bool, test_mode: bool = False, 
+                     direct_mode: bool = False,
                      map_template: str = None, reduce_template: str = None,
                      reduce_temperature: float = 0.0) -> str:
     
     if test_mode:
         return f"【測試模式】這是一段自動生成的摘要測試文字。\n\n*   模型：{model}\n*   輸入長度：{len(text)} 字\n*   這是為了確認資料庫儲存功能是否正常而生成的佔位符。"
+        
+    if direct_mode:
+        llm = init_llm(reduce_temperature, model, max_tokens=token_max)
+        reduce_chain = reduce_function(llm, reduce_template=reduce_template)
+        res = reduce_chain.invoke({"docs": text})
+        if isinstance(res, dict):
+            return res.get("text", res.get("output_text", res.get("output", str(res))))
+        return str(res)
     
     split_docs1 = split_text(text, chunk_size_1, chunk_overlap_1)
     split_docs2 = split_text(text, chunk_size_2, chunk_overlap_2)

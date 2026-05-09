@@ -1,0 +1,54 @@
+## IRS Oversight of Third-Party Tax Return Providers
+
+- Federal agencies, including IRS, rely heavily on cybersecurity controls to protect sensitive taxpayer and financial information.
+- Third-party tax return providers, including paid preparers and tax software providers, retain large amounts of electronic tax data and are targets for data theft and identity theft refund fraud.
+- IRS uses multiple offices to oversee different aspects of third-party provider security, including education, incident intake, compliance, fraud monitoring, and program administration.
+- IRS has taken steps such as the Security Summit, the Information Sharing and Analysis Center (ISAC), and the Rapid Response Team to improve response to identity theft refund fraud.
+- IRS’s Authorized e-file Provider program includes requirements for some provider types, but the security requirements are not uniform across all provider types.
+
+## Security Standards and FTC Safeguards Rule
+
+- IRS has not fully incorporated the FTC Safeguards Rule into the requirements for all Authorized e-file Provider types.
+- IRS Revenue Procedure 2007-40 states that violations of FTC Safeguards Rule-related provisions can lead to penalties or removal from the program.
+- IRS publications for Authorized e-file Providers briefly reference the FTC Safeguards Rule but do not fully explain the required elements of an information security program.
+- IRS publications such as Publication 4557 and Publication 4600 provide broader safeguarding guidance for tax professionals, but these are not mandatory for all Authorized e-file Providers.
+- IRS officials stated they believe they lack authority to enforce the FTC Safeguards Rule broadly for all providers.
+
+## Security Requirements for Paid Preparers and Software Providers
+
+- IRS does not have a robust set of minimum information security requirements for all tax software providers in the Authorized e-file Provider program.
+- Specific security standards exist for online providers, but not for all other provider types.
+- Most paid preparers are not Authorized e-file Providers and therefore are not covered by the program’s requirements.
+- Industry representatives reported confusion among paid preparers and EROs about who is responsible for safeguarding taxpayer data.
+- IRS officials stated that they have implicit authority over e-file providers related to electronic filing, but no explicit statutory authority for broader system security standards.
+
+## Monitoring and Security Incident Reporting
+
+- IRS monitoring of electronic return originators focuses more on physical security than on basic cybersecurity checks.
+- GAO noted that IRS should update monitoring to include basic network security checks and use risk-based approaches for different provider types.
+- Security incident reporting requirements are not uniform across all provider types.
+- IRS internal processes for receiving, storing, and sharing security incident data across offices are not fully documented.
+- GAO recommended more consistent reporting and clearer documentation of incident data flows.
+
+## GAO Findings and Recommendations
+
+- GAO concluded that IRS oversight of third-party provider information security remains insufficient.
+- GAO recommended that IRS establish centralized governance or leadership for third-party tax information protection.
+- GAO recommended that IRS explicitly incorporate FTC Safeguards Rule elements into the Authorized e-file Provider program.
+- GAO recommended expanding Security Summit/NIST SP 800-53-related controls to applicable tax software providers.
+- GAO recommended updating provider security requirements on a regular basis and strengthening monitoring and reporting processes.
+
+## IRS Response
+
+- IRS agreed with three GAO recommendations:
+  - regularly updating security requirements,
+  - standardizing security incident reporting requirements,
+  - documenting internal incident data flow processes.
+- IRS disagreed with five recommendations, citing lack of explicit legal authority.
+- GAO did not fully agree with IRS’s position and stated that some improvements could be made under existing authority.
+
+## Action Items
+
+- IRS: Regularly review and update security requirements for tax software providers and other Authorized e-file Providers.
+- IRS: Standardize security incident reporting requirements across all Authorized e-file Providers.
+- IRS: Document the internal process for receiving, storing, and sharing security incident data across offices.

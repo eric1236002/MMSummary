@@ -1,0 +1,40 @@
+{
+  "mode": "on",
+  "effective_params": {
+    "model": "gpt-5.4-mini",
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1500,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "use_map": true,
+    "map_template": null,
+    "reduce_template": null,
+    "reduce_temperature": 0
+  },
+  "plan": {
+    "use_map": true,
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1500,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "reduce_temperature": 0,
+    "model": null,
+    "map_template": null,
+    "reduce_template": null,
+    "notes": "文本很長且屬於結構化政策/審計報告，主題集中但包含多個大段落與條列式問題、建議、方法說明。建議採 map-reduce 以控制成本並降低單次上下文壓力。第一層 chunk 可略小於目前設定，避免單塊過大導致局部摘要遺漏；保留適度 overlap 以銜接跨段落論點。第二層再做中度聚合，適合整合重點、發現、建議與方法。reduce_temperature 維持 0 以確保事實型摘要穩定一致。"
+  },
+  "review": {
+    "verdict": "revise",
+    "revised_summary": "## Regulatory Oversight of Cell-Cultured Meat\n\n- FDA generally oversees the safety of most foods, while USDA oversees meat, poultry, processed egg products, and catfish; the agencies also have different labeling roles, with USDA requiring label preapproval for products under its jurisdiction and FDA addressing misbranding largely through post-market oversight.\n- New food technologies, including cell-cultured meat, can challenge existing regulatory structures.\n\n## Cell-Cultured Meat: What Is Known\n\n- Cell-cultured meat is food derived from animal cells grown outside the animal in a controlled environment.\n- The general production process has five phases: biopsy, cell banking, growth, harvest, and food processing.\n- Possible production elements include use of growth media, bioreactors, scaffolds, and potentially genetic engineering.\n- However, commercial-scale production methods and the composition of final products were still not known as of the report period because firms were still developing prototypes and had not finalized key aspects of production.\n\n## Key Uncertainties and Challenges\n\n- Major open questions include tissue sourcing and biopsy frequency, whether genetic engineering or antibiotics will be used, the composition of growth media, whether scaffolds will be edible, how the point of harvest will be defined, scalability, production cost, safety hazards, final product composition, environmental/animal welfare/health claims, timeline to market, labeling, and consumer acceptance.\n- Firms are often reluctant to share proprietary information, which limits what regulators and other stakeholders know about eventual commercial processes and products.\n- FDA and USDA officials said they need more information to regulate cell-cultured meat effectively, particularly for safety oversight and labeling decisions.\n\n## FDA-USDA Collaboration\n\n- FDA and USDA began coordinating through a 2018 joint public meeting, a March 2019 interagency agreement, and three working groups created in June 2019.\n- Under the agreement, FDA oversees cell-cultured meat through the point of harvest, after which USDA assumes oversight through processing and labeling.\n- The agreement covers products derived from USDA-amenable species such as livestock, poultry, and catfish.\n- The working groups focus on pre-market assessment, labeling, and transfer of jurisdiction.\n\n## GAO Findings\n\n- GAO found that the interagency agreement only partially incorporated the seven leading practices for effective interagency collaboration.\n- GAO also found that the three working groups either partially incorporated or did not incorporate these leading practices, including lacking clear milestones or metrics, incomplete written documentation of how they would collaborate, and insufficient inclusion of relevant participants such as state and tribal officials.\n- GAO found that FDA and USDA had decided FDA would oversee cell-cultured seafood other than catfish, but this had not been formally documented or publicly communicated clearly, creating confusion for some stakeholders.\n\n## Recommendations and Agency Responses\n\n- GAO made six recommendations total—three to FDA and three to USDA.\n- The recommendations called for the agencies to more fully incorporate the seven leading practices for collaboration into both the interagency agreement and the working groups, and to clearly document which agency oversees cell-cultured seafood other than catfish.\n- FDA concurred with two recommendations and partially concurred with one; USDA also concurred with two and partially concurred with one.\n- Both agencies agreed on improving collaboration in the working groups and documenting oversight of cell-cultured seafood other than catfish, but were less willing to revise the interagency agreement immediately.",
+    "issues": [
+      "The draft misses a central conclusion of the report: GAO made six formal recommendations and evaluated FDA/USDA responses.",
+      "The 'Action Items' section is not fully faithful because some bullets are future plans or existing agreement provisions rather than actual action items/recommendations from the report.",
+      "The draft underemphasizes the report's main evaluative finding that the interagency agreement only partially incorporated all seven leading collaboration practices and the working groups partially or did not incorporate them.",
+      "The audit scope and methods section is overly detailed relative to the summary and displaces more important conclusions.",
+      "The summary does not clearly distinguish background regulatory context from GAO findings and recommendations."
+    ],
+    "notes": "Overall accurate, but it should better foreground the report's principal findings and recommendations rather than methodological detail."
+  }
+}

@@ -1,0 +1,35 @@
+## GAO Review of DOD Climate Resilience in Installation Planning and Facility Design
+
+- GAO reviewed how DOD incorporates extreme weather and climate change effects into (1) installation master plans and related planning documents and (2) individual facility project designs.
+- Climate change is described as increasing risks to infrastructure, operations, budgets, and national security, with extreme weather events expected to become more frequent or intense.
+
+## Main Findings
+
+- DOD requires installations to maintain master plans and uses Unified Facilities Criteria (UFC) as facility planning and design standards.
+- Although DOD and other federal entities provide climate information and projections, DOD had not provided sufficient detailed guidance on how installations should use climate projections in planning and design.
+- GAO found that 15 of the 23 installations reviewed had incorporated some consideration of extreme weather or climate change effects into planning documents, but 8 had not.
+- Of those 15, only 2 installations had gone further to fully assess risks and identify response actions in their planning documents.
+- GAO found that installations had not consistently integrated climate projections into master planning because DOD guidance did not specify key issues such as authoritative sources, time horizons, and how to use multiple scenarios.
+- Eleven of the 23 installations had designed or implemented at least one resilience-related construction project, but most installations did not generally use climate projections in project design.
+- GAO identified only one project in its review that was clearly designed using climate projections: a pier replacement project at Naval Base San Diego that was raised by one foot based on expected sea level rise over the pier’s service life.
+- GAO also found that most UFC project design standards relied on historical climate data or referenced climate considerations generally, rather than requiring the use of forward-looking climate projections.
+
+## Examples from Installations
+
+- Installations that had incorporated some climate-related planning included Langley Air Force Base / Joint Base Langley-Eustis, the 611th Civil Engineer Squadron in Alaska, Fort Irwin, Parris Island, Naval Station Norfolk, Naval Base San Diego, and Camp Lejeune.
+- Examples of resilience actions included elevating a hangar floor at Joint Base Langley-Eustis, planning flood protection at Norfolk Naval Shipyard, erosion-related measures at Camp Pendleton, and flood mitigation structures at Fort Shafter.
+- Installations cited as not having integrated climate considerations into their most recent master plans included Joint Base Pearl Harbor-Hickam, Pearl Harbor Naval Shipyard, Fort Wainwright, and Camp Pendleton.
+
+## GAO Conclusions
+
+- DOD has taken some positive steps, including updating the UFC standard on installation master planning in November 2018 to require consideration of climate projections from reliable and authorized sources.
+- However, GAO concluded that this update alone was not enough because DOD still had not issued detailed implementation guidance or broadly updated relevant UFC design standards.
+- Without systematic risk assessments and use of climate projections, installations may make planning and investment decisions that do not adequately account for future climate conditions and may face greater damage, degradation, and budgetary risk.
+
+## Recommendations and Agency Response
+
+- GAO made 8 recommendations.
+- Three recommendations directed the Army, Navy, and Air Force to work jointly to update the UFC standard on installation master planning so master plans require installation-specific climate risk assessments and plans to address those risks.
+- Two recommendations directed the Secretary of Defense to issue guidance on how to incorporate climate projections into installation master planning and into facility project design, including sources, scenarios, and time frames.
+- Three recommendations directed the Army, Navy, and Air Force to update relevant UFC design criteria so installations are required to consider climate projections in facility project design and apply DOD guidance on their use.
+- DOD concurred with all eight recommendations; NOAA provided no comments.

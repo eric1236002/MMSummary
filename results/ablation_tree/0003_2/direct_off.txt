@@ -1,0 +1,47 @@
+## Climate Change Risks to DOD Installations
+
+- Climate change and extreme weather events are expected to increase in frequency and severity.
+- Documented impacts include loss of life, higher food and energy prices, increased disaster relief and insurance costs, property value fluctuations, and national security concerns.
+- DOD facilities face operational and budgetary risks from flooding, sea level rise, drought, wind, wildfire, erosion, and permafrost thaw.
+
+## Climate Information Needed for Planning and Design
+
+- Decision makers need three types of climate information: observed climate conditions, observed climate impacts and vulnerabilities, and future local climate projections.
+- Climate information must be tailored to the needs of the user, such as engineers, planners, or federal program managers.
+- Climate projections are typically provided as multiple future scenarios over time horizons such as 20, 40, or 60 years, or over a project’s service life.
+
+## DOD Master Planning and Design Standards
+
+- All DOD installations are required to have master plans covering at least 10 years and updated every 5 years.
+- Individual facilities projects must follow DOD’s Unified Facilities Criteria (UFC) design standards.
+- UFC guidance mentions climate-related factors such as drought, flood, wind, wildfire, rainfall patterns, storm intensity, and water levels.
+- Earlier guidance did not clearly specify how to use climate projections in master planning or facility design.
+
+## Installation Examples of Climate Adaptation
+
+- Langley Air Force Base studied sea level rise and raised the minimum elevation for new development.
+- Joint Base Elmendorf-Richardson developed predictive models for coastal erosion affecting radar sites.
+- Fort Irwin developed stormwater drainage improvements after severe flash flooding.
+- Marine Corps Recruit Depot Parris Island planned a sea level rise study for use in its next master plan update.
+- Naval Station Norfolk identified sea level rise as a risk and set a goal of reducing related impacts in its master plan.
+- Naval Base San Diego planned a study of installation-specific sea level rise effects.
+- Camp Lejeune used sea level rise study results to inform flood zone mapping and building siting decisions.
+
+## Installations Without Integrated Climate Considerations
+
+- Joint Base Pearl Harbor-Hickam did not consider climate effects in its most recent master plan.
+- Pearl Harbor Naval Shipyard also did not integrate climate effects into its most recent master plan.
+- Fort Wainwright had not considered climate change in master planning, despite permafrost-related risks in some areas.
+- Camp Pendleton was still planning based on historical conditions rather than future climate conditions.
+
+## GAO Conclusions and Prior Findings
+
+- DOD has taken some positive steps, including providing a sea level change scenarios database for DOD sites.
+- GAO found that installations have not consistently integrated climate risks into master plans or related planning documents.
+- GAO previously reported that DOD had not fully implemented recommendations to clarify climate-related planning actions and update design standards with climate projection guidance.
+
+## Action Items
+
+- DOD: Implement GAO’s recommendations to integrate climate risk assessments into master plans and facility design guidance.
+- DOD: Provide clearer guidance on how to use climate projections in master planning and design.
+- DOD: Update Unified Facilities Criteria to require consideration of climate projections and define acceptable sources, scenarios, and timeframes.

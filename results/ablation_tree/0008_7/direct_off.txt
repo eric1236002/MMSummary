@@ -1,0 +1,52 @@
+## Background
+
+- The meeting discussed IRS information security oversight for third-party tax return preparers and related service providers.
+- Third-party providers, including paid preparers, tax software providers, and online filing platforms, handle sensitive tax and personal information and are targets for hacking and identity theft fraud.
+- Identity theft refund fraud typically involves stealing taxpayer data first, then filing fraudulent returns to claim refunds.
+
+## Current IRS Approach
+
+- IRS responsibilities are distributed across multiple units, including Stakeholder Liaison, Cybersecurity, Criminal Investigation, Return Preparer Office, SB/SE, EPSS, and RICS.
+- IRS uses collaboration mechanisms such as the Security Summit, ISAC, and Rapid Response Team to share fraud and incident information.
+
+## Key Issues Identified
+
+- IRS security requirements for third-party providers are not consistent or complete.
+- There is no clear minimum security standard for paid preparers and some e-file providers.
+- Tax software providers are not uniformly subject to the NIST controls agreed through the Security Summit.
+- Security standards for online providers have not been substantially updated since 2010 and include older encryption requirements.
+- IRS monitoring of e-file providers focuses more on physical security than on cybersecurity controls.
+- Security incident reporting requirements vary by provider type, limiting IRS’s visibility into incident scope.
+- Documentation of incident data intake, storage, and sharing across IRS units is incomplete.
+
+## GAO Findings
+
+- IRS lacks a sufficiently clear governance structure to coordinate third-party data protection.
+- IRS has not clearly incorporated all relevant FTC Safeguards Rule elements into provider requirements.
+- IRS has not required all tax software providers to adopt the NIST controls agreed to in the Security Summit.
+- Security standards for online providers are not regularly updated and may lag behind current technology and threats.
+- Monitoring of e-file providers places too much emphasis on physical checks and not enough on cybersecurity.
+- Incident reporting and data-sharing processes are not fully documented.
+
+## GAO Recommendations
+
+- Establish a centralized governance or coordination mechanism for third-party provider security oversight.
+- Explicitly incorporate FTC Safeguards Rule elements into Authorized e-file Provider requirements.
+- Require all participating tax software providers to follow the agreed NIST SP 800-53 subset controls.
+- Regularly review and update security requirements for third-party providers.
+- Strengthen ERO monitoring to include basic cybersecurity and information security checks.
+- Conduct risk assessments and adjust monitoring methods by provider type.
+- Standardize incident reporting requirements for all Authorized e-file Providers.
+- Document the processes for receiving, storing, and sharing security incident data across IRS units.
+
+## IRS Response
+
+- IRS agreed with three recommendations: updating security requirements, standardizing incident reporting, and documenting incident data processes.
+- IRS disagreed with five recommendations, mainly citing a lack of clear statutory authority.
+- GAO stated that IRS could still improve governance, monitoring, and standardization under its existing authority.
+
+## Action Items
+
+- IRS: Update security requirements for third-party tax providers.
+- IRS: Standardize security incident reporting requirements for Authorized e-file Providers.
+- IRS: Document the process for receiving, storing, and sharing security incident data.

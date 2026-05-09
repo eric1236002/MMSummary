@@ -1,0 +1,76 @@
+## Climate Change Risks and Climate Information
+
+- Climate change poses serious risks to physical and ecological systems, and extreme weather events are expected to become more frequent and intense.
+- Extreme weather events can affect loss of life, food and energy prices, disaster relief and insurance costs, property values, and national security.
+- Decision makers need climate information that is tailored to specific locations and uses, including observed conditions, vulnerabilities, and local projections.
+- Federal agencies, including DOD, use observational records, climate models, and decision-support tools such as sea level rise databases and national assessments.
+
+## DOD Planning and Design Requirements
+
+- DOD requires military installations to develop master plans covering at least 10 years and updated every 5 years.
+- Master plans are to be based on strategic assessments of mission and expected installation use.
+- DOD facilities projects must follow Unified Facilities Criteria (UFC), which provide standards for planning, design, construction, maintenance, and operations.
+- UFC guidance includes climate-related considerations such as floodplain development, wind, drought, wildfire, drainage, roofing, energy use, and erosion.
+
+## Installation Planning Practices and Climate Integration
+
+- Of the 23 installations reviewed, 15 had integrated some extreme weather or climate change considerations into planning documents.
+- Examples of integration included:
+  - Langley Air Force Base partnering with the City of Hampton on sea level rise planning.
+  - Joint Base Elmendorf-Richardson developing site-specific predictive models for coastal erosion.
+  - Fort Irwin developing a stormwater drainage plan after flash flooding.
+  - Marine Corps Recruit Depot Parris Island planning a sea level rise study for master plan updates.
+  - Naval Station Norfolk and Naval Base San Diego incorporating sea level rise concerns into planning.
+  - Camp Lejeune using study results to inform flood zone mapping and building siting decisions.
+- Eight installations had not integrated such considerations into master plans or related planning documents.
+- Examples of installations not fully integrating climate considerations included Joint Base Pearl Harbor Hickam, Pearl Harbor Naval Shipyard, Fort Wainwright, and Camp Pendleton.
+
+## Risk Assessment and Use of Climate Projections
+
+- Most installations did not fully assess risks from extreme weather or climate change effects in terms of likelihood, impact, and response options.
+- Only two installations in the sample fully assessed weather and climate risks and developed response plans.
+- Some installations used climate projections, but many officials said they needed more DOD guidance on which projections to use and how to apply them.
+- DOD updated UFC master planning language in November 2018 to require consideration of climate projections from reliable and authorized sources.
+- However, the report states that DOD had not provided detailed guidance on how to use projections, including time horizons, multiple scenarios, or specific projection sources.
+
+## Facilities Project Design and Resilience Measures
+
+- Eleven of the 23 installations reviewed had designed or implemented one or more projects to increase resilience to extreme weather or climate effects.
+- Examples included:
+  - Joint Base Langley-Eustis designing a hangar with an elevated foundation.
+  - Norfolk Naval Shipyard building a floodwall to protect dry docks.
+  - Camp Pendleton protecting coastline near a new aircraft landing zone.
+  - Fort Shafter constructing flood mitigation structures for maintenance facilities.
+- Despite these examples, most installations did not consider climate projections in facilities project design.
+- The report identified only one project whose design was informed by climate projections: a Naval Base San Diego pier that was raised by one foot based on sea level rise expectations.
+
+## Budgetary and Operational Risks
+
+- Extreme weather and climate effects can damage infrastructure and create significant repair and budgetary risks for DOD.
+- Examples cited include Hurricane Michael at Tyndall Air Force Base and Hurricane Florence damage at Camp Lejeune and nearby Marine Corps air stations.
+- The report notes that costs from such events are often not clearly represented in the federal budget process.
+
+## Prior GAO Findings and DOD Response
+
+- GAO previously recommended that DOD clarify planning actions and update design standards to reflect climate change effects and projections.
+- The report states that DOD had not fully implemented prior recommendations as of January 2019.
+- DOD concurred in prior responses that tracking impacts and costs matters, but did not implement the recommendation to systematically track extreme-weather costs at installations.
+- DOD has made some progress, including a sea level rise database for DOD sites, but has not established a defined process for incorporating additional climate projections into guidance.
+
+## Conclusions
+
+- DOD installations have taken some positive steps to address climate risks, but integration is inconsistent.
+- Many installations still do not fully assess climate risks or incorporate climate projections into planning and design.
+- The report concludes that better guidance, updated criteria, and more consistent use of climate projections would help reduce risk to facilities and budgets.
+
+## Action Items
+
+- Secretary of the Army: Update UFC installation master planning standards to require installation-specific risk assessment and response plans.
+- Secretary of the Navy: Update UFC installation master planning standards to require installation-specific risk assessment and response plans.
+- Secretary of the Air Force: Update UFC installation master planning standards to require installation-specific risk assessment and response plans.
+- Secretary of Defense: Issue guidance on incorporating climate projections into installation master planning.
+- Secretary of Defense: Issue guidance on incorporating climate projections into facilities project designs.
+- Secretary of the Army: Update relevant UFCs to require consideration of climate projections in facilities project designs and incorporate DOD guidance.
+- Secretary of the Navy: Update relevant UFCs to require consideration of climate projections in facilities project designs and incorporate DOD guidance.
+- Secretary of the Air Force: Update relevant UFCs to require consideration of climate projections in facilities project designs and incorporate DOD guidance.
+- DOD: Concurred with all eight recommendations and identified actions to address two of them.

@@ -1,0 +1,41 @@
+## Identity Information in Public Comment Systems
+
+- Federal agencies may request identity fields such as name, address, and email when commenters submit public comments.
+- In practice, anonymous or fabricated identity information can still be accepted because agencies do not authenticate submitted identity data.
+- Website logs may collect technical data such as IP address, browser type, operating system, and timestamps, but this information is separate from the comment text and not reliably linked to specific comments.
+
+## Agency Practices and Internal Guidance
+
+- The testimony reviewed 10 selected agencies and found that 7 had some internal guidance related to identity information in the public comment process.
+- Agency guidance varied across the comment lifecycle: intake, analysis, and response.
+- Agencies differed in how they handled duplicate comments, including whether all duplicates were posted, only a sample was posted, or some comments were kept outside the public system.
+- These differences affected whether identity information and unique comment content were consistently visible to the public.
+
+## Public Disclosure and Transparency
+
+- Regulations.gov provides general notice and directs users to agency websites, but does not clearly explain what identity information or comment data will be publicly available.
+- Most participating agencies also direct users back to Regulations.gov or the Federal Register without clearly describing posting limitations.
+- FDA was the only participating agency noted as providing additional posting-practice details beyond what is available on Regulations.gov.
+- EBSA recreates rulemaking materials on its own website and links to comments, but its website content does not always match what is posted on Regulations.gov.
+- SEC and FCC were cited as examples of nonparticipating agencies with separate comment systems; FCC clearly communicated its comment posting policies, while SEC had not clearly documented or communicated its duplicate-comment practices at the time of the report.
+
+## Findings and Implications
+
+- The lack of clear disclosure about identity information and duplicate-comment handling may lead users to misunderstand how many commenters supported or opposed an issue.
+- This can limit public users’ ability to use comment data effectively.
+- The testimony stated that unclear posting practices may also affect meaningful participation in the rulemaking process.
+
+## Prior Recommendations and Agency Status
+
+- A June 2019 report recommended that five agencies establish posting policies and eight agencies more clearly communicate their posting practices, especially regarding identity information and duplicate comments.
+- SEC completed actions responsive to the recommendation by issuing an internal memorandum in September 2019 and adding a disclaimer on SEC.gov.
+- The other seven agencies had provided updates but had not fully implemented the recommendations at the time of the testimony.
+- HHS officials stated that CMS would provide additional follow-up actions by July 2020.
+
+## Action Items
+
+- **SEC:** Continue applying the internal memorandum on duplicate comment and identity-information posting practices; maintain the public disclaimer on SEC.gov.
+- **BLM, CFPB, EPA, and FWS:** Develop or update written policies for posting public comments and public-facing statements describing those policies.
+- **HHS/CMS:** Update the CMS comment posting policy, publish it on the CMS website, and provide additional follow-up actions by July 2020.
+- **EBSA:** Develop a written policy regarding comment posting, including duplicate comments, and make the policy available on the agency website; evaluate or document the current practice of replicating rulemaking dockets.
+- **WHD:** Revise webpage text to state that personal information in comments will be posted to Regulations.gov without change and clarify how duplicate comments are posted.

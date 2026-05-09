@@ -1,0 +1,63 @@
+## Topic 1: Legal and Policy Framework for EPA Advisory Committees
+
+- EPA advisory committee appointments are governed by FACA, federal ethics regulations, GSA guidance, and OGE guidance.
+- FACA requires advisory committees to follow uniform procedures and have balanced membership in terms of viewpoints and functions.
+- Federal ethics rules require review of financial disclosure forms to identify and prevent conflicts of interest for prospective members who must file them.
+- GSA oversees government-wide implementation of FACA and maintains the public advisory committee database.
+- EPA’s Federal Advisory Committee Management Division and Ethics Office share responsibility for compliance with these requirements.
+
+## Topic 2: EPA Advisory Committee Types and Member Designations
+
+- EPA can establish non-discretionary committees when required by statute or presidential direction.
+- EPA can also establish discretionary committees at the Administrator’s direction.
+- EPA may appoint committee members as federal employees, special government employees (SGEs), or non-employee representatives.
+- OGE guidance states that SGEs are generally subject to federal ethics requirements, including financial disclosure filing.
+- Representative members generally serve as the voice of groups or entities with a stake in a matter and are not generally subject to federal ethics regulations.
+
+## Topic 3: EPA’s Advisory Committee Appointment Process
+
+- EPA’s handbook describes a three-phase appointment process: soliciting nominations, evaluating candidates, and obtaining approvals before final appointment.
+- The nomination phase includes developing selection criteria, creating outreach plans, preparing membership balance plans for discretionary committees, soliciting nominations, contacting nominees, and assessing nominee diversity.
+- The evaluation phase includes reviewing candidates against selection criteria and preparing a draft membership grid with primary and alternate candidates.
+- The handbook assigns primary responsibility for these steps to designated federal officers, with ethics officials reviewing financial disclosure forms when required.
+
+## Topic 4: GSA Database and Public Reporting
+
+- GSA requires agencies to enter advisory committee data into the government-wide FACA database.
+- The database is reviewed annually for accuracy and completeness by GSA and the responsible agency.
+- The database includes member designation, occupation or affiliation, geographic information, appointment dates, and meeting dates.
+- The database is publicly accessible and contains records from more than 50 agencies dating back to 1997.
+
+## Topic 5: GAO Review Findings on EPA Implementation
+
+- GAO reviewed EPA’s advisory committee appointment process and ethics oversight.
+- GAO found that EPA generally followed its established process, but some required steps were not consistently documented or completed.
+- For the 2018 appointments to SAB and CASAC, EPA did not prepare the draft membership grid document required by its handbook.
+- EPA used briefings instead of the handbook’s documented step for the final appointment process.
+
+## Topic 6: Ethics Review and Oversight Issues
+
+- EPA did not consistently ensure that SGEs met federal financial disclosure and ethics requirements.
+- Some financial disclosure forms were not signed off by ethics officials, and completion within the required 60-day period could not always be confirmed.
+- EPA’s Ethics Office did not routinely conduct audits or spot-checks of deputy ethics officials’ reviews.
+- GAO concluded that additional oversight was needed to help ensure compliance and quality control.
+
+## Topic 7: Committee Composition and Activity Analysis
+
+- GAO analyzed changes in committee composition, geographic distribution, member turnover, and meeting frequency.
+- SAB and BOSC had noticeable decreases in academic membership.
+- SAB had an increase in members from the South.
+- BOSC, the Clean Air Act Advisory Committee, and the Pesticide Program Dialogue Committee showed notable membership turnover.
+- Overall committee meeting counts declined.
+
+## Topic 8: Recommendations and EPA Response
+
+- GAO recommended that EPA follow its established appointment process for all committees, including preparing the draft membership grid.
+- GAO also recommended that EPA Ethics Office conduct regular audits or spot-checks of SGE financial disclosure reviews.
+- EPA disagreed with part of the first recommendation but agreed with the second.
+- EPA stated that it had improved Ethics Office staffing and was conducting more comprehensive reviews.
+
+## Action Items
+
+- EPA: Follow the established advisory committee appointment process for all committees, including preparation of the draft membership grid.
+- EPA Ethics Office: Conduct regular audits or spot-checks of deputy ethics officials’ financial disclosure reviews for SGEs.

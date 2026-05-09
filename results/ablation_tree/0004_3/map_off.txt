@@ -1,0 +1,68 @@
+## Oversight and Investigation Framework
+
+- Federal law requires nursing homes participating in Medicare and Medicaid to meet minimum standards for resident rights, quality of care, and quality of life.
+- CMS oversees nursing home compliance through central and regional offices, while state survey agencies conduct routine surveys and investigate complaints and facility-reported incidents.
+- Nursing homes must immediately report alleged abuse to the state survey agency and complete their own investigation within 5 working days.
+- If abuse is substantiated, state survey agencies must refer the case to local law enforcement, the Medicaid Fraud Control Unit when appropriate, and the state nurse aide registry or other licensure authority.
+
+## Abuse Deficiency Trends and Severity
+
+- CMS data from 2013 through 2017 showed that abuse deficiencies increased substantially.
+- Abuse deficiencies more than doubled, from 430 in 2013 to 875 in 2017.
+- Abuse deficiencies remained less than 1 percent of all deficiencies, but a larger share were classified as causing actual harm or immediate jeopardy over time.
+- Most abuse deficiencies were identified through complaint investigations or facility-reported incident investigations rather than standard surveys.
+
+## Enforcement Actions
+
+- CMS implemented penalties infrequently for abuse deficiencies.
+- Civil money penalties were the most common implemented enforcement action.
+- Many penalties were imposed but not implemented because the nursing home returned to compliance before the effective date.
+- Mandatory termination was rare.
+
+## Nursing Homes with Abuse Deficiencies
+
+- The number of nursing homes with at least one abuse deficiency more than doubled between 2013 and 2017.
+- Some nursing homes had repeated abuse deficiencies across multiple years.
+- For-profit homes and Special Focus Facilities were more represented among homes with repeated abuse deficiencies than among homes with no abuse deficiencies.
+
+## Abuse Types and Perpetrators
+
+- In the sampled CMS narratives from 2016 and 2017, physical abuse and mental/verbal abuse were the most common abuse types, followed by sexual abuse.
+- Staff were the most frequent perpetrators in the sample, followed by residents and others.
+- Mental/verbal abuse was less often categorized as severe than physical or sexual abuse.
+
+## Stakeholder-Identified Risk Factors and Investigation Challenges
+
+- Stakeholders from five states identified abuse risk factors including:
+  - residents without frequent visitors,
+  - residents with cognitive impairment,
+  - residents mixed with widely different age groups,
+  - insufficient staffing,
+  - inadequate staff training on abuse, and
+  - inadequate staff screening.
+- Common investigation challenges included:
+  - underreporting of abuse,
+  - cognitive impairment of victims,
+  - lack of cooperation from some nursing homes, and
+  - poor coordination among agencies.
+
+## CMS Data and Oversight Gaps
+
+- CMS does not readily collect or access data on abuse type or perpetrator type, limiting analysis of abuse patterns.
+- CMS lacks guidance on what information should be included in facility-reported incident reports.
+- Referral processes to law enforcement and Medicaid Fraud Control Units have gaps that can delay or prevent referrals.
+- Additional issues include delayed reporting until abuse is substantiated, limited tracking of referrals, inconsistent understanding of what counts as substantiated abuse, and unclear guidance on what information may be shared with law enforcement.
+
+## Recommendations and Agency Response
+
+- The report recommended that CMS improve data collection, standardize facility-reported incident guidance, strengthen referral requirements, oversee timely referrals, clarify substantiation guidance, and provide guidance for law enforcement referrals.
+- HHS concurred with all six recommendations and stated it was taking steps to implement them.
+
+## Action Items
+
+- CMS/HHS: Explore options to require recording abuse type and perpetrator type in CMS databases.
+- CMS/HHS: Develop and disseminate standardized guidance and forms for facility-reported incidents.
+- CMS/HHS: Require immediate referral of complaints to law enforcement, and to MFCUs when applicable, when there is reasonable suspicion of a crime.
+- CMS/HHS: Consider mechanisms to track law enforcement referrals.
+- CMS/HHS: Clarify guidance on when abuse is substantiated and must be reported even if a federal deficiency is not cited.
+- CMS/HHS: Develop standardized elements for abuse allegation referrals to law enforcement.

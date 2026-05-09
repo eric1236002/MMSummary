@@ -1,0 +1,40 @@
+## Regulatory Overview
+
+- The meeting discussed a GAO report on the regulation and commercialization progress of cell-cultured meat in the United States.
+- Cell-cultured meat is still in a mid-development stage, and the production technology, process, and final product composition have not been fully determined.
+- The report outlined five main stages from innovation to commercialization: biopsy, cell banking, growth, harvest, and food processing.
+
+## FDA and USDA Roles
+
+- FDA is responsible for most food safety oversight and regulates the early stages of cell-cultured meat production up to the harvest point.
+- USDA is responsible for meat, poultry, processed egg products, and catfish, and takes over regulation after harvest, including processing and labeling.
+- FDA and USDA coordinate through joint meetings, mutual agreements, and working groups.
+
+## Unresolved Regulatory and Technical Issues
+
+- Open questions remain about tissue sample collection source and frequency.
+- It is not fully resolved whether genetic engineering is used.
+- The use of antibiotics remains an open issue.
+- The composition of the growth medium is still under discussion.
+- The use of scaffolds remains unresolved.
+- The definition of the harvest point is still unclear.
+- Challenges remain in scaling up production and reducing costs.
+- Safety, product composition, environmental impact, animal welfare impact, labeling, and consumer acceptance remain key issues.
+
+## GAO Findings and Gaps
+
+- GAO found that FDA and USDA have established collaboration mechanisms but have not fully aligned with cross-agency collaboration best practices.
+- For cell-cultured seafood other than catfish, the regulatory responsibility has not been formally documented, although both agencies verbally indicated that FDA is responsible.
+
+## GAO Recommendations
+
+- GAO made six recommendations in total: three to FDA and three to USDA.
+- The recommendations focus on better incorporation of collaboration best practices.
+- The recommendations also call for clearer goals and evaluation mechanisms within working groups.
+- GAO recommended formally documenting which agency regulates cell-cultured seafood other than catfish.
+
+## Action Items
+
+- FDA: Strengthen collaboration practices and formally document oversight responsibilities for cell-cultured seafood other than catfish.
+- USDA: Strengthen collaboration practices and improve working group goals and evaluation mechanisms.
+- FDA and USDA: Clarify regulatory boundaries and reduce overlap in oversight of cell-cultured meat products.

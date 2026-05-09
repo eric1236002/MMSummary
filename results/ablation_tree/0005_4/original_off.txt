@@ -1,0 +1,78 @@
+## Legal and Regulatory Framework for Mixed HLW
+
+- Mixed high-level waste (HLW) at Idaho National Laboratory (INL) is governed by federal laws, cleanup agreements, DOE orders, EPA RCRA regulations, and state-authorized hazardous waste programs.
+- DOE defines HLW under the Atomic Energy Act and Nuclear Waste Policy Act; calcine waste is treated by DOE as HLW, and sodium-bearing waste (SBW) is managed by EM as mixed HLW.
+- HLW must generally be disposed of in a geologic repository unless the Nuclear Regulatory Commission approves an alternative.
+- EPA regulations require hazardous components of mixed HLW to meet treatment standards before land disposal; Idaho’s standard for mixed HLW is vitrification.
+- Idaho and New Mexico both operate EPA-authorized hazardous waste programs; New Mexico’s program includes permitting for WIPP.
+
+## IWTU Reengineering Project Status
+
+- As of March 2019, EM’s Integrated Waste Treatment Unit (IWTU) reengineering project was in phase two of a four-phase approach to achieve operational capability.
+- Phase one focused on identifying fixes through engineering analyses and chemistry studies.
+- Phase two focused on implementing fixes, including equipment modifications.
+- EM officials reported that phases one and two had cost about $150 million by February 2019, which was about $64 million over the original estimate for those phases combined.
+- The project was more than one year behind schedule.
+- EM expected phase three to begin in summer 2019 and phase four to begin in early 2020, but key outage and testing decisions had not yet been finalized.
+- Treatment of all 900,000 gallons of SBW was originally estimated to take 10 months, but EM now estimated it could take 3 to 7 years.
+
+## Project Management Requirements and Oversight
+
+- DOE Order 413.3B governs capital asset projects, while EM manages operations activities under a separate cleanup policy issued in July 2017.
+- In a prior review, GAO found that EM and DOE had not clearly established criteria for classifying work as either an operations activity or a capital asset project.
+- EM has managed the IWTU reengineering project as an operations activity since construction was declared complete in April 2012.
+- DOE created the operational release milestone in 2016 to provide additional oversight for projects transitioning from construction to operations.
+- Under this process, program offices must develop an operational release plan and provide quarterly progress updates to the Project Management Risk Committee (PMRC), unless an alternative schedule is approved.
+- EM developed an operational release plan in December 2016 and provided five progress briefings to the PMRC, though not on a quarterly basis.
+
+## Cost and Schedule Estimate Findings
+
+- EM partially met best practices for a comprehensive cost estimate.
+- The cost estimate did not use a standardized work breakdown structure and did not account for all life-cycle costs, including costs for later phases that had not yet been developed at the time of review.
+- EM partially met best practices for a well-constructed schedule.
+- The schedule had minimal sequencing issues and a continuous critical path, but included long-duration critical path activities and unusually large positive and negative float values.
+- EM substantially met best practices for a comprehensive schedule, including capturing most activities and assigning resources to most work.
+- EM has not developed a total project cost estimate or completion date covering the full IWTU reengineering effort and future waste treatment operations.
+
+## Earned Value Management (EVM) Findings
+
+- EM generally met best practices for using an EVM system, including having a comprehensive system and using EVM data for decision-making.
+- EM partially met best practices for ensuring EVM data reliability.
+- The reviewed EVM data contained anomalies in all months examined, including missing and negative values.
+- EM did not document all anomalies and their explanations in monthly reports.
+- EM officials attributed many anomalies to authorized unpriced work in phase two.
+- The report found that unreliable EVM data may limit EM’s ability to measure project performance.
+
+## Sodium-Bearing Waste (SBW) Disposal Challenges
+
+- EM identified WIPP as its preferred disposal site for SBW, but no final disposal decision had been made as of March 2019.
+- EM faces three main obstacles: WIPP permit restrictions, the federal prohibition on HLW disposal at WIPP, and WIPP capacity limitations.
+- New Mexico’s WIPP permit prohibits waste that has ever been managed as HLW from being disposed of at WIPP unless the permit is modified.
+- DOE has pursued a new interpretation of the statutory definition of HLW through Federal Register notices in 2018 and 2019.
+- Stakeholder comments on the proposed interpretation included both support and concern, including concerns about excluding NRC from the determination process.
+- EM officials stated there was no timeline for implementing the new HLW interpretation or for making related policy or regulatory changes.
+- EM also has not developed a strategy or timeline for its preferred SBW disposal path or an alternative path.
+
+## Calcine Waste Treatment and Disposal Challenges
+
+- EM suspended further development of its calcine waste treatment plan for land disposal due to challenges with the chosen technology and uncertainty about disposal pathways.
+- EM had selected hot isostatic pressing in 2009, but later analyses identified major technical, regulatory, safety, and cost concerns.
+- An April 2016 analysis of alternatives recommended deferring a final treatment decision until disposal-path performance requirements are better defined.
+- EM has no strategy or timeline for selecting the next treatment approach for calcine waste.
+- EM is conducting a pilot retrieval project to remove calcine waste from the oldest bin set and transfer it to a partially empty bin set.
+- The retrieval project is intended to test technologies and reduce use of the older storage bin set.
+
+## GAO Recommendations and DOE Response
+
+- GAO made five recommendations to DOE.
+- DOE agreed with recommendations related to IWTU cost estimates, schedule estimates, EVM reliability, and strategies for SBW and calcine waste disposal.
+- DOE stated that phases three and four cost estimates and schedules had been developed and reviewed, and that EVM data would be incorporated once contract negotiations were completed.
+- DOE disagreed with the recommendation to seek congressional clarification on DOE’s authority to classify SBW as other than HLW; GAO deleted that recommendation but maintained that litigation risk remains.
+
+## Action Items
+
+- Secretary of Energy / Assistant Secretary for Environmental Management: Develop comprehensive cost estimates for the IWTU reengineering project and SBW treatment operations.
+- Secretary of Energy / Assistant Secretary for Environmental Management: Develop well-constructed schedule estimates for the IWTU reengineering project and SBW treatment operations.
+- Secretary of Energy / Assistant Secretary for Environmental Management: Follow best practices to ensure reliability of the IWTU reengineering project’s EVM system.
+- Secretary of Energy / Assistant Secretary for Environmental Management: Develop a strategy, including a timeline, for implementing the preferred or an alternative SBW disposal pathway.
+- Secretary of Energy / Assistant Secretary for Environmental Management: Develop a strategy, including a timeline, to identify and develop a treatment approach for calcine waste by December 31, 2035.

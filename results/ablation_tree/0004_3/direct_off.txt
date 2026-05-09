@@ -1,0 +1,84 @@
+## Overview
+
+- The report focused on federal, state, and local oversight and investigation mechanisms for nursing home abuse allegations in the United States.
+- It also identified gaps in CMS data, guidance, and reporting processes.
+
+## Regulatory and Oversight Framework
+
+- Nursing homes must comply with Medicare and Medicaid participation requirements, including residents’ rights, quality of care, and quality of life.
+- CMS oversight involves central, regional, and state-level entities.
+- State survey agencies conduct:
+  - Routine unannounced standard inspections
+  - Investigations of complaints and self-reported facility incidents
+- When abuse is substantiated, reporting is required to:
+  - Local law enforcement
+  - Medicaid Fraud Control Units, when applicable
+  - State nursing assistant registries or other licensing entities
+
+## Abuse Deficiencies and Enforcement Trends
+
+- Abuse deficiencies increased from 430 in 2013 to 875 in 2017, a 103.5% increase.
+- In 2017, abuse deficiencies were more often cited at high severity levels, including actual harm or immediate jeopardy.
+- Most abuse deficiencies were identified through complaint investigations or investigations of self-reported incidents rather than routine standard surveys.
+- CMS rarely imposed remedies for abuse deficiencies; civil money penalties were the most common remedy when action was taken.
+
+## Common Abuse Types and Perpetrators
+
+- The most common abuse types were:
+  - Physical abuse
+  - Verbal/psychological abuse
+  - Sexual abuse
+- Perpetrators were commonly:
+  - Staff
+  - Residents
+  - Other individuals such as family members or visitors
+
+## Risk Factors
+
+- Resident-related risk factors included:
+  - Few visitors
+  - Cognitive impairment
+  - Living with residents of very different ages
+- Facility-related risk factors included:
+  - Staffing shortages
+  - Inadequate staff training
+  - Insufficient background checks
+
+## Investigation and Reporting Challenges
+
+- Abuse is often underreported.
+- Residents with cognitive impairment may have difficulty describing what happened.
+- Some facilities do not cooperate, which can delay or obscure information.
+- Coordination problems among agencies can delay investigations and required reporting.
+
+## CMS-Identified Gaps
+
+- CMS data did not easily identify abuse type or perpetrator type.
+- Facilities lacked clear guidance for completing self-reported incident documentation.
+- Reporting to law enforcement and MFCUs included delays and missing reports.
+- States had inconsistent interpretations of what constituted substantiated abuse.
+- Rules governing information sharing with law enforcement were unclear.
+
+## GAO Recommendations and HHS Response
+
+- GAO made six recommendations, including:
+  - Requiring states to report abuse and perpetrator types in CMS data and analyze trends
+  - Issuing standardized self-report forms and guidance
+  - Requiring immediate reporting to law enforcement when there is reasonable suspicion of a crime
+  - Strengthening oversight to ensure timely and complete reporting
+  - Clarifying that abuse can be substantiated and reported even if a penalty cannot be imposed
+  - Providing guidance on what information should be included when reporting to law enforcement
+- HHS agreed with all six recommendations and stated it would:
+  - Review data fields
+  - Develop standardized forms
+  - Strengthen reporting and follow-up
+  - Clarify definitions and information-sharing rules
+
+## Action Items
+
+- CMS / HHS: Review and add data fields to identify abuse type and perpetrator type
+- CMS / HHS: Develop and publish standardized self-report forms and guidance for facility incident reporting
+- CMS / HHS: Require immediate reporting to law enforcement when there is reasonable suspicion of a crime
+- CMS / HHS: Strengthen oversight to ensure reporting is timely and complete
+- CMS / HHS: Clarify substantiated abuse definitions and information-sharing rules
+- CMS / HHS: Provide guidance on what information should be included in reports to law enforcement

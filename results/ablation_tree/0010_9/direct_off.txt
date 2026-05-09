@@ -1,0 +1,55 @@
+## PMIAA Overview and Agency Roles
+
+- The PMIAA was designed to improve program and project management in larger federal agencies.
+- The law applies to OMB, OPM, the 24 CFO Act agencies, and related implementation bodies.
+- OMB is responsible for government-wide standards, policies, guidance, portfolio reviews, and strategic planning.
+- OPM is responsible for issuing regulations on program and project management skills, occupational standards, and career paths.
+- The Program Management Policy Council (PMPC) was created as an interagency forum to improve program management practices.
+
+## OMB Strategic Plan and Implementation Approach
+
+- OMB met the requirement to establish a five-year strategic plan for program and project management.
+- The strategic plan includes three main strategies:
+  - coordinated governance,
+  - regular OMB and agency engagement reviews,
+  - strengthening program management capacity and workforce capability.
+- The plan includes milestones and a phased implementation approach over five years.
+- OMB gathered input from stakeholders, including congressional staff, external organizations, and agency staff.
+- OMB used existing GPRAMA processes, including strategic reviews and cross-agency priority goals, to support PMIAA implementation.
+
+## Program and Project Management Standards
+
+- OMB published 15 program and project management standards in June 2018.
+- OMB chose to develop its own standards rather than directly adopt PMI standards.
+- OMB’s standards are principle-based and intended to allow agencies flexibility in applying them.
+- OMB directed agencies to align the standards with existing agency-specific policies and practices.
+- Compared with PMI standards, OMB’s standards are less detailed and do not include:
+  - minimum thresholds for determining whether a standard is met,
+  - clear separation between program and project standards,
+  - detailed relationships among standards,
+  - lifecycle-specific guidance for using the standards.
+
+## Governance of Standards
+
+- OMB does not have a fully documented governance structure for maintaining and updating the standards.
+- OMB has not clearly defined roles and responsibilities for future decision-making and accountability.
+- OMB has not provided a detailed process for stakeholder input in future standards development.
+- OMB has not established a clear process for approving changes to existing standards or resolving conflicts.
+- OMB has not defined a monitoring or enforcement mechanism to assess agency use of the standards.
+
+## Portfolio Reviews and High-Risk Programs
+
+- PMIAA requires portfolio reviews of agency programs and separate reviews of high-risk programs.
+- OMB used GPRAMA strategic reviews and CAP goals to support early PMIAA portfolio review activities.
+- OMB conducted a 2018 pilot focused on non-IT major acquisition programs to prepare agencies for PMIAA reviews.
+- The pilot was intended to test the portfolio review approach and inform future implementation.
+- OMB planned to use pilot results to guide subsequent portfolio reviews.
+
+## Action Items
+
+- OMB: Further develop and document a governance structure for program management standards.
+- OMB: Define roles and responsibilities for future standards development, approval, and maintenance.
+- OMB: Establish a process for stakeholder input in revising or updating standards.
+- OMB: Create a process for monitoring, reviewing, and enforcing consistent agency use of standards.
+- OMB: Clarify and finalize procedures for future portfolio reviews of agency programs and high-risk programs.
+- OMB: Use pilot and review results to inform continued PMIAA implementation.

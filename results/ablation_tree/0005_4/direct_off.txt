@@ -1,0 +1,60 @@
+## Scope and Review Method
+
+- The meeting focused on GAO’s review of DOE/EM’s IWTU reconstruction project.
+- The review covered cost estimates, schedule estimates, earned value management (EVM), independent reviews, and the disposal challenges for SBW and calcine waste.
+- GAO reviewed DOE/EM documents, policies, and contractor reports, and interviewed relevant federal and state officials.
+
+## IWTU Cost Estimate Assessment
+
+- GAO evaluated the cost estimate primarily for completeness.
+- At the time of review, EM had developed cost estimates only for the first two phases of the reconstruction project.
+- GAO noted that incomplete cost estimates limit the ability to assess accuracy, documentation, and credibility.
+
+## IWTU Schedule Assessment
+
+- GAO evaluated the project schedule primarily for whether it was well constructed.
+- EM had not yet developed a complete schedule for the full reconstruction effort because the work was being carried out in phases.
+- GAO noted issues affecting schedule quality, including missing logical links and limited ability to show overall critical path impacts.
+
+## EVM Review
+
+- GAO reviewed EVM data for the period from March 2017 to February 2018.
+- EM’s EVM system showed strengths in system existence and management use.
+- GAO found that EVM data reliability was only partially met because of missing values, negative values, and insufficient explanation of anomalies.
+- Unreliable EVM data can reduce the quality of management decision-making.
+
+## Independent Reviews and PMRC Oversight
+
+- GAO reviewed DOE/EM policies and PMRC review records.
+- PMRC was intended to provide independent review for projects entering the operational release phase.
+- GAO noted that DOE/EM had taken some steps, but quarterly reporting requirements were not fully followed.
+
+## SBW Disposal Challenges
+
+- EM wanted to send treated sodium-bearing waste (SBW) to WIPP.
+- Three main barriers were identified:
+  - WIPP permit restrictions on certain wastes previously managed as HLW
+  - Federal law prohibiting HLW disposal at WIPP
+  - Limited WIPP capacity
+- DOE was exploring a new interpretation of the HLW definition, but no complete strategy or timeline was identified.
+
+## Calcine Waste Treatment and Disposal Challenges
+
+- DOE previously selected hot isostatic pressing as the treatment method for calcine waste.
+- Development of that option was paused due to concerns about technology maturity, cost, risk, and uncertainty in the disposal path.
+- The termination of the Yucca Mountain repository plan undermined the original disposal assumption.
+- DOE was continuing research into alternatives and retrieval/pilot activities, but no complete strategy or timeline was identified.
+
+## GAO Conclusions
+
+- GAO concluded that DOE/EM only partially met best practices for cost estimation and schedule development.
+- GAO found that the EVM system was used by management, but the underlying data were not reliable enough.
+- GAO also found that DOE/EM lacked clear long-term strategies for both SBW and calcine waste.
+
+## Action Items
+
+- DOE/EM: Develop a cost estimate for the IWTU/SBW effort that aligns with best practices.
+- DOE/EM: Develop a schedule estimate for the IWTU/SBW effort that aligns with best practices.
+- DOE/EM: Improve the reliability of EVM data used for IWTU oversight.
+- DOE/EM: Develop a final disposal strategy and timeline for SBW.
+- DOE/EM: Develop a treatment and disposal strategy and timeline for calcine waste to support the 2035 goal.

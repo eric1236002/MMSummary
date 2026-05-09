@@ -1,0 +1,53 @@
+## Comment Submission and Identity Information
+
+- Regulations.gov and agency-specific comment websites may require commenters to provide identity information such as name, address, and email.
+- Anonymous comments are accepted in practice, including comments submitted with fictitious names or placeholder entries in required fields.
+- Agencies do not authenticate identity information submitted through comment forms.
+- Website logs may collect user technical information such as IP address, browser type, operating system, and visit timestamps, but this information is collected separately from comment submission and cannot be reliably linked to specific comments.
+
+## Agency Guidance and Comment Processing Practices
+
+- Seven of the 10 selected agencies had some internal guidance related to commenter identity across the intake, analysis, and response phases.
+- Guidance most often addressed comment intake and response to comments, including handling duplicate comments and identifying commenters in final rules.
+- Agencies vary in how they treat identity information during intake, analysis, and response to comments.
+- Some agencies keep all comments within the comment system, while others keep some duplicate records outside the system, such as in email archives.
+- When agencies post only a sample of duplicate comments, identity information and unique comment content for all duplicates may not appear on the public website.
+- SEC posts one example for each set of duplicate comments and shows the total number received, meaning only the first example’s identity information and content are publicly visible.
+
+## Public Disclosure and Communication of Posting Practices
+
+- The reviewed agencies do not consistently document or clearly communicate how they post identity information and duplicate comments.
+- Regulations.gov provides a general disclosure about identity information but does not clearly explain what comment data users should expect to find.
+- Participating agency websites generally direct users back to Regulations.gov and the Federal Register for more information.
+- FDA provides some additional posting information not available on Regulations.gov.
+- EBSA posts complete rulemaking materials on its own website, but its pages do not always match what is posted on Regulations.gov.
+- FCC clearly states its comment posting policies and informs users that all submitted information, including identity information, will be made public.
+- The lack of clear disclosure may lead users to misunderstand how many commenters submitted input or how agencies considered comments.
+
+## Findings and Recommendations from the June 2019 Report
+
+- The June 2019 report recommended that five agencies establish a policy for posting comments.
+- The report also recommended that eight agencies more clearly communicate their posting policies, especially regarding identity information and duplicate comments.
+- The agencies generally agreed with the recommendations and described planned actions such as developing policies and updating website statements.
+
+## Follow-Up Actions and Status of Recommendations
+
+- SEC completed actions responsive to the recommendation.
+- In September 2019, SEC issued a memorandum documenting its internal policy for posting duplicate comments and related identity information.
+- SEC also added a disclaimer on SEC.gov describing how comments are posted.
+- BLM, CFPB, EPA, and FWS said they were developing or updating policies and website statements.
+- HHS said CMS would update its comment posting policy and communicate it on the CMS website, but no finalized policy was provided and no website changes were observed.
+- HHS said it would provide additional follow-up actions by July 2020.
+- EBSA said it would develop a written policy for posting comments, including duplicate comments, but did not provide evidence of a formal evaluation of its current practice.
+- WHD said it would add text to rulemaking webpages stating that personal information in comments, including duplicates, will be posted to Regulations.gov without change, but the text did not clearly explain its duplicate-comment posting practice.
+
+## Action Items
+
+- SEC: Implemented—issued memo and website disclaimer on duplicate comment posting policies.
+- BLM: Develop or update public comment posting policy and public website statement.
+- CFPB: Develop or update public comment posting policy and public website statement.
+- EPA: Develop or update public comment posting policy and public website statement.
+- FWS: Develop or update public comment posting policy and public website statement.
+- HHS/CMS: Finalize and communicate updated comment posting policy on CMS website.
+- EBSA: Develop written policy for posting comments, including duplicate comments.
+- WHD: Add website text explaining posting practices for comments, including duplicates.

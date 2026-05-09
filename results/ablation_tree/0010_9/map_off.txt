@@ -1,0 +1,65 @@
+## PMIAA Implementation Overview
+
+- The meeting focused on implementation of the Program Management Improvement Accountability Act (PMIAA) across OMB, OPM, and CFO Act agencies.
+- PMIAA responsibilities discussed included OMB standards development, portfolio reviews, a five-year strategic plan, and OPM workforce-related regulations and guidance.
+- The Program Management Policy Council (PMPC) was described as an interagency forum intended to support PMIAA implementation and share program management practices.
+
+## OMB Standards and Governance
+
+- OMB developed 15 program and project management standards in June 2018 and a five-year PMIAA strategic plan.
+- The standards were described as principle-based and intended to align with existing agency practices.
+- OMB’s governance structure for maintaining and updating the standards remains incomplete.
+- Gaps were identified in roles and responsibilities, stakeholder input, approval processes, change management, and monitoring/enforcement.
+
+## Portfolio Reviews and Dashboard
+
+- OMB used existing GPRAMA processes, including strategic reviews and CAP goals, to support PMIAA portfolio reviews.
+- OMB conducted a pilot review of non-IT major acquisitions in 2018 to prepare agencies for future portfolio reviews.
+- OMB completed portfolio reviews with ten agencies in 2019 and planned to expand reviews to grants in 2020.
+- OMB and GSA created a dashboard prototype to track cost, schedule, and performance data for selected non-IT major acquisition programs.
+- Agencies reported challenges collecting high-quality data for portfolio reviews and the dashboard.
+
+## Federal Program Inventory and Definitions
+
+- The federal program inventory remains incomplete, and agencies continue to struggle to identify all programs and projects.
+- OMB has not fully implemented prior recommendations related to the inventory.
+- OMB uses three different definitions of “program” or “program activity” under PMIAA, GPRAMA, and the DATA Act.
+- The differing definitions were identified as a source of confusion and increased reporting burden for agencies.
+
+## OPM Workforce and Career Path Actions
+
+- OPM identified competencies for program and project managers.
+- OPM updated the 0340 program management job series and issued guidance for identifying project management positions.
+- OPM developed a career path framework and was working on a job identifier code for program and project managers.
+- Agencies reported varying ability to identify program and project management personnel.
+
+## Agency Implementation and Workforce Planning
+
+- Agencies submitted PMIAA implementation plans with varying levels of completeness.
+- Many plans partially met OMB’s requested elements, and OMB did not require agencies to finalize drafts.
+- Some agencies created task forces, new offices, or cross-functional teams to support implementation.
+- Workforce planning efforts included identifying skill gaps, training needs, hiring strategies, and mentorship resources.
+
+## High-Risk Areas and PMPC Activity
+
+- OMB used strategic reviews, trilateral meetings, and ad hoc meetings to address high-risk areas.
+- The PMPC met as required but did not consistently address the High-Risk List or establish working groups for those issues.
+- OMB stated that the PMPC was used primarily for sharing best practices rather than high-risk discussions.
+- Trilateral meetings were held for only a limited number of high-risk areas.
+
+## Measurement of PMIAA Implementation
+
+- Agencies used a variety of approaches to measure PMIAA implementation, including milestone tracking, existing metrics, maturity models, and surveys.
+- OMB said it was too early to establish formal outcome measures for PMIAA.
+- OMB and VA discussed maturity model surveys as a way to assess capability gaps and benchmark progress.
+
+## Action Items
+
+- **OMB**: Continue implementing PMIAA requirements, including expanding portfolio reviews beyond non-IT major acquisitions.
+- **OMB**: Strengthen governance for program management standards, including roles, approval, change management, and monitoring processes.
+- **OMB**: Continue work on the federal program inventory and implement outstanding prior recommendations.
+- **OMB**: Clarify and reconcile the definitions of “program” and “program activity” across PMIAA, GPRAMA, and the DATA Act.
+- **OPM**: Finalize and release the program and project management career path for agency comment.
+- **OPM**: Complete development of the job identifier code for program and project managers.
+- **Agencies**: Implement updated classification guidance for covered positions by May 1, 2020.
+- **Agencies**: Continue identifying program and project managers and align workforce planning with PMIAA requirements.

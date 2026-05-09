@@ -1,0 +1,34 @@
+{
+  "mode": "on",
+  "effective_params": {
+    "model": "gpt-5.4-mini",
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1000,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "use_map": true,
+    "map_template": null,
+    "reduce_template": null,
+    "reduce_temperature": 0.0
+  },
+  "plan": {
+    "use_map": true,
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1000,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "reduce_temperature": 0.0,
+    "model": null,
+    "map_template": null,
+    "reduce_template": null,
+    "notes": "文本很長且屬於結構化政策/研究報告，包含多個主題段落、統計結果、方法論與建議，適合 map-reduce。為降低成本並避免單塊過大造成摘要遺漏，建議比目前設定更細分；重疊保留少量即可銜接跨段落脈絡。摘要應重視關鍵發現、數據趨勢、問題點與六項建議，因此 reduce 維持低溫以提升一致性與事實穩定性。"
+  },
+  "review": {
+    "verdict": "pass",
+    "revised_summary": null,
+    "issues": null,
+    "notes": null
+  }
+}

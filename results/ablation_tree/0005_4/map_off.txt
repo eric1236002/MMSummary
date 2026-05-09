@@ -1,0 +1,76 @@
+## IWTU Reengineering Project Status
+
+- EM has been working to reengineer the Integrated Waste Treatment Unit (IWTU) to treat sodium-bearing waste and calcine waste.
+- Construction was declared complete in 2012, but the facility required additional repairs and reengineering after testing identified problems.
+- As of early 2019, EM was in phase two of a four-phase reengineering approach.
+- Phase one focused on identifying equipment and process fixes; phase two focused on implementing those fixes.
+- By February 2019, spending on phases one and two was about $150 million, which was approximately $64 million above the original estimate for those phases.
+- The project was more than one year behind schedule.
+- EM officials indicated phase three could begin in summer 2019 and phase four could begin in early 2020.
+
+## Project Management, Cost, and Schedule Findings
+
+- EM had not developed a full cost estimate for the entire reengineering effort at the time of review.
+- The cost estimate for phases one and two partially met best practices for being comprehensive.
+- The project schedule partially met best practices for being well-constructed and substantially met best practices for being comprehensive.
+- The schedule included long-duration critical path activities and large amounts of positive and negative float.
+- EM and DOE have not fully defined requirements for classifying work as operations activity versus capital asset project.
+- The IWTU reengineering effort was managed as an operations activity after construction ended in 2012.
+- Operations activities are subject to less stringent requirements than capital asset projects.
+
+## Earned Value Management (EVM)
+
+- EM generally met best practices for maintaining an EVM system and using EVM data for decision-making.
+- The EVM data were considered unreliable due to anomalies in every month reviewed, including missing or negative values.
+- EM did not document the reasons for the anomalies in monthly reports.
+- Unreliable EVM data may limit EM’s ability to measure project performance and support informed decisions.
+
+## DOE Oversight and Operational Release Requirements
+
+- DOE established an operational release milestone requirement for selected projects with extended transitions to operations.
+- Program offices must prepare an operational release plan and provide quarterly progress updates to DOE’s Project Management Risk Committee (PMRC).
+- EM developed an operational release plan for IWTU in December 2016.
+- EM provided five progress updates to the PMRC, but not on a quarterly basis.
+- The PMRC made recommendations in three of the five briefings.
+
+## Sodium-Bearing Waste (SBW) Disposal Challenges
+
+- EM does not have a strategy or timeline for disposing of SBW or identifying an alternative disposal path.
+- EM’s preferred disposal site has been the Waste Isolation Pilot Plant (WIPP).
+- Major barriers include the WIPP permit, federal restrictions on HLW disposal, and WIPP capacity limitations.
+- EM published a Federal Register notice in October 2018 and a supplemental notice in June 2019 seeking comment on a proposed interpretation of the statutory definition of HLW.
+- Stakeholder comments were mixed, with some supporting the approach and others raising legal and procedural concerns.
+- EM stated it had not set a timeline for implementation or specified the administrative actions needed.
+- If WIPP disposal is not possible, EM’s fallback is disposal in a geologic repository after treatment, although no such repository currently exists in the United States.
+
+## Calcine Waste Treatment and Disposal
+
+- EM suspended further development of hot isostatic pressing for calcine waste due to technical challenges and uncertainty about the disposal path.
+- Hot isostatic pressing had been selected in 2009, but later reviews raised concerns about maturity, logistics, safety, and cost.
+- EM has not developed a strategy or timeline for final calcine treatment and disposal.
+- EM is evaluating alternatives, including direct disposal and retrieval of waste from storage bin sets.
+- A pilot retrieval project for the oldest bin set was initiated to test retrieval methods and transfer waste to a partially empty bin set.
+- The pilot project was estimated to cost $50 million over five years.
+
+## Regulatory and Legal Framework
+
+- Mixed HLW and SBW at INL are governed by federal statutes, DOE orders, EPA hazardous waste requirements, and state-authorized hazardous waste programs.
+- DOE regulates radioactive waste under the Atomic Energy Act and the Nuclear Waste Policy Act.
+- Hazardous waste components are regulated under RCRA by EPA or authorized state programs.
+- Idaho is authorized to administer its own hazardous waste program.
+- HLW generally must be disposed of in a geologic repository unless NRC approves an alternative.
+- Vitrification was identified as the treatment standard for Idaho’s mixed HLW under EPA requirements.
+
+## Action Items
+
+- EM officials and Fluor Idaho: Continue planning for IWTU phase three and phase four.
+- EM: Obtain and review the independent cost estimate for phases three and four from the Defense Contract Audit Agency.
+- EM and Fluor Idaho: Begin contract negotiations for phases three and four.
+- EM: Review and revise the 2017 cleanup policy to incorporate project management leading practices.
+- EM: Continue preparing and updating the operational release plan and progress updates for projects subject to DOE operational release oversight.
+- EM: Improve the IWTU cost estimate so it is comprehensive and includes all life-cycle costs.
+- EM: Improve the IWTU schedule so it is well-constructed with clearer logic and more reasonable float values.
+- EM: Address EVM anomalies and improve documentation of anomalies in monthly reports.
+- EM: Develop a strategy and timeline for SBW disposal or an alternative disposal path.
+- EM: Determine next steps for implementing or revising the proposed HLW interpretation.
+- EM: Continue evaluating alternatives and pilot activities related to calcine waste treatment and disposal.

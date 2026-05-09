@@ -1,0 +1,1 @@
+HTTP 500 from http://localhost:8000/summarize: No JSON object found

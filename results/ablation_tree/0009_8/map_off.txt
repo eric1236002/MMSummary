@@ -1,0 +1,59 @@
+## CCDF Program Oversight and Regulatory Framework
+
+- The discussion focused on the Child Care and Development Fund (CCDF) program, including the CCDBG Act, CCDF regulations, and the oversight roles of the Office of Child Care (OCC) and the Administration for Children and Families (ACF).
+- States are required to submit State Plans every three years and report expenditures, children served, improper payments, and corrective action plans when required.
+- OCC reviews and approves State Plans and oversees state compliance through monitoring and other oversight tools.
+
+## State Plan Review and Approval
+
+- OCC reviewed and approved the FY 2019–2021 State Plans.
+- OCC had not finalized written policies to guide staff in the State Plan review and approval process.
+- Draft materials, training documents, and summary protocols were used, but they were not formal finalized policies.
+- The lack of finalized policies was noted as a risk to consistency and institutional knowledge.
+
+## Program-Integrity Reporting in State Plans
+
+- OCC requested that states report the results of program-integrity and fraud-fighting activities in their State Plans.
+- Most approved State Plans did not include this information.
+- OCC had not defined what it meant by the “results” of program-integrity activities.
+- OCC had not clearly communicated the purpose or expected content of this information to states or staff.
+
+## Improper Payment Reporting and Corrective Action Plans
+
+- CCDF is treated as a high-priority program under federal improper-payment requirements.
+- States with improper-payment rates at or above 10% are required to submit corrective action plans.
+- OCC oversees improper-payment reporting and CAPs, but it lacks documented criteria for reviewing whether CAPs address root causes of improper payments.
+- OCC also lacks written policies for CAP follow-up and consistent documentation of follow-up activities.
+
+## Monitoring System and Program Integrity Reviews
+
+- OCC launched a Monitoring System in fiscal year 2019 to review selected states during the 3-year State Plan cycle.
+- One of the monitoring topic areas is program integrity and accountability.
+- The Monitoring System uses state-specific submissions and on-site reviews.
+- OCC does not use specific criteria to assess the effectiveness of states’ program-integrity control activities.
+
+## Internal Controls and Fraud Toolkit Resources
+
+- OCC makes the Grantee Internal Controls Self-Assessment Instrument and the Fraud Toolkit available to states.
+- These tools are intended to support technical assistance and self-assessment.
+- States are not required to use the tools or act on the resulting reports.
+- OCC stated it does not currently plan to use these tools as formal monitoring or data-collection mechanisms.
+
+## Fraud Risk Assessment
+
+- ACF had not completed a fraud risk assessment for CCDF.
+- ACF was developing a Fraud Risk Assessment template, with CCDF intended to serve as the pilot program.
+- The work was on hold due to competing priorities.
+- Until the assessment is completed, OCC does not have a formal fraud risk profile for CCDF.
+
+## Action Items
+
+- **OCC**: Finalize written policies for the State Plan review and approval process.
+- **OCC**: Define what information is needed regarding the “results” of program-integrity activities.
+- **OCC**: Communicate informational needs to states and staff.
+- **OCC**: Develop documented criteria for reviewing corrective action plans.
+- **OCC**: Develop written policies for corrective action plan follow-up.
+- **OCC**: Develop criteria to assess the effectiveness of states’ program-integrity control activities.
+- **OCC**: Evaluate the feasibility of using information from the Self-Assessment Instrument and Fraud Toolkit for monitoring purposes.
+- **ACF**: Resume work on the CCDF Fraud Risk Assessment template.
+- **ACF**: Complete the fraud risk assessment for CCDF.

@@ -1,0 +1,34 @@
+{
+  "mode": "on",
+  "effective_params": {
+    "model": "gpt-5.4-mini",
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1500,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "use_map": true,
+    "map_template": null,
+    "reduce_template": null,
+    "reduce_temperature": 0
+  },
+  "plan": {
+    "use_map": true,
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1500,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "reduce_temperature": 0,
+    "model": null,
+    "map_template": null,
+    "reduce_template": null,
+    "notes": "輸入很長且結構明確，屬於多主題正式報告，適合 map-reduce。建議比現有設定略縮小第一層 chunk 以降低單段主題混雜，保留中等 overlap 以銜接跨段論點；第二層用較小 chunk 做中間整併，避免 reduce 階段上下文過載。reduce_temperature 維持 0 以提升事實性與一致性。"
+  },
+  "review": {
+    "verdict": "pass",
+    "revised_summary": null,
+    "issues": null,
+    "notes": null
+  }
+}

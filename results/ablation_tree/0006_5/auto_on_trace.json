@@ -1,0 +1,34 @@
+{
+  "mode": "on",
+  "effective_params": {
+    "model": "gpt-5.4-mini",
+    "chunk_size_1": 16000,
+    "chunk_overlap_1": 0,
+    "chunk_size_2": 8000,
+    "chunk_overlap_2": 0,
+    "token_max": 12000,
+    "use_map": false,
+    "map_template": null,
+    "reduce_template": null,
+    "reduce_temperature": 0.0
+  },
+  "plan": {
+    "use_map": false,
+    "chunk_size_1": 16000,
+    "chunk_overlap_1": 0,
+    "chunk_size_2": null,
+    "chunk_overlap_2": null,
+    "token_max": 12000,
+    "reduce_temperature": 0.0,
+    "model": null,
+    "map_template": null,
+    "reduce_template": null,
+    "notes": "Input length is moderate (~15k chars) and appears to be a single coherent formal testimony/report section, so map-reduce is likely unnecessary and may add cost and synthesis loss. A single-pass summary should fit comfortably. Overlap is not needed if map is disabled."
+  },
+  "review": {
+    "verdict": "pass",
+    "revised_summary": null,
+    "issues": null,
+    "notes": "摘要整體忠實於原文，涵蓋了關鍵發現、差異化做法、透明度問題、2019年建議及後續執行情況，結構也清楚。可再補強之處是明確點出：七家機關有內部指引，但並非所有階段皆完整涵蓋，且參與 Regulations.gov 的 8 家機關中只有 FDA 額外提供較具體資訊、非參與機關中 SEC 與 FCC 的公開說明程度不同。不過這些不影響整體通過。"
+  }
+}

@@ -105,6 +105,7 @@ def api_summarize(request: SummarizeRequest):
                 token_max=request.token_max,
                 use_map=request.use_map,
                 test_mode=request.test_mode,
+                direct_mode=request.direct_mode,
                 map_template=request.map_temple,
                 reduce_template=request.reduce_temple,
                 reduce_temperature=request.reduce_temperature,
@@ -122,6 +123,7 @@ def api_summarize(request: SummarizeRequest):
                 "chunk_overlap_2": request.chunk_overlap_2,
                 "token_max": request.token_max,
                 "use_map": request.use_map,
+                "direct_mode": request.direct_mode,
                 "summary": summary,
                 "processing_time": duration,
                 "map_temple": request.map_temple,
@@ -132,7 +134,11 @@ def api_summarize(request: SummarizeRequest):
                 payload["agent_mode"] = agent_mode
                 payload["agent_meta"] = agent_meta
             database.insert_history(payload)
-        return SummarizeResponse(summary=summary, processing_time=duration)
+        return SummarizeResponse(
+            summary=summary,
+            processing_time=duration,
+            trace=agent_meta
+        )
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

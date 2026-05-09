@@ -14,7 +14,7 @@ _PLANNER_TEMPLATE = """
     你是會議記錄摘要系統的 Planner。你的任務是根據輸入文字特性，決定摘要流程的參數（是否 map、chunk 參數、token_max、reduce_temperature），以提升摘要品質並控制成本。
 
     請只輸出 JSON（不要任何額外文字），格式如下：
-    {
+    {{
     "use_map": true|false|null,
     "chunk_size_1": number|null,
     "chunk_overlap_1": number|null,
@@ -23,7 +23,7 @@ _PLANNER_TEMPLATE = """
     "token_max": number|null,
     "reduce_temperature": number|null,
     "notes": string|null
-    }
+    }}
 
     限制：
     - 若不確定就回 null，不要亂猜。
@@ -47,12 +47,12 @@ _REVIEWER_TEMPLATE = """
     若需要修訂，請直接給出 revised_summary。
 
     請只輸出 JSON（不要任何額外文字），格式如下：
-    {
+    {{
     "verdict": "pass"|"revise",
     "revised_summary": string|null,
     "issues": [string]|null,
     "notes": string|null
-    }
+    }}
 
     原文：
     {text}
@@ -94,7 +94,12 @@ def plan_parameters(
     else:
         content = str(res)
 
-    data = _extract_json(str(content))
+    try:
+        data = _extract_json(str(content))
+    except Exception as e:
+        print(f"Planner JSON parse error: {e}. Content: {content}...")
+        return Plan()
+
     if not isinstance(data, dict):
         print("Planner response JSON is not a dict:", data)
         return Plan()
@@ -128,7 +133,12 @@ def review_summary(
     else:
         content = str(res)
 
-    data = _extract_json(str(content))
+    try:
+        data = _extract_json(str(content))
+    except Exception as e:
+        print(f"Reviewer JSON parse error: {e}. Content: {content[:200]}...")
+        return ReviewResult(verdict="pass")
+
     verdict = data.get("verdict") or "pass"
     return ReviewResult(
         verdict=verdict,

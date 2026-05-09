@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional, List
+from typing import Optional, List, Any
 
 
 class TextSplitRequest(BaseModel):
@@ -23,6 +23,7 @@ class SummarizeRequest(BaseModel):
     model: str = "gpt-5-mini"
     use_map: bool = True
     test_mode: bool = False
+    direct_mode: bool = False
     reduce_temple: Optional[str] = None
     map_temple: Optional[str] = None
     reduce_temperature: float = 0.0
@@ -40,6 +41,7 @@ class SummarizeRequest(BaseModel):
 class SummarizeResponse(BaseModel):
     summary: str
     processing_time: float
+    trace: Optional[Any] = None
 
 class HistoryResponse(BaseModel):
     id: str

@@ -1,0 +1,40 @@
+{
+  "mode": "on",
+  "effective_params": {
+    "model": "gpt-5.4-mini",
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1500,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "use_map": true,
+    "map_template": null,
+    "reduce_template": null,
+    "reduce_temperature": 0.0
+  },
+  "plan": {
+    "use_map": true,
+    "chunk_size_1": 12000,
+    "chunk_overlap_1": 1500,
+    "chunk_size_2": 6000,
+    "chunk_overlap_2": 500,
+    "token_max": 12000,
+    "reduce_temperature": 0.0,
+    "model": null,
+    "map_template": null,
+    "reduce_template": null,
+    "notes": "文本很長且屬於結構化政策/審計報告，主題集中但包含大量細節、建議、回應與方法論，適合 map-reduce。相較目前設定，適度縮小第一層 chunk 並降低 overlap，可減少重複內容與成本，同時保留跨段脈絡；第二層保守分段有助於彙整重點、結論與建議。reduce 保持低溫以提升一致性與事實穩定性。"
+  },
+  "review": {
+    "verdict": "revise",
+    "revised_summary": "## IRS Oversight of Third-Party Tax Providers\n\n- GAO reviewed how IRS oversees the security of taxpayer information held by third-party providers such as paid preparers, electronic return originators (EROs), and tax software providers.\n- The report explains that identity theft tax refund fraud involves both theft/compromise of taxpayer data and use of that data to file fraudulent returns.\n- IRS oversight is fragmented across multiple offices, including Stakeholder Liaison, Cybersecurity, Criminal Investigation, Return Preparer Office, SB/SE, EPSS, RICS, and OPR.\n- IRS also uses collaborative mechanisms such as the Security Summit, ISAC, and the Rapid Response Team to share information and respond to threats.\n\n## Key Findings\n\n- IRS’s Authorized e-file Provider program includes security-related requirements, and Revenue Procedure 2007-40 states that violations of the FTC Safeguards Rule may be treated as violations of the program.\n- However, IRS publications do not fully spell out the required elements of an information security program under the FTC Safeguards Rule, and many paid preparers reportedly are unaware of the rule.\n- IRS does not have robust or consistent minimum information security standards across all provider types. Online providers have six additional standards in Publication 1345, but these have not been substantially updated since 2010 and include outdated minimum encryption references.\n- IRS and Security Summit partners voluntarily adopted a subset of NIST SP 800-53 controls for some tax software providers, but these controls are not required for all tax software providers.\n- GAO found no centralized IRS leadership or formal governance structure responsible for coordinating all aspects of protecting taxpayer information held by third parties.\n- IRS monitoring is limited: SB/SE field visits focus mainly on EROs and emphasize physical security and general program compliance more than cybersecurity; staff also lack technical expertise for deeper cybersecurity review.\n- Monitoring of online providers is limited and not fully integrated into the broader monitoring program; IRS can remotely monitor only some of the six online-provider standards.\n- IRS has not recently conducted a comprehensive risk assessment across all provider types to determine which present the greatest fraud or security risks.\n- Security incident reporting requirements are inconsistent. Online providers must report incidents promptly, but paid preparers and EROs are not subject to the same standardized requirement.\n- IRS uses incident data to track fraud trends and protect taxpayer accounts, but it lacks comprehensive documentation of how incident data are collected, routed, stored, and shared across offices.\n\n## Authority Issues\n\n- IRS officials said they lack clear explicit statutory authority to impose or enforce broader system security standards for paid preparers and some other providers, though IRS believes it has implicit authority related to e-filing activities.\n- GAO concluded that without explicit authority, Congress and IRS have limited assurance that third-party systems adequately protect taxpayer data.\n\n## Conclusions and Recommendations\n\n- GAO concluded that IRS’s standards, monitoring, incident reporting, and coordination have not kept pace with evolving cyber threats.\n- GAO made one matter for congressional consideration: Congress should consider giving IRS explicit authority to establish security requirements for the information systems of paid preparers and Authorized e-file Providers.\n- GAO made eight recommendations to IRS:\n  1. Establish a governance structure or centralized leadership for third-party taxpayer information security.\n  2. Modify Authorized e-file Provider requirements to explicitly state the elements of an information security program required by the FTC Safeguards Rule.\n  3. Require all tax software providers in the Authorized e-file Provider program to follow the subset of NIST SP 800-53 controls adopted by Security Summit participants.\n  4. Regularly review and update security requirements for tax software providers and other Authorized e-file Providers.\n  5. Update ERO monitoring to include basic information security and cybersecurity techniques, plus related guidance and training.\n  6. Conduct a risk assessment to determine appropriate monitoring approaches for all provider types and revise the monitoring program as needed.\n  7. Standardize incident reporting requirements for all Authorized e-file Provider types.\n  8. Document intake, storage, and sharing of security incident data across IRS offices.\n- IRS agreed with three recommendations: regularly reviewing and updating security requirements, standardizing incident reporting requirements, and documenting incident-data processes. IRS disagreed with five recommendations, generally citing lack of explicit statutory authority. GAO disagreed with IRS’s position on those five recommendations.",
+    "issues": [
+      "草稿使用了「The meeting focused on」與「The discussion highlighted」等措辭，但原文是 GAO 報告而非會議紀錄，表述不夠忠實。",
+      "草稿遺漏了最重要的結論之一：GAO提出國會應考慮賦予 IRS 明確法定權限（matter for consideration）。",
+      "草稿未完整涵蓋 GAO 的八項具體建議，只籠統提到部分方向。",
+      "草稿的 Action Items 把部分建議寫成一般性行動，未清楚區分 GAO 對 IRS 的正式建議與對國會的建議。",
+      "草稿未提及 IRS 對建議的回應細節：同意3項、不同意5項，且 GAO 反駁 IRS 對部分不同意理由。"
+    ],
+    "notes": "摘要整體結構清楚，但需更忠實反映原文性質，並補足正式結論、建議與 IRS 回應。"
+  }
+}

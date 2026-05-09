@@ -1,0 +1,72 @@
+## Overview of Nursing Home Abuse Oversight
+
+- Nursing homes must comply with federal quality standards to participate in Medicare and Medicaid, including resident rights, quality of care, and quality of life.
+- Oversight is shared by CMS central office, CMS regional offices, state survey agencies, and other state/local agencies.
+- State survey agencies conduct standard surveys and investigate complaints and facility-reported incidents, including abuse allegations.
+
+## Abuse Investigation and Reporting Process
+
+- Nursing homes must immediately report alleged abuse to the state survey agency and conduct their own investigation.
+- Nursing homes must submit a written report of their findings to the state survey agency within 5 working days.
+- If abuse is substantiated, state survey agencies must refer the case to local law enforcement, the MFCU if appropriate, and the nurse aide registry or other applicable licensure authority.
+- If a nurse aide is found responsible for abuse, the finding must be added to the state nurse aide registry, and nursing homes may not employ that aide.
+
+## Enforcement Actions and Facility Response
+
+- Deficiencies cited during surveys or investigations are classified by scope and severity.
+- Nursing homes are usually required to prepare a plan of correction, and surveyors may revisit facilities to verify corrective action.
+- CMS regional offices may impose enforcement actions such as directed in-service training, civil money penalties, denial of payment, or termination from Medicare and Medicaid.
+- Some enforcement actions are not implemented if the nursing home corrects the deficiency before the effective date.
+
+## Trends in Abuse Deficiencies, 2013–2017
+
+- Abuse deficiencies more than doubled, from 430 in 2013 to 875 in 2017.
+- Abuse deficiencies remained less than 1 percent of total deficiencies each year, while total deficiencies decreased slightly over the same period.
+- The share of abuse deficiencies classified as actual harm or immediate jeopardy increased from 31.9 percent in 2013 to 42.6 percent in 2017.
+- The number of nursing homes with at least one abuse deficiency more than doubled, from 394 in 2013 to 821 in 2017.
+- Across the 5-year period, 2,214 unique nursing homes had at least one abuse deficiency; 185 had abuse deficiencies in two consecutive years, and 25 had them in three or more consecutive years.
+
+## Sources and Characteristics of Abuse Deficiencies
+
+- About two-thirds of abuse deficiencies were identified through complaint investigations or facility-reported incident investigations.
+- Facility-reported incident investigations became a larger source of abuse deficiencies over time.
+- In a sample of 2016 and 2017 narrative descriptions, physical abuse and mental/verbal abuse were the most common types, followed by sexual abuse.
+- Staff were the most common perpetrators in the sampled narratives, followed by residents and then others.
+- Most sampled abuse narratives were categorized as isolated in scope.
+
+## Risk Factors for Abuse Identified by Stakeholders
+
+- Reported resident risk factors included infrequent visitors, cognitive impairment, and placement with widely different age groups.
+- Reported staffing-related risk factors included insufficient staffing, inadequate staff training, and inadequate staff screening.
+- Stakeholders said insufficient staffing can contribute to stress, reduced monitoring, and delays in detecting or reporting abuse.
+- Stakeholders said inadequate screening can allow unsafe employees to be hired, including across state lines.
+
+## Challenges in Abuse Investigations
+
+- Stakeholders identified underreporting of abuse as a major challenge.
+- Cognitive impairment can make victims less able to describe incidents or provide reliable statements.
+- Some nursing homes may withhold, delay, or alter information, which can slow or hinder investigations.
+- Multiple agencies involved in investigations can create coordination and information-sharing challenges.
+
+## CMS Oversight Gaps Identified in the Review
+
+- CMS cannot readily access data on abuse type or perpetrator type in its databases.
+- CMS has not provided guidance on what information should be included in facility-reported incidents.
+- CMS has gaps in its referral process that can delay or prevent referrals to law enforcement and MFCUs.
+- CMS does not appear to track whether state survey agencies make required referrals.
+- There is confusion among some state survey agencies about when abuse is considered substantiated.
+- CMS guidance does not clearly specify what information can be shared with law enforcement.
+
+## Recommendations and HHS Response
+
+- GAO made six recommendations to CMS regarding data collection, incident reporting guidance, referral timing, oversight of referrals, substantiation guidance, and law enforcement referral content.
+- HHS concurred with all six recommendations and said it was taking steps to implement them.
+
+## Action Items
+
+- CMS/HHS: Require abuse and perpetrator type to be submitted in CMS databases and systematically assess trends.
+- CMS/HHS: Develop and disseminate standardized guidance for facility-reported incident reporting.
+- CMS/HHS: Require immediate referral of complaints and surveys to law enforcement when there is reasonable suspicion of a crime.
+- CMS/HHS: Conduct oversight to ensure timely referrals to law enforcement and MFCUs.
+- CMS/HHS: Clarify substantiation guidance for abuse allegations when a federal deficiency may not be appropriate.
+- CMS/HHS: Provide guidance on what information should be included in abuse referrals to law enforcement.

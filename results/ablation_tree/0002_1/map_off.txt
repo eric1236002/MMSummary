@@ -1,0 +1,42 @@
+## EPA Advisory Committee Appointment Process
+
+- The meeting reviewed EPA’s three-phase process for appointing advisory committee members: soliciting nominations, evaluating candidates, and obtaining approvals.
+- The process includes developing selection criteria, outreach plans, membership balance plans, draft membership grids, and obtaining concurrence from relevant EPA offices before final appointment decisions.
+- Key EPA offices involved include the Federal Advisory Committee Management Division, the Ethics Office, designated federal officers, deputy ethics officials, and agency leadership.
+- The discussion covered compliance with FACA, federal ethics regulations, and guidance from GSA and OGE.
+
+## Review Findings on Appointment Documentation
+
+- EPA generally followed its established appointment process for most committees reviewed during fiscal year 2017 through the first two quarters of fiscal year 2018.
+- EPA did not follow a key documentation step for 20 appointed members on the Science Advisory Board (SAB) and the Clean Air Scientific Advisory Committee (CASAC).
+- Draft membership grid documents were not prepared for those appointments, and the staff rationales for recommended candidates were not documented in the appointment packets.
+- EPA stated it used a briefing process for SAB and CASAC, but the report concluded that the established documented process was not followed for those committees.
+
+## Ethics Oversight and Financial Disclosure Reviews
+
+- The review found inconsistencies in EPA’s handling of financial disclosure requirements for special government employees (SGEs) serving on advisory committees.
+- Of 74 financial disclosure forms reviewed, 57 had a signed and dated compliance certification by an ethics official, while 17 did not.
+- For 42 forms, it could not be determined whether review occurred within 60 days because the date EPA received the forms was not documented.
+- EPA’s Ethics Office had not periodically evaluated the quality of financial disclosure reviews performed by deputy ethics officials through audits or spot-checks.
+- EPA officials stated that staffing issues in the Ethics Office had affected its oversight activities.
+
+## Committee Characteristics and Meeting Trends
+
+- Most committees reviewed did not show notable changes in composition, regional affiliation, membership turnover, or number of meetings after January 2017.
+- Notable changes included:
+  - a decrease in academic-affiliated members on SAB and BOSC,
+  - an increase in southern-region affiliation on SAB,
+  - higher membership turnover on BOSC, the Clean Air Act Advisory Committee, and the Pesticide Program Dialogue Committee.
+- The number of meetings held by the 18 committees reviewed declined overall over time.
+- Meeting counts decreased by 40% from the period before January 2017 to the period after January 2017, and by 67% when comparing the period before January 2009 to after January 2017.
+
+## EPA Response to the Report
+
+- EPA disagreed with the finding related to the draft membership grid recommendation.
+- EPA agreed with the findings and conclusions related to the ethics oversight recommendation.
+- EPA provided additional comments and data corrections, which were incorporated as appropriate.
+
+## Action Items
+
+- **EPA Administrator:** Direct officials responsible for appointing advisory committee members to prepare and include draft membership grids with staff rationales in appointment packets for all committees.
+- **EPA’s Designated Agency Ethics Official:** Direct the Ethics Office to periodically evaluate the quality of financial disclosure reviews for SGEs, such as through audits or spot-checks.

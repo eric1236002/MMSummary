@@ -1,0 +1,70 @@
+## CCDBG Program Overview and Regulatory Framework
+
+- The Child Care and Development Block Grant (CCDBG) Act is the main federal law governing state child-care programs for low-income working families.
+- The act was reauthorized in 2014, with an emphasis on improving child-care quality and child development.
+- In September 2016, OCC issued CCDF regulations to help states implement the law and administer the program.
+- The regulations align some child-care requirements with Head Start rules, including background checks, annual monitoring, and prelicensure inspections for some providers.
+- State lead agencies must describe in their State Plans effective internal controls to ensure integrity and accountability, including fiscal management, risk identification, training, and regular evaluation of internal controls.
+- State lead agencies must also describe processes to identify fraud or program violations, recover fraudulent payments, and impose sanctions.
+
+## State Plans, Reporting, and Oversight Structure
+
+- Each state submits a 3-year State Plan to OCC for approval and designates a lead agency for CCDF administration.
+- OCC provides a Plan Preprint template and guidance for State Plan development.
+- The fiscal years 2019–2021 Plan Preprint included the new CCDF regulatory requirements and added a request for states to report the results of program-integrity and fraud-fighting activities.
+- OCC’s Program Operations Division and regional staff review and approve State Plans.
+- States are required to report CCDF expenditures and the number of children served by subsidies.
+
+## Improper Payments and Corrective Action Plans
+
+- CCDF is designated as a high-priority program under IPERIA due to susceptibility to significant improper payments.
+- States must estimate and report improper payments on a 3-year rotational cycle.
+- For fiscal year 2019, the CCDF gross improper payment estimate was approximately $325 million, with an estimated improper payment rate of 4.53 percent.
+- States with error rates at or above 10 percent must submit corrective action plans (CAPs) and later provide progress updates.
+- OCC oversees improper-payment reporting by approving preliminary documents, sample changes, Joint Case Reviews, and final reports/CAP submissions.
+
+## OCC Monitoring System and Technical Assistance Tools
+
+- OCC launched a formal Monitoring System in fiscal year 2019 to review selected states annually over the 3-year State Plan period.
+- The Monitoring System is intended to ensure compliance, identify technical-assistance needs, and identify promising practices.
+- It covers 11 topic areas, including program integrity and accountability.
+- OCC also uses the Grantee Internal Controls Self-Assessment Instrument and the Fraud Toolkit as technical-assistance tools.
+- These tools are optional for states and are not used by OCC as formal data-collection instruments.
+
+## Findings on OCC State Plan Review and Program-Integrity Oversight
+
+- OCC had not established written policies to guide staff review and approval of State Plans.
+- OCC relied on draft materials and training documents, but these were not finalized policies for future review periods.
+- Most approved State Plans did not include the results of program-integrity activities as requested.
+- OCC had not defined what it means by “results” of program-integrity activities.
+- OCC had not communicated its informational needs clearly to states or staff.
+- OCC did not have documented criteria for reviewing CAPs to ensure corrective actions address root causes of improper payments and are effectively implemented.
+- OCC also lacked written policies for CAP follow-up and documentation of completed follow-up.
+- OCC’s Monitoring System did not include specific criteria to assess whether states’ program-integrity control activities are effective.
+- OCC did not plan to collect data from the Self-Assessment Instrument or Fraud Toolkit and had not evaluated the feasibility of doing so.
+- ACF had not completed a fraud risk assessment for CCDF, which limits development of an antifraud strategy and fraud risk profile.
+
+## Fraud Risk Management Context
+
+- Fraud risk and actual fraud are distinct concepts; fraud risk can exist even when no fraud has been identified.
+- Federal standards require managers to consider fraud risks when identifying and responding to risks.
+- GAO’s Fraud Risk Framework and OMB guidance outline leading practices for assessing and addressing fraud risks.
+- The report notes that CCDF oversight activities could support an antifraud strategy, but a formal fraud risk assessment is still needed.
+
+## Recommendations and Agency Response
+
+- GAO made nine recommendations: eight to OCC and one to ACF.
+- The recommendations address written policies for State Plan review, defining and communicating information needs, CAP review criteria, CAP follow-up policies, criteria for assessing program-integrity effectiveness, evaluating the feasibility of collecting information from technical-assistance tools, and completing a fraud risk assessment.
+- HHS concurred with all recommendations.
+
+## Action Items
+
+- Director of OCC: Establish internal written policies for the State Plan review and approval process.
+- Director of OCC: Define informational needs related to the results of program-integrity activities.
+- Director of OCC: Communicate informational needs related to program-integrity results to states.
+- Director of OCC: Communicate informational needs related to program-integrity results to staff.
+- Director of OCC: Develop documented criteria for reviewing CAPs to ensure corrective actions address root causes and are effectively implemented.
+- Director of OCC: Complete written policies for the CAP follow-up process.
+- Director of OCC: Develop and document criteria to assess the effectiveness of states’ program-integrity control activities.
+- Director of OCC: Evaluate the feasibility of collecting information from the Self-Assessment Instrument and Fraud Toolkit.
+- Assistant Secretary for ACF: Conduct a fraud risk assessment for CCDF to support development of an antifraud strategy.

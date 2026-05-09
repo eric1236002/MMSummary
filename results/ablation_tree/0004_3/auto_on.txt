@@ -1,0 +1,73 @@
+## Oversight and Investigation Structure
+
+- Nursing home oversight is shared among CMS central office, CMS regional offices, and state survey agencies.
+- CMS central office oversees federal nursing home standards and issues guidance through the State Operations Manual.
+- CMS regional offices oversee state activities and evaluate state surveyor performance.
+- State survey agencies conduct unannounced standard surveys and investigate complaints and facility-reported incidents.
+- Nursing homes must report alleged abuse immediately to the state survey agency, conduct their own investigation, and submit a written report within 5 working days.
+- Substantiated abuse must be referred to local law enforcement, the Medicaid Fraud Control Unit if appropriate, and the nurse aide registry or other relevant licensing authority.
+
+## Enforcement Actions
+
+- CMS may impose enforcement actions when deficiencies are cited, including directed in-service training, civil money penalties, denial of payment, and termination from Medicare and Medicaid participation.
+- Some penalties are immediate, while others may be avoided if the nursing home corrects the issue before the effective date.
+- Mandatory termination for abuse deficiencies was extremely rare during the review period.
+
+## Abuse Investigation Challenges and Coordination
+
+- Other entities involved in abuse investigations may include Adult Protective Services, long-term care ombudsmen, local law enforcement, and Medicaid Fraud Control Units.
+- Stakeholders reported delays in investigations when nursing homes delay access to records or alter records after incidents.
+- Cooperation from nursing homes was described as inconsistent and sometimes dependent on the seriousness of the allegation.
+- Multiple agencies involved in investigations can create coordination challenges.
+- Some stakeholders said CMS restrictions limit what information state survey agencies can share with law enforcement.
+
+## CMS Data Limitations and Reporting Gaps
+
+- CMS does not readily access data on abuse type or perpetrator type in its datasets.
+- In two CMS datasets, state survey agencies are not required to record abuse type and perpetrator type.
+- CMS officials stated their understanding of abuse patterns is based on professional experience, literature, and ad hoc analysis rather than systematic collection of abuse-type data.
+- Facility-reported incident information was often described by state survey agencies as incomplete, requiring follow-up and delaying investigations.
+- CMS has not provided guidance on what information must be included in facility-reported incident reports.
+
+## Trends in Abuse-Related Deficiencies
+
+- Abuse deficiencies increased from 430 in 2013 to 875 in 2017.
+- Abuse deficiencies remained less than 1% of all deficiencies, but became more frequent over time.
+- The share of abuse deficiencies causing actual harm or immediate jeopardy increased from 31.9% in 2013 to 42.6% in 2017.
+- Abuse-related deficiencies increased from 4,899 in 2013 to 5,383 in 2017, with a peak in 2016 at 5,687.
+- More than half of abuse-related deficiencies each year were identified through standard surveys.
+- The proportion identified through complaint investigations and facility-reported incident investigations increased over time.
+
+## Nursing Home Patterns
+
+- The number of nursing homes with at least one abuse deficiency more than doubled from 394 in 2013 to 821 in 2017.
+- 2,214 unique nursing homes had at least one abuse deficiency over the five-year period.
+- Some nursing homes had abuse deficiencies in multiple consecutive years, suggesting recurring issues.
+- For-profit nursing homes and Special Focus Facilities were more represented among homes with repeated abuse deficiencies.
+
+## Types of Abuse and Perpetrators
+
+- In sampled CMS narratives from 2016 and 2017, physical abuse and mental/verbal abuse were the most common types, followed by sexual abuse.
+- Staff were the most common perpetrators, followed by residents, then other individuals such as family members or visitors.
+- Mental/verbal abuse was less often categorized as severe than physical or sexual abuse.
+- Most narratives were categorized as isolated incidents in scope.
+
+## Risk Factors for Abuse
+
+- Resident-related risk factors included lack of frequent visitors, cognitive impairment, and mixing residents with widely different age groups.
+- Staffing-related risk factors included insufficient staffing, inadequate staff training on abuse, and inadequate staff screening.
+
+## Recommendations and HHS Response
+
+- The report included six recommendations to CMS on data collection, guidance, referral requirements, oversight, substantiation guidance, and law enforcement referral content.
+- HHS concurred with all six recommendations.
+- HHS stated it would explore options to require abuse and perpetrator type data, develop standardized guidance for facility-reported incidents, require immediate referrals when reasonable suspicion of a crime exists, consider mechanisms for tracking referrals, clarify substantiation guidance, and develop standardized referral elements.
+
+## Action Items
+
+- **CMS/HHS**: Evaluate options to require state survey agencies to record abuse type and perpetrator type in CMS databases.
+- **CMS/HHS**: Develop and issue standardized guidance and a template for facility-reported incident information.
+- **CMS/HHS**: Update referral requirements so state survey agencies immediately refer qualifying complaints and surveys to law enforcement and MFCUs when applicable.
+- **CMS/HHS**: Oversee state survey agencies to ensure timely referrals of complaints, surveys, and substantiated incidents.
+- **CMS/HHS**: Clarify guidance on when allegations verified by evidence should be substantiated and reported even if citing a federal deficiency is not appropriate.
+- **CMS/HHS**: Provide guidance on what information should be included in referrals of abuse allegations to law enforcement.

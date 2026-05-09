@@ -1,0 +1,54 @@
+## Overview of EPA Advisory Committee Appointment Requirements
+
+- Federal laws, regulations, and policies establish requirements for EPA advisory committee appointments, including balanced membership, ethics review, and public access to committee records.
+- EPA’s Federal Advisory Committee Management Division oversees committee management and created the Federal Advisory Committee Handbook to clarify roles and responsibilities.
+- EPA’s Ethics Office, through the Designated Agency Ethics Official and deputy ethics officials, oversees financial disclosure and conflict-of-interest review for prospective committee members.
+- GSA maintains the government-wide FACA database and requires annual review and data submission for advisory committees.
+
+## EPA Advisory Committee Types and Member Classifications
+
+- EPA may establish non-discretionary committees when required by statute or presidential direction.
+- EPA may establish discretionary committees at the Administrator’s direction when they provide a unique perspective on EPA programs or operations.
+- EPA can appoint members as federal employees, special government employees (SGEs), or non-employee representatives depending on the circumstances.
+- OGE guidance states that SGEs are generally subject to federal ethics rules and financial disclosure requirements, while representatives generally are not.
+
+## EPA Appointment Process for Advisory Committee Members
+
+- EPA’s established process includes three main phases: soliciting nominations, evaluating candidates, and obtaining approvals.
+- Soliciting nominations includes developing selection criteria, preparing outreach plans, developing membership balance plans for discretionary committees, and contacting nominees.
+- Evaluating candidates includes comparing candidates to selection criteria, preparing a draft membership grid with primary and alternate candidates, and reviewing financial disclosure forms for applicable candidates.
+- Approvals involve review by the Federal Advisory Committee Management Division, legal review by the Office of General Counsel, approval by an Assistant Administrator or Regional Administrator, and final appointment by the Administrator or Deputy Administrator.
+
+## Findings on EPA Compliance with Its Established Process
+
+- From fiscal year 2017 through the first two quarters of fiscal year 2018, EPA generally followed its established process for most advisory committees reviewed.
+- All 14 discretionary committees reviewed developed membership balance plans.
+- 20 of the 22 appointment packets reviewed included draft membership grid documents.
+- 21 of the 22 appointment packets reviewed included documentation of Office of General Counsel review.
+
+## FY 2018 SAB and CASAC Appointment Process Issue
+
+- EPA did not follow a key step in its established process for 20 committee members appointed to SAB and CASAC in fiscal year 2018.
+- The FY 2018 appointment packets for SAB and CASAC did not include draft membership grid documents.
+- EPA officials said management requested briefings instead of draft membership grids.
+- EPA stated that staff presented options and public-comment summaries during briefings, and management selected members after reviewing the full list of nominees.
+
+## Financial Disclosure and Ethics Review Findings
+
+- EPA did not consistently ensure that 74 SGEs appointed or reappointed from fiscal year 2017 through the first two quarters of fiscal year 2018 met federal financial disclosure requirements.
+- 57 of 74 financial disclosure forms were signed and dated by an ethics official as in compliance with federal ethics rules.
+- 17 of 74 forms did not have an ethics official signature and date indicating compliance.
+- For 42 of 74 forms, the review timing within 60 days could not be determined because receipt dates were not documented.
+- Prior OGE review had also identified weaknesses in EPA’s ethics program.
+
+## Internal Control and Documentation Concerns
+
+- The report noted that EPA’s use of briefing documents did not replace the handbook’s requirement to document staff rationales in draft membership grids.
+- The absence of these documents in appointment packets limited EPA’s ability to demonstrate how it selected candidates to achieve balanced membership.
+- The report stated that better documentation would help EPA meet FACA’s purpose of uniform appointment procedures and support internal control requirements for clear recordkeeping.
+
+## Action Items
+
+- EPA: Follow the established appointment process, including preparing draft membership grid documents for committee appointments.
+- EPA Ethics Office / deputy ethics officials: Ensure timely review, signature, and dating of financial disclosure forms for SGEs.
+- EPA: Periodically evaluate ethics program compliance through audits or spot-checks.

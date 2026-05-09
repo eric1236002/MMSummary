@@ -1,0 +1,31 @@
+## Program Integrity Oversight and CAP Review
+
+- OCC/ACF lacked clear written policies for overseeing CCDF program integrity.
+- Criteria for CAP review, follow-up tracking, and monitoring were not clearly defined.
+- Information needs for oversight and review processes were not clearly specified.
+
+## Impact of Current Gaps
+
+- There was no assurance that state corrective actions addressed the root causes of improper payments.
+- There was no assurance that program-integrity controls were effective.
+- Available tools were not fully used to gather information for monitoring fraud risk.
+- The CCDF fraud risk assessment / antifraud strategy had not yet been completed.
+
+## GAO Recommendations and HHS Response
+
+- GAO made 9 recommendations, including:
+  - Requiring OCC to establish written policies.
+  - Defining information requirements.
+  - Creating standards for CAP review and follow-up.
+  - Establishing criteria to assess program-integrity effectiveness.
+  - Evaluating the feasibility of using available tools to collect monitoring data.
+  - Requiring ACF to complete the fraud risk assessment.
+- HHS agreed with all 9 recommendations.
+
+## Action Items
+
+- OCC: Develop written policies for CCDF program-integrity oversight.
+- OCC: Define information needs for oversight, CAP review, and monitoring.
+- OCC: Establish standards for CAP review, follow-up tracking, and program-integrity effectiveness assessment.
+- OCC: Evaluate the feasibility of using available tools to collect information for fraud monitoring.
+- ACF: Complete the CCDF fraud risk assessment / antifraud strategy.

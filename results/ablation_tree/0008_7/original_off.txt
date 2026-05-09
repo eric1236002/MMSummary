@@ -1,0 +1,64 @@
+## Cybersecurity Risks and Third-Party Tax Data Protection
+
+- Federal agencies, including IRS, rely on computerized systems and electronic data to carry out operations and protect sensitive taxpayer information.
+- Third-party providers such as paid preparers and tax software providers retain large amounts of taxpayer data and are targets for data theft and identity theft refund fraud.
+- Identity theft tax refund fraud involves stealing taxpayer data and then using it to file fraudulent returns and claim refunds.
+
+## IRS Oversight Structure for Third-Party Providers
+
+- Multiple IRS offices have responsibilities related to third-party provider security oversight, including Stakeholder Liaison, Cybersecurity, Criminal Investigation, Return Preparer Office, Small Business/Self-Employed Examination, Electronic Products and Services Support, Return Integrity and Compliance Services, and Office of Professional Responsibility.
+- The Office of Professional Responsibility administers practitioner regulations but does not oversee third-party information security.
+- IRS coordinates some activities across offices, but there is no centralized leadership or formal governance structure for protecting taxpayer information held by third-party providers.
+
+## Existing Security Requirements and Gaps
+
+- IRS uses the Authorized e-file Provider program to prescribe requirements for certain third-party providers.
+- IRS Revenue Procedure 2007-40 states that compliance with the FTC Safeguards Rule is required for participation in the program.
+- IRS publications reference the FTC Safeguards Rule but do not fully explain the required elements of a written information security program.
+- IRS has specific security standards for online providers, but not for all provider types.
+- IRS does not have a robust set of minimum information security standards for all tax software providers or paid preparers.
+- IRS has not fully incorporated the NIST Special Publication 800-53 controls agreed to by Security Summit participants into requirements for all tax software providers.
+- The security standards for online providers in Publication 1345 have not been substantially updated since 2010.
+- One referenced encryption minimum, TLS 1.0, is outdated compared with NIST and industry guidance.
+
+## Outreach and Education Efforts
+
+- IRS uses publications, webinars, forums, social media, news releases, and campaigns to educate third-party providers about security risks and leading practices.
+- Outreach examples included the Tax Security 101 campaign, tax forums, webinars, YouTube videos, and Twitter posts.
+- IRS and industry groups noted that outreach is harder to reach small paid preparers who are not connected to larger industry channels.
+
+## Monitoring and Compliance Oversight
+
+- IRS monitoring is focused primarily on Electronic Return Originators (EROs) and physical information security.
+- Monitoring guidance and job aids provide limited direction on cybersecurity or electronic information security controls.
+- IRS officials stated that revenue agents do not have the technical expertise to fully assess cybersecurity controls.
+- Monitoring for online providers is limited and not systematic across all six online-provider standards.
+- IRS has not recently assessed whether different monitoring approaches are needed for different provider types.
+- IRS’s monitoring approach has not been substantially updated since 2011.
+
+## Security Incident Reporting and Data Use
+
+- Security incident reporting requirements apply differently across provider types.
+- Online providers must report incidents promptly; paid preparers and EROs are not subject to the same standardized reporting requirement.
+- IRS uses incident information for fraud detection, trend analysis, account monitoring, and criminal investigations.
+- IRS tracks incidents in the RICS Incident Management Database, but does not have a comprehensive document describing intake, storage, and sharing of incident data across IRS offices.
+- Some reporting and sharing mechanisms are voluntary, including Security Summit and ISAC channels.
+
+## GAO Conclusions and Recommendations
+
+- GAO concluded that IRS’s third-party provider security requirements have not kept pace with changing cyber risks.
+- GAO noted missed opportunities due to lack of centralized leadership, outdated standards, inconsistent monitoring, and inconsistent incident reporting.
+- GAO stated that Congress should consider providing IRS explicit authority to establish security requirements for the systems of paid preparers and Authorized e-file Providers.
+- IRS agreed with three recommendations and disagreed with five.
+
+## Action Items
+
+- Congress: Consider providing IRS explicit authority to establish security requirements for the information systems of paid preparers and Authorized e-file Providers.
+- Commissioner of Internal Revenue: Develop a governance structure or centralized leadership to coordinate taxpayer information protection efforts at third-party providers.
+- Commissioner of Internal Revenue: Modify Authorized e-file Provider requirements to explicitly state the FTC Safeguards Rule information security program elements.
+- Commissioner of Internal Revenue: Require all tax software providers in the Authorized e-file Provider program to follow the agreed subset of NIST Special Publication 800-53 controls.
+- Commissioner of Internal Revenue: Regularly review and update security requirements for tax software providers and other Authorized e-file Providers.
+- Commissioner of Internal Revenue: Update ERO monitoring programs to include basic information security and cybersecurity techniques, and revise guidance, job aids, and training as needed.
+- Commissioner of Internal Revenue: Conduct a risk assessment of monitoring approaches for all Authorized e-file Provider types and revise monitoring accordingly if needed.
+- Commissioner of Internal Revenue: Standardize incident reporting requirements for all Authorized e-file Providers.
+- Commissioner of Internal Revenue: Document the intake, storage, and sharing of security incident data across IRS offices.

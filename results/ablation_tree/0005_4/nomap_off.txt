@@ -1,0 +1,71 @@
+## IWTU Reengineering Project Assessment
+
+- The meeting reviewed DOE EM’s management of the IWTU reengineering project.
+- GAO assessed the project’s cost estimate, schedule estimate, and earned value management (EVM) data against best practices.
+- The project was reported to be in phase two as of March 2019, with phase one focused on identifying problems and phase two focused on implementing corrections.
+- By February 2019, spending on the first two phases was about $150 million, exceeding the original estimate by about $64 million.
+- The project was more than one year behind schedule.
+- Future phases were expected to require additional shutdowns, adjustments, and testing.
+
+## Cost and Schedule Estimation
+
+- GAO found the cost estimate only partially met best practices.
+- The estimate was not built using a standard work breakdown structure.
+- It did not include full life-cycle costs because later phases had not yet been fully estimated.
+- Assumptions and risk explanations in the cost estimate were insufficient.
+- GAO found the schedule estimate partially met best practices.
+- The schedule had logical sequencing overall, but contained long-duration activities and some unreasonable positive and negative float.
+- Several activities showed negative float, indicating schedule delays.
+- GAO noted that weak cost and schedule estimates limit management’s ability to plan resources and assess risk.
+
+## EVM Data and Management Use
+
+- EM had an EVM system and used it for decision-making.
+- GAO found the EVM system was sufficiently comprehensive and useful for management purposes.
+- GAO found the reliability of the EVM data only partially met best practices.
+- The data contained missing and negative values, and these anomalies were not fully explained in monthly reporting.
+- GAO concluded that unreliable EVM data could weaken management oversight.
+
+## DOE Operational Release Oversight
+
+- DOE established an operational release milestone in 2016 for projects with startup risk.
+- EM submitted an operational release plan and provided multiple progress briefings to PMRC.
+- EM did not fully meet the requirement for quarterly reporting.
+- PMRC had recommended clarifying authorization responsibilities before startup.
+
+## SBW Disposal Challenges
+
+- Sodium-bearing waste (SBW) was treated as mixed high-level waste because it contained both radioactive and hazardous chemical components.
+- Disposal of SBW was constrained by federal law, EPA/RCRA requirements, and state-authorized procedures.
+- EM preferred disposal at WIPP, but three major barriers remained:
+  - WIPP permit restrictions
+  - Federal legal restrictions on high-level waste disposal at WIPP
+  - Limited WIPP disposal capacity
+- DOE was seeking a new interpretation of the legal definition of high-level waste.
+- DOE had not provided a clear timeline for policy or regulatory changes.
+- GAO noted that applying the new interpretation to SBW could lead to long-term litigation.
+
+## Calcine Waste Disposal Challenges
+
+- EM had previously selected hot isostatic pressing as a treatment approach for calcine waste.
+- Development of that approach was later paused because the technology was not mature, costs were high, and regulatory uncertainty remained.
+- EM was evaluating bin set removal/retrieval testing and possible direct disposal options.
+- No final disposal pathway or timeline had been established for calcine waste.
+
+## GAO Conclusions and Recommendations
+
+- GAO concluded that EM had made progress in some technical and oversight areas, but major gaps remained in cost estimation, scheduling, EVM data reliability, and waste disposal planning.
+- GAO made five recommendations:
+  - Improve cost estimating practices.
+  - Improve schedule estimating practices.
+  - Ensure EVM data reliability.
+  - Develop a disposal strategy and timeline for SBW.
+  - Develop a treatment/disposal strategy and timeline for calcine waste.
+
+## Action Items
+
+- DOE EM: Improve IWTU reengineering project cost estimates and align them with best practices.
+- DOE EM: Improve IWTU reengineering project schedule estimates and align them with best practices.
+- DOE EM: Ensure the reliability of EVM data used for IWTU project oversight.
+- DOE EM: Develop a strategy and timeline for SBW disposal.
+- DOE EM: Develop a strategy and timeline for calcine waste treatment and disposal.

@@ -1,0 +1,50 @@
+## Background
+- The CCDBG Act is the main federal law governing state child-care programs for low-income working families. Its 2014 reauthorization and the 2016 CCDF regulations emphasized child-care quality, program integrity, and state flexibility.
+- States must submit 3-year CCDF State Plans to OCC for approval, report expenditures and children served, and estimate/report improper payments on a 3-year cycle.
+- CCDF is designated a high-priority program for improper-payment oversight under IPERIA.
+
+## Key Findings
+
+### 1. State Plan review process lacked finalized written policies
+- OCC reviewed and approved the fiscal years 2019–2021 State Plans, but had not finalized written policies governing how staff should review and approve those plans.
+- Instead, OCC relied on draft procedures, training materials, and discussions. This limited consistency across reviews and regions and increased the risk of losing organizational knowledge when staff turnover occurs.
+
+### 2. Program-integrity results were requested but usually not provided
+- OCC added instructions in the 2019–2021 Plan Preprint asking states to report the results of their program-integrity and fraud-fighting activities.
+- However, 43 of 51 approved State Plans did not provide those results.
+- OCC had not defined what counts as “results,” had not clearly communicated its informational needs to states or staff, and approved plans without that information because it was requested on an informational rather than regulatory basis.
+
+### 3. Corrective Action Plan (CAP) oversight was weak
+- States with improper-payment error rates of 10 percent or more must submit CAPs.
+- Since 2013, seven states submitted 14 CAPs, but OCC lacked documented criteria for reviewing whether proposed corrective actions addressed the root causes of improper payments and were effectively implemented.
+- OCC also lacked written policies and documentation for CAP follow-up, which undermined consistent oversight.
+
+### 4. Monitoring system did not assess effectiveness using defined criteria
+- OCC launched a formal Monitoring System in fiscal year 2019 to review about one-third of states each year during the 3-year State Plan period.
+- The system aims to ensure compliance, identify technical-assistance needs, and identify promising practices.
+- Although program integrity and accountability are included in monitoring, OCC did not have specific criteria for assessing whether states’ program-integrity and fraud-fighting controls were actually effective; states also had broad flexibility in the evidence they submitted.
+
+### 5. OCC was not using technical-assistance tools as a monitoring information source
+- OCC offers the Grantee Internal Controls Self-Assessment Instrument and the Fraud Toolkit as voluntary technical-assistance tools.
+- OCC did not plan to collect data from these tools for monitoring purposes and had not evaluated the feasibility or benefits of doing so, even though such information could help assess and improve fraud risk management.
+
+### 6. ACF/OCC had not completed a fraud risk assessment or antifraud strategy
+- Although federal standards and GAO’s Fraud Risk Framework call for agencies to assess fraud risks and develop an antifraud strategy, ACF had not completed a fraud risk assessment or fraud risk profile for CCDF.
+- ACF was developing a fraud risk assessment template with CCDF as a pilot, but the effort was on hold due to competing priorities.
+
+## Overall Conclusion
+- OCC and states share responsibility for protecting CCDF program integrity, but OCC’s oversight had several gaps: lack of finalized written policies, weak information requirements for program-integrity results, insufficient CAP review and follow-up guidance, no defined criteria for assessing control effectiveness, limited use of available technical-assistance information, and no completed fraud risk assessment or antifraud strategy.
+
+## Recommendations
+GAO made nine recommendations, and HHS concurred:
+- **To the OCC Director:**
+  1. Finalize written policies for State Plan review and approval.
+  2. Define informational needs related to the results of program-integrity activities.
+  3. Communicate those informational needs to states.
+  4. Communicate those informational needs to OCC staff.
+  5. Develop documented criteria for reviewing CAPs to ensure actions address root causes and are effectively implemented.
+  6. Complete written policies for CAP follow-up.
+  7. Develop and document criteria for assessing the effectiveness of states’ program-integrity control activities.
+  8. Evaluate the feasibility of collecting information from the Self-Assessment Instrument and Fraud Toolkit, such as through the Monitoring System.
+- **To the Assistant Secretary for ACF:**
+  9. Ensure ACF conducts a fraud risk assessment to support development of a documented antifraud strategy for CCDF.
