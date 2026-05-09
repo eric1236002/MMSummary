@@ -12,13 +12,32 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def init_llm(temperature, model, max_tokens=1000):
-    if model.lower().startswith("gpt"):
-        return ChatOpenAI(
-            temperature=temperature, 
-            model=model, 
-            api_key=os.environ.get('OPENAI_API_KEY'), 
-            max_tokens=max_tokens
-        )
+    model_lower = (model or "").lower()
+
+    def _uses_max_completion_tokens(model_name: str) -> bool:
+        # Some newer OpenAI models (e.g. GPT-5 family) reject `max_tokens` and require
+        # `max_completion_tokens` instead.
+        return model_name.startswith("gpt-5")
+
+    def _restricts_temperature(model_name: str) -> bool:
+        # Some models only support the provider default temperature.
+        return model_name.startswith("gpt-5")
+
+    if model_lower.startswith("gpt"):
+        kwargs = {
+            "model": model,
+            "api_key": os.environ.get("OPENAI_API_KEY"),
+        }
+        if _restricts_temperature(model_lower):
+            kwargs["temperature"] = 1
+        else:
+            kwargs["temperature"] = temperature
+        if max_tokens is not None:
+            if _uses_max_completion_tokens(model_lower):
+                kwargs["model_kwargs"] = {"max_completion_tokens": max_tokens}
+            else:
+                kwargs["max_tokens"] = max_tokens
+        return ChatOpenAI(**kwargs)
     else:
         return ChatOpenAI(
             base_url="https://openrouter.ai/api/v1",
@@ -94,6 +113,8 @@ def process_reduce_results(combined_map_results, token_max, model, reduce_templa
     return res
 
 def split_text(text, chunk_size, chunk_overlap):
+    if chunk_size is None or int(chunk_size) <= 0:
+        return []
     text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
         separator=" ",
         chunk_size=chunk_size,
@@ -117,9 +138,11 @@ def generate_summary(text: str, model: str, chunk_size_1: int, chunk_overlap_1: 
     
     combined_map_results = []
     
-    if use_map:
-        map1_results = process_map_results(split_docs1, model, map_template=map_template)
-        map2_results = process_map_results(split_docs2, model, map_template=map_template)
+    if not split_docs1 and not split_docs2:
+        combined_map_results = [Document(page_content=text)]
+    elif use_map:
+        map1_results = process_map_results(split_docs1, model, map_template=map_template) if split_docs1 else []
+        map2_results = process_map_results(split_docs2, model, map_template=map_template) if split_docs2 else []
         combined_map_results = map1_results + map2_results
     else:
         combined_map_results = split_docs1 + split_docs2

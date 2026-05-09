@@ -13,6 +13,7 @@ describe('SettingsSection Component', () => {
         token_max: 16000,
         temperature: 0.0,
         strategy: "map",
+        agent_mode: "off",
         reduce_temple: "",
         map_temple: "",
         reduce_temperature: 0.0,

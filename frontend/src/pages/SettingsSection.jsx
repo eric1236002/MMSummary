@@ -120,6 +120,20 @@ function SettingsSection({ settings, onChange, t }) {
           </Box>
 
           <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 2 }}>
+
+            <FormControl fullWidth>
+              <InputLabel id="agent-mode-select-label">{t.agentMode}</InputLabel>
+              <Select
+                labelId="agent-mode-select-label"
+                label={t.agentMode}
+                value={settings.agent_mode}
+                onChange={(e) => handleChange('agent_mode', e.target.value)}
+                sx={{ borderRadius: '12px' }}
+              >
+                <MenuItem value="off">{t.agentModeoff}</MenuItem>
+                <MenuItem value="on">{t.agentModeon}</MenuItem>
+              </Select>
+            </FormControl>
             <FormControl fullWidth>
               <InputLabel id="strategy-select-label">{t.strategy}</InputLabel>
               <Select
@@ -127,6 +141,7 @@ function SettingsSection({ settings, onChange, t }) {
                 label={t.strategy}
                 value={settings.strategy}
                 onChange={(e) => handleChange('strategy', e.target.value)}
+                disabled={settings.agent_mode === 'on'}
                 sx={{ borderRadius: '12px' }}
               >
                 <MenuItem value="map">Map-Reduce</MenuItem>

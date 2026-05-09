@@ -21,6 +21,7 @@ function App() {
     temperature: 0.0,
     strategy: "map",
     test_mode: false,
+    agent_mode: "off",
     map_temple: "", // read from temple dir
     reduce_temple: "", // read from temple
     reduce_temperature: 0.0,
@@ -49,7 +50,8 @@ function App() {
         reduce_temple: settings.reduce_temple,
         map_temple: settings.map_temple,
         reduce_temperature: settings.reduce_temperature,
-        test_mode: settings.test_mode
+        test_mode: settings.test_mode,
+        agent_mode: settings.agent_mode
       });
       setResult({
         summary: response.data.summary,

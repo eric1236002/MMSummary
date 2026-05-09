@@ -27,6 +27,16 @@ class SummarizeRequest(BaseModel):
     map_temple: Optional[str] = None
     reduce_temperature: float = 0.0
 
+    # Agent orchestration (opt-in)
+    agent_mode: str = "off"  # "off" | "on"
+    quality_check: bool = True
+    max_iters: int = 1
+
+    # Optional separate models for planner/reviewer
+    agent_model: Optional[str] = None
+    planner_model: Optional[str] = None
+    reviewer_model: Optional[str] = None
+
 class SummarizeResponse(BaseModel):
     summary: str
     processing_time: float
