@@ -6,11 +6,11 @@ permissions:
 
 on:
   push:
-    branches: [main]
+    branches: [main, doc-update]
     paths-ignore:
       - ".github/docs-sync-needed/**"
   pull_request:
-    branches: [main]
+    branches: [main, doc-update]
     types: [closed]
     paths-ignore:
       - ".github/docs-sync-needed/**"
@@ -133,4 +133,4 @@ jobs:
           branch: "chore/docs-sync-${{ github.run_id }}"
           delete-branch: true
           add-paths: |
-            .github/docs-sync-needed/${{ github.sha }}.md
+            .github/docs-sync-needed/*.md
