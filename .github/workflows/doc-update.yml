@@ -5,14 +5,19 @@ permissions:
   pull-requests: write
 
 on:
+  push:
+    branches: [main, doc-update]
+    paths-ignore:
+      - ".github/docs-sync-needed/**"
   pull_request:
-    branches: [main]
+    branches: [main, doc-update]
     types: [closed]
-  workflow_dispatch: # 允許手動觸發測試
+    paths-ignore:
+      - ".github/docs-sync-needed/**"
 
 jobs:
   auto-update:
-    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    if: github.event_name == 'push' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
@@ -46,7 +51,5 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "docs: auto-update README and README_ZH via LLM [skip ci]"
-            # 獲取遠端變更並 rebase，防止衝突
-            git pull origin main --rebase
-            git push origin HEAD:main
+            git push
           fi
