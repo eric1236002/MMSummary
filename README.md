@@ -2,7 +2,6 @@ Here is the updated content for the README.md and README_ZH.md files based on th
 
 ### Updated README.md
 
-```markdown
 # MMSummary - Meeting Minutes Summarization Tool
 
 [中文版 (Chinese Version)](./README_ZH.md)
@@ -182,4 +181,3 @@ See the [Kubernetes Deployment Guide](./k8s/README.md) for detailed instructions
     *   Enable "Test Mode" to verify the flow without consuming API credits.
 3.  **History**:
     *   View and management previously generated summaries.
-```
