@@ -38,7 +38,7 @@ jobs:
       - name: Run LLM Sync Script
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          LLM_MODEL: "gpt-4o"
+          LLM_MODEL: "gpt-5.4-mini"
         run: |
           python scripts/sync_docs.py
 
