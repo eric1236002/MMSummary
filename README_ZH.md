@@ -1,3 +1,6 @@
+### Updated README_ZH.md
+
+```markdown
 # MMSummary - 會議記錄摘要工具
 
 [English Version](./README.md)
@@ -65,6 +68,7 @@ MMSummary 是一個強大的全端網頁應用程式，專為自動摘要長篇�
 本專案透過 GitHub Actions 實現自動化 CI/CD：
 - **CI (ci.yml)**：每當有 Pull Request 或推送至 `main` 分支時自動執行。負責檢查後端依賴、執行 Python 測試 (pytest)，並驗證前端是否能成功建構。
 - **CD (cd.yml)**：當推送版本標籤（如 `v1.0.0`）或手動觸發時，自動建構 Docker 映像檔並推送至 GitHub Container Registry (GHCR)。
+- **文檔更新 (doc-update.yml)**：當變更推送至 `main` 或 `doc-update` 分支時，自動更新文檔，排除 `.github/docs-sync-needed/**` 路徑下的文件。
 
 ## 專案結構
 
@@ -175,3 +179,4 @@ MMSummary/
     *   啟用 "測試模式" 以驗證流程而不消耗 API 額度。
 3.  **歷史記錄**:
     *   查看與管理過往生成的摘要紀錄。
+```

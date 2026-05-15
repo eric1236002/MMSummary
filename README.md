@@ -1,3 +1,8 @@
+Here is the updated content for the README.md and README_ZH.md files based on the recent code changes:
+
+### Updated README.md
+
+```markdown
 # MMSummary - Meeting Minutes Summarization Tool
 
 [中文版 (Chinese Version)](./README_ZH.md)
@@ -66,6 +71,7 @@ To validate the effectiveness of our text processing strategies, we conducted an
 The project includes an automated CI/CD pipeline via GitHub Actions:
 - **CI (ci.yml)**: Automatically runs on every Pull Request or push to `main`. It performs backend dependency checks, runs Python tests (pytest), and verifies that the frontend can build successfully.
 - **CD (cd.yml)**: Triggers when a new version tag (e.g., `v1.0.0`) is pushed. It builds Docker images for both backend and frontend and pushes them to GitHub Container Registry (GHCR).
+- **Documentation Update (doc-update.yml)**: Automatically updates documentation when changes are pushed to `main` or `doc-update` branches, excluding paths under `.github/docs-sync-needed/**`.
 
 ## Project Structure
 
@@ -176,3 +182,4 @@ See the [Kubernetes Deployment Guide](./k8s/README.md) for detailed instructions
     *   Enable "Test Mode" to verify the flow without consuming API credits.
 3.  **History**:
     *   View and management previously generated summaries.
+```
