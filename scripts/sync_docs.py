@@ -1,3 +1,4 @@
+import json
 import os
 import requests
 import sys
@@ -5,7 +6,7 @@ import sys
 def get_completion(prompt):
     api_key = os.getenv("LLM_API_KEY") 
     api_url = os.getenv("LLM_API_URL", "https://api.openai.com/v1/chat/completions")
-    model_name = os.getenv("LLM_MODEL", "gpt-5.4-mini")
+    model_name = os.getenv("LLM_MODEL", "gpt-4o")
     
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -26,6 +27,23 @@ def get_completion(prompt):
         sys.exit(1)
 
 import subprocess
+
+def extract_json_payload(text):
+    """
+    Try to parse JSON from LLM output. If extra text is present, extract
+    the outermost JSON object.
+    """
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        pass
+
+    start = text.find("{")
+    end = text.rfind("}")
+    if start == -1 or end == -1 or end <= start:
+        raise ValueError("No JSON object found in LLM output.")
+
+    return json.loads(text[start : end + 1])
 
 def get_git_diff():
     # 獲取當前分支與 main 主分支的差異
@@ -53,47 +71,57 @@ def main():
 
     prompt = f"""
     You are a technical documentation maintainer. Your task is to update the documentation based on recent code changes.
-    
+
     --- RECENT CODE CHANGES (Git Diff) ---
     {diff_content}
-    
+
     --- CURRENT README (English) ---
     {readme_en}
-    
+
     --- CURRENT README (Traditional Chinese) ---
     {readme_zh}
-    
+
     Task:
     1. Analyze the 'RECENT CODE CHANGES' to identify new features, bug fixes, or architectural changes.
-    2. Update BOTH the English README and the Traditional Chinese README_ZH content.
-    3. Ensure the tone is professional and the Chinese version uses Traditional Chinese (zh-TW).
-    
-    Format Requirements:
-    - Output EXACTLY AND ONLY the full content of README.md first.
-    - Then output the exact separator line: =====
-    - Then output EXACTLY AND ONLY the full content of README_ZH.md.
-    - DO NOT include ANY conversational text like "Here is the updated content" or markdown code blocks (```markdown) to wrap the entire output.
-    - Start directly with the content of README.md.
+    2. Decide whether the README files should be updated.
+    3. If updates are needed, provide the full updated content for BOTH README files.
+
+    Output Requirements:
+    - Output ONLY a single JSON object.
+    - The JSON must include these keys:
+        - "update_required": boolean
+        - "readme_md": string (full updated README.md content, empty if no update)
+        - "readme_zh_md": string (full updated README_ZH.md content, empty if no update)
+        - "reason": string (short rationale)
+    - Do NOT wrap JSON in markdown fences and do NOT include any extra text.
     """
     
     print("Analyzing code changes and updating documentation via LLM...")
     llm_output = get_completion(prompt)
     
-    if "=====" in llm_output:
-        parts = llm_output.split("=====")
-        new_en = parts[0].strip()
-        new_zh = parts[1].strip()
-        
-        with open("README.md", "w", encoding="utf-8") as f:
-            f.write(new_en)
-        with open("README_ZH.md", "w", encoding="utf-8") as f:
-            f.write(new_zh)
-        print("Successfully updated README.md and README_ZH.md")
-    else:
-        # Fallback if separator is missing
-        with open("README_ZH.md", "w", encoding="utf-8") as f:
-            f.write(llm_output)
-        print("Updated README_ZH.md (Note: Separator missing, only one file updated)")
+    try:
+        result = extract_json_payload(llm_output)
+    except Exception as e:
+        print(f"Error parsing LLM JSON output: {e}")
+        sys.exit(1)
+
+    update_required = bool(result.get("update_required"))
+    new_en = (result.get("readme_md") or "").strip()
+    new_zh = (result.get("readme_zh_md") or "").strip()
+
+    if not update_required:
+        print("No documentation update required.")
+        return
+
+    if not new_en or not new_zh:
+        print("Update required but README content missing in JSON output.")
+        sys.exit(1)
+
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.write(new_en)
+    with open("README_ZH.md", "w", encoding="utf-8") as f:
+        f.write(new_zh)
+    print("Successfully updated README.md and README_ZH.md")
 
 if __name__ == "__main__":
     main()
