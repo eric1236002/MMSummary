@@ -65,14 +65,15 @@ def main():
     
     Task:
     1. Analyze the 'RECENT CODE CHANGES' to identify new features, bug fixes, or architectural changes.
-    2. Update BOTH the English README and the Traditional Chinese README_ZH content in your mind.
-    3. Output ONLY the updated content for BOTH files in a specific format.
+    2. Update BOTH the English README and the Traditional Chinese README_ZH content.
+    3. Ensure the tone is professional and the Chinese version uses Traditional Chinese (zh-TW).
     
-    I will provide the files one by one. For now, please focus on generating the FULL updated content of:
-    - README.md
-    - README_ZH.md
-    
-    Wait, to simplify, please output the updated content of README.md first, then a separator '=====', then README_ZH.md.
+    Format Requirements:
+    - Output EXACTLY AND ONLY the full content of README.md first.
+    - Then output the exact separator line: =====
+    - Then output EXACTLY AND ONLY the full content of README_ZH.md.
+    - DO NOT include ANY conversational text like "Here is the updated content" or markdown code blocks (```markdown) to wrap the entire output.
+    - Start directly with the content of README.md.
     """
     
     print("Analyzing code changes and updating documentation via LLM...")
