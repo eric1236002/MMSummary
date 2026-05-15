@@ -115,6 +115,7 @@ jobs:
             printf '%s\n' "${{ steps.evaluate.outputs.filtered_code_files }}"
             echo '```'
           } > ".github/docs-sync-needed/${{ github.sha }}.md"
+          git add .github/docs-sync-needed/${{ github.sha }}.md
 
       - name: Open PR for documentation sync
         if: steps.evaluate.outputs.needs_pr == 'true'
