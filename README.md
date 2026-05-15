@@ -1,7 +1,3 @@
-Here is the updated content for the README.md and README_ZH.md files based on the recent code changes:
-
-### Updated README.md
-
 # MMSummary - Meeting Minutes Summarization Tool
 
 [中文版 (Chinese Version)](./README_ZH.md)
@@ -33,6 +29,10 @@ MMSummary is a powerful, full-stack web application designed to automatically su
     *   Dedicated settings page for granular control over the AI parameters.
 *   **Production Ready**:
     *   Containerized with **Docker** and orchestrated with **Kubernetes** for high availability and scalability.
+
+## API Version
+
+The backend FastAPI application is currently version **1.0.6**.
 
 ## Ablation Study Results
 
@@ -115,7 +115,7 @@ MMSummary/
     ```bash
     python -m venv venv
     # Windows
-    .\venv\Scripts\activate
+    .\\venv\\Scripts\\activate
     # Mac/Linux
     source venv/bin/activate
     ```
