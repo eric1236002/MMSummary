@@ -8,7 +8,11 @@ import time
 import os
 import dotenv
 dotenv.load_dotenv()
-app = FastAPI(title="MMSummary API", description="API for meeting minutes summarization")
+app = FastAPI(
+    title="MMSummary API",
+    description="API for meeting minutes summarization",
+    version="1.0.0"
+)
 
 
 app.add_middleware(
