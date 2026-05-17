@@ -4,6 +4,8 @@ metadata:
   name: mongodb-service
   namespace: mmsummary
 spec:
+  # MongoDB 只需要讓叢集內部的後端存取，所以用 ClusterIP 即可。
+  # 這樣外部不會直接暴露資料庫，安全性較高。
   selector:
     app: mongodb
   ports:
@@ -18,6 +20,8 @@ metadata:
   name: backend-service
   namespace: mmsummary
 spec:
+  # Backend 主要提供給 Ingress 轉發 /api 請求使用，因此也用 ClusterIP。
+  # 這代表只有叢集內部可以直接連到這個 Service。
   selector:
     app: backend
   ports:
@@ -32,6 +36,8 @@ metadata:
   name: frontend-service
   namespace: mmsummary
 spec:
+  # Frontend 需要對外提供瀏覽器訪問，因此這裡使用 LoadBalancer。
+  # 實際上若有 Ingress，也可以改成 ClusterIP 再由 Ingress 統一對外。
   selector:
     app: frontend
   ports:

@@ -13,7 +13,8 @@ from typing import Any, Optional
 # - 設計契合：搭配 `from_request`（工廠）與 `apply_plan`（回傳新實例）的模式，鼓勵純函式式更新。
 
 
-
+# @dataclass 就是：你只要列出有哪些欄位，Python 會自動幫你把建構子做好。
+# frozen=True 白話就是：這個資料袋封起來了，做好後不能亂改（避免後面流程有人不小心把參數改掉，導致結果不穩）。
 @dataclass(frozen=True)
 class EffectiveParams:
     model: str
@@ -33,6 +34,11 @@ class EffectiveParams:
     # - 集中處理如何從外部請求（或 dict）建立 `EffectiveParams` 的邏輯（欄位對應、預設值、安全取值）。
     # - 使用 `cls(...)` 建構，對繼承友好：若有子類繼承並呼叫 `from_request`，會回傳子類的實例而非固定父類，保留多型性。
     # - 比起寫成外部函式或硬編碼類名，class method 更易於維護與擴充。
+    # self 代表「已經存在的一個物件」。
+    # 但這個 from_request 是在做「建立新物件」：
+    # 你根本還沒有 EffectiveParams 物件，怎麼用 self？
+    # 如果硬要用 self，需要先隨便做出一個 EffectiveParams（才拿得到 self）
+    # 再用它去做 from_request 產生另一個 EffectiveParams
     def from_request(cls, request: Any) -> "EffectiveParams":
         return cls(
             model=request.model,

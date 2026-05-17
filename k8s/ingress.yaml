@@ -4,13 +4,18 @@ metadata:
   name: mmsummary-ingress
   namespace: mmsummary
   annotations:
+    # 指定使用 Nginx Ingress Controller 來處理這個入口規則。
     kubernetes.io/ingress.class: nginx
+    # 將請求轉發到後端服務時，把路徑重寫成 `/`，避免後端收到不符合預期的前綴路徑。
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  # Ingress 的作用是把外部流量依照 host/path 分流到不同 Service。
+  # 這裡讓同一個網域同時服務前端頁面與後端 API。
   rules:
   - host: mmsummary.local
     http:
       paths:
+      # `/api` 走後端：摘要 API、歷史紀錄、健康檢查等都走這條路徑。
       - path: /api
         pathType: Prefix
         backend:
@@ -18,6 +23,7 @@ spec:
             name: backend-service
             port:
               number: 8000
+      # 其餘路徑都交給前端：讓 SPA router 接手處理頁面切換。
       - path: /
         pathType: Prefix
         backend:
