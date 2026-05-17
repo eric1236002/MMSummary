@@ -1,27 +1,37 @@
 name: MMSummary CD (Push to GHCR)
 
+# 這份 CD workflow 負責在發版或合併後自動建置 Docker image，並推送到 GitHub Container Registry。
+# 目標是讓後端與前端映像檔都能自動更新，方便 Kubernetes 或其他部署環境直接拉取。
+
 permissions:
+  # 只需要讀取 repo 內容與寫入 packages 權限：前者用來 checkout，後者用來推送 GHCR image。
   contents: read    # read-only for repo contents
   packages: write   # allow pushing to GitHub Container Registry
 
 on:
   push:
+    # 只有在推送版本 tag（例如 v1.0.0）時才進行正式釋出。
     tags:
       - 'v*' # Trigger on version tags like v1.0.0
   pull_request:
+    # PR 關閉且目標分支是 main 時也會觸發，通常代表合併完成。
     types: [closed]
     branches: [main]
+  # 保留手動觸發入口，方便臨時重跑建置與推送。
   workflow_dispatch: # Allow manual trigger
 
 jobs:
   build-and-push:
+    # 單一 job 先完成 checkout、登入 registry、再分別建置後端與前端 image。
     runs-on: ubuntu-latest
 
     steps:
+      # 把 repo 內容抓下來，讓後續 build 可以使用 Dockerfile 與原始碼。
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Login to GitHub Container Registry
+        # 登入 GHCR，之後 docker/build-push-action 才能把 image 推上去。
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
@@ -29,10 +39,12 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Docker Buildx
+        # 啟用 Buildx，讓 Docker build/push 有更完整的建置能力與快取支援。
         uses: docker/setup-buildx-action@v3
 
       # Build and Push Backend
       - name: Build and push Backend
+        # 後端 image 使用 backend/Dockerfile 建置，並推送 latest 與版本 tag。
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -44,6 +56,7 @@ jobs:
 
       # Build and Push Frontend
       - name: Build and push Frontend
+        # 前端 image 使用 frontend/Dockerfile 建置，推送方式與後端相同。
         uses: docker/build-push-action@v5
         with:
           context: .

@@ -10,12 +10,15 @@ from nltk.translate.bleu_score import SmoothingFunction, sentence_bleu
 
 @dataclass(frozen=True)
 class Example:
+    # `Example` 用來統一表示評估資料的一筆樣本，避免在不同流程裡重複處理欄位名稱。
     id: str
     transcript: str
     reference_summary: str
     split: str = "test"
 
 def as_text(value: Any) -> str:
+    # 這個 helper 負責把不同型態的輸入資料轉成純文字，方便後續拿來做摘要評估。
+    # 它支援 string / list / dict，避免資料來源格式不一致時每個呼叫端都要自己處理。
     if value is None:
         return ""
     if isinstance(value, str):
@@ -44,6 +47,7 @@ def as_text(value: Any) -> str:
     return str(value)
 
 def load_ids(path: str) -> Optional[List[str]]:
+    # 如果有提供 ids 檔，就從 JSON list 讀取指定樣本 ID；沒有提供則回傳 None。
     if not path:
         return None
     if not os.path.exists(path):
@@ -55,6 +59,7 @@ def load_ids(path: str) -> Optional[List[str]]:
     raise ValueError(f"ids file must be a JSON list: {path}")
 
 def save_ids(path: str, ids: Sequence[str]) -> None:
+    # 把抽樣到的 ID 存回檔案，方便之後重跑同一批資料得到可重現的結果。
     if not path:
         return
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
@@ -62,6 +67,8 @@ def save_ids(path: str, ids: Sequence[str]) -> None:
         json.dump(list(ids), f, ensure_ascii=False, indent=2)
 
 def load_records_file(path: str) -> List[Dict[str, Any]]:
+    # 讀取本地資料檔，支援 parquet / JSON / JSONL 三種常見格式。
+    # 這讓評估腳本除了 Hugging Face dataset，也能直接吃本地實驗資料。
     if not os.path.exists(path):
         raise FileNotFoundError(path)
 
@@ -102,6 +109,8 @@ def select_examples(
     limit: int,
     ids: Optional[Sequence[str]],
 ) -> List[Example]:
+    # 從 dataset_split 中挑出要評估的樣本。
+    # 若有 ids，就精準選取指定資料；若沒有，就依 limit 取前 N 筆。
     selected: List[Example] = []
 
     if ids is not None:
@@ -142,6 +151,8 @@ def select_examples(
     return selected
 
 def compute_metrics(*, reference: str, prediction: str) -> Dict[str, float]:
+    # 計算摘要評估常用的 ROUGE 與 BLEU。
+    # ROUGE 看重覆蓋率，BLEU 偏向 n-gram 一致性；兩者搭配可粗略反映摘要品質。
     scorer = rouge_scorer.RougeScorer(["rouge1", "rougeL"], use_stemmer=True)
     rouge = scorer.score(reference, prediction)
 
@@ -174,6 +185,8 @@ def normalize_for_eval(text: str) -> str:
     This is optional and should be used only when your output is forced into a template
     that the reference does not share.
     """
+    # 這個函式的目的是在算指標前，先把模板標題、code fence、JSON 外殼與多餘空白去掉。
+    # 這樣可以避免格式差異影響評分，讓指標更聚焦在內容本身。
     if text is None:
         return ""
     text = str(text).strip()
@@ -216,4 +229,5 @@ def normalize_for_eval(text: str) -> str:
     return text
 
 def list_mean(values: List[float]) -> float:
+    # 安全地計算平均值；如果列表是空的就回傳 0.0，避免 statistics.mean 拋例外。
     return float(statistics.mean(values)) if values else 0.0

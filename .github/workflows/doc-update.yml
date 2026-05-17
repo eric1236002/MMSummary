@@ -1,41 +1,55 @@
 name: Docs Sync Check
 
+# 這份 workflow 用來在程式碼變更後，自動檢查並同步 README 文件。
+# 當後端或前端邏輯有更新時，它會執行 LLM 文件同步腳本，必要時自動提交 README 的變更。
+
 permissions:
+  # 這個 workflow 需要寫入 repository 內容與 pull request（若有需要更新文件或回寫變更）。
   contents: write
   pull-requests: write
 
 on:
   push:
+    # 推送到 main 或 doc-update 分支時會觸發，代表需要檢查文件是否要跟著更新。
     branches: [main, doc-update]
     paths-ignore:
+      # 如果只是 workflow 自己的 docs-sync-needed 標記變更，不需要再觸發文件同步，避免無限迴圈。
       - ".github/docs-sync-needed/**"
   pull_request:
+    # PR 關閉時也會觸發，通常代表有變更合併進目標分支，需要重新同步文件。
     branches: [main, doc-update]
     types: [closed]
     paths-ignore:
+      # 同樣忽略 docs-sync-needed 標記目錄，避免文件同步流程反覆觸發。
       - ".github/docs-sync-needed/**"
 
 jobs:
   auto-update:
+    # 只有在 PR 已經 merge，或是直接 push 到目標分支時才執行。
     if: github.event.pull_request.merged == true || github.event_name == 'push'
     runs-on: ubuntu-latest
 
     steps:
+      # 先拉下程式碼，讓後續可以讀 README、git diff 與執行同步腳本。
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          # 只需要最近兩筆歷史就夠了，因為腳本主要看前一個 commit 的 diff。
           fetch-depth: 2 
 
       - name: Set up Python
+        # 使用固定 Python 版本，確保同步腳本在 CI 中可重現執行。
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install dependencies
+        # 同步腳本只需要 requests 來呼叫 LLM API，所以依賴很輕量。
         run: |
           pip install requests
 
       - name: Run LLM Sync Script
+        # 執行文件同步腳本：讀取 diff、請 LLM 判斷是否更新 README，必要時直接改寫檔案。
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_MODEL: "gpt-5.4-mini"
@@ -43,6 +57,8 @@ jobs:
           python scripts/sync_docs.py
 
       - name: Commit and Push changes
+        # 如果同步腳本真的有修改 README，就自動提交並推回 repo。
+        # 加上 [skip ci] 是為了避免這個自動提交再次觸發同一套 CI/CD，形成循環。
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"

@@ -1,5 +1,8 @@
 name: MMSummary CI
 
+# 這份 CI workflow 用來在 main 分支有變更時自動驗證專案。
+# 主要檢查兩件事：後端 Python 測試是否通過、前端是否能成功建置與跑測試。
+# 這樣可以在合併前先抓出明顯的回歸問題。
 on:
   push:
     branches: [ main ]
@@ -8,22 +11,27 @@ on:
 
 jobs:
   backend-tests:
+    # 後端 job：安裝 Python 依賴並執行 backend/tests。
     runs-on: ubuntu-latest
     steps:
+      # 先把 repo 內容拉下來，後續才能安裝依賴與執行測試。
       - uses: actions/checkout@v4
       
       - name: Set up Python
+        # 使用固定版本的 Python，讓 CI 環境可重現。
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
           
       - name: Install dependencies
+        # 安裝後端執行與測試所需套件，包含 pytest 與 pytest-mock。
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements_backend.txt
           pip install pytest pytest-mock
           
       - name: Run Backend Tests
+        # 測試時注入必要的環境變數，避免因缺少 API key 或資料庫 URL 而失敗。
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MONGODB_URL: ${{ secrets.MONGODB_URL }}
@@ -31,20 +39,25 @@ jobs:
           python -m pytest backend/tests
 
   frontend-build:
+    # 前端 job：確認 React/Vite 專案可以安裝依賴、成功 build，並執行前端測試。
     runs-on: ubuntu-latest
     steps:
+      # 同樣先 checkout 程式碼。
       - uses: actions/checkout@v4
       
       - name: Set up Node.js
+        # 這裡應該是設定 Node.js 環境，讓 frontend 的 npm 指令可以執行。
         uses: actions/setup-python@v4
         with:
           node-version: '20'
           
       - name: Install dependencies
+        # 在 frontend 目錄下安裝相依套件。
         working-directory: ./frontend
         run: npm install
         
       - name: Build Frontend
+        # 先 build 再跑 test，確認前端在 CI 環境可以正常打包與驗證。
         working-directory: ./frontend
         run: |
           npm run build

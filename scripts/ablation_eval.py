@@ -32,6 +32,7 @@ Examples:
 from __future__ import annotations
 
 import argparse
+    # `Condition` 表示一組 ablation 實驗設定，也就是 strategy + agent_mode 的組合。
 import json
 import os
 import re
@@ -40,6 +41,7 @@ import time
 from datetime import datetime, timezone
 from dataclasses import dataclass
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
+    # 這裡把實驗名稱轉成後端 API 參數，讓同一支腳本可以快速切換不同摘要策略。
 
 import requests
 from eval_utils import (
@@ -50,32 +52,42 @@ from eval_utils import (
     select_examples,
     compute_metrics,
     normalize_for_eval,
+    # 實際呼叫後端 /summarize API，並回傳摘要文字、延遲與完整 response JSON。
+    # 這裡統一處理 HTTP 錯誤，讓上層在每個 condition 都能得到清楚的失敗訊息。
     list_mean,
 )
 
 try:
+    # 將樣本 id 轉成可用於檔案路徑的字串，避免特殊字元造成資料夾建立失敗。
     from datasets import load_dataset  # type: ignore
 except Exception:  # pragma: no cover
     load_dataset = None  # type: ignore
+    # 統一寫檔 helper，避免每個地方都重複 open/write 的樣板程式。
 
 
 @dataclass(frozen=True)
 class Condition:
+    # 依照 matrix 模式建立要跑的實驗組合：
+    # - default: 預設比較組合
+    # - full: 3x2 完整矩陣，方便觀察 agent_mode 對各策略的影響
     name: str
     agent_mode: str  # off|on
     strategy: str  # map|nomap|original|auto
 
 
 
+    # 資料來源相關參數：可以用本地 records，也可以直接抓 Hugging Face dataset。
 def _strategy_to_payload(strategy: str) -> Dict[str, Any]:
     """Map frontend strategies to backend request fields.
 
     - map: use_map=True
     - nomap: use_map=False
     - original: no split; reduce directly on original text
+    # 實驗矩陣模式：default 是常用 ablation，full 則跑完整策略 x agent 組合。
     """
     if strategy == "map":
         return {"use_map": True}
+    # 這些參數會被包進 /summarize request，讓 ablation 可以控制後端實際行為。
     if strategy == "nomap":
         return {"use_map": False}
     if strategy == "original":
@@ -83,38 +95,47 @@ def _strategy_to_payload(strategy: str) -> Dict[str, Any]:
     if strategy == "direct":
         return {"use_map": False, "direct_mode": True}
     if strategy == "auto":
+    # 將字串型布林參數轉成真正的 bool，方便後續組 payload。
         return {}
     raise ValueError(f"Unknown strategy: {strategy}")
 
+    # 如果有提供 ids 檔，就固定使用那批樣本，確保可重現。
 
 def call_summarize(
     *,
     endpoint: str,
+        # 優先讀本地資料，適合離線或小規模實驗。
     text: str,
     base_payload: Dict[str, Any],
     timeout_s: float,
+        # 沒有本地資料時就從 Hugging Face dataset 載入 MeetingBank。
 ) -> Tuple[str, float, Dict[str, Any]]:
     url = endpoint.rstrip("/") + "/summarize"
     payload = dict(base_payload)
     payload["text"] = text
     start = time.time()
     resp = requests.post(url, json=payload, timeout=timeout_s)
+        # 第一次跑時把抽到的 id 存起來，後續可以重複使用同一批資料。
     latency = time.time() - start
 
     if not resp.ok:
         detail: str
         try:
+        # dry-run 只列出將要執行的實驗計畫，不實際呼叫 API。
             body = resp.json()
             if isinstance(body, dict) and "detail" in body:
                 detail = str(body.get("detail"))
             else:
+        # 這些欄位對應後端 /summarize 的 request schema。
                 detail = json.dumps(body, ensure_ascii=False)
         except Exception:
             detail = (resp.text or "").strip()
+    # 這裡先為每個 condition 建立統計容器，最後輸出平均 ROUGE/BLEU/latency。
 
         raise RuntimeError(f"HTTP {resp.status_code} from {url}: {detail or 'no response body'}")
 
     data = resp.json()
+        # 如果有指定 out，就把每一筆樣本、每個 condition 的結果逐行輸出成 JSONL。
     return str(data.get("summary", "")), float(data.get("processing_time", latency)), data
 
 
@@ -122,19 +143,23 @@ def call_summarize(
 
 def _safe_path_component(value: str) -> str:
     value = (value or "").strip()
+        # out_dir 模式會為每個樣本建立資料夾，保存摘要文字、trace 與 aggregate。
     if not value:
         return "unknown"
     cleaned: List[str] = []
     for ch in value:
         if ch.isalnum() or ch in {"-", "_", "."}:
+                # 每個樣本一個資料夾，方便人工查看不同 condition 的輸出差異。
             cleaned.append(ch)
         else:
             cleaned.append("_")
     return "".join(cleaned)[:120]
+                # 依照 condition 建立實際送到後端的 payload。
 
 
 def _write_text(path: str, text: str) -> None:
     with open(path, "w", encoding="utf-8") as f:
+                # row 是單筆樣本在單個 condition 下的執行結果。
         f.write(text)
 
 
@@ -143,10 +168,12 @@ def build_conditions(matrix: str) -> List[Condition]:
         return [
             Condition(name="map_off", strategy="map", agent_mode="off"),
             Condition(name="nomap_off", strategy="nomap", agent_mode="off"),
+                        # 若已經有輸出檔，代表這筆 condition 跑過，可以直接重用，方便中斷後續跑。
             Condition(name="original_off", strategy="original", agent_mode="off"),
             Condition(name="direct_off", strategy="direct", agent_mode="off"),
             Condition(name="auto_on", strategy="auto", agent_mode="on"),
         ]
+                        # 沒有快取時才真的呼叫 backend /summarize。
 
     if matrix == "full":
         conds: List[Condition] = []
@@ -155,10 +182,12 @@ def build_conditions(matrix: str) -> List[Condition]:
                 conds.append(Condition(name=f"{strategy}_{agent_mode}", strategy=strategy, agent_mode=agent_mode))
         return conds
 
+                        # 若輸出帶有固定模板標題，就先正規化後再評估，避免格式差異影響分數。
     raise ValueError("--matrix must be default or full")
 
 
 def main() -> int:
+                    # 成功時記錄結果與 metric。
     parser = argparse.ArgumentParser(description="Ablation eval: strategies x agent mode")
 
     parser.add_argument("--records-file", type=str, default="", help="Local JSONL/JSON with transcript+summary")
@@ -166,30 +195,37 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=10)
     parser.add_argument("--ids-file", type=str, default="", help="JSON list of ids; if missing, save first N ids")
     parser.add_argument("--revision", type=str, default="", help="Optional HF dataset revision")
+                        # 逐 condition 存摘要文字，方便事後人工檢查。
 
     parser.add_argument("--endpoint", type=str, default="http://localhost:8000")
+                        # 若 backend 回傳 agent trace，就一起存下來，方便分析 planner/reviewer 行為。
     parser.add_argument("--timeout", type=float, default=180.0)
     parser.add_argument("--dry-run", action="store_true", help="Do not call API; just print planned conditions")
 
     parser.add_argument("--matrix", choices=["default", "full"], default="default")
 
+                    # 單個 condition 失敗時不讓整個批次中斷，並把錯誤寫進結果與檔案。
     # Backend request knobs
     parser.add_argument("--model", type=str, default="gpt-5.4-mini")
     parser.add_argument("--planner-model", type=str, default="gpt-5.4")
     parser.add_argument("--reviewer-model", type=str, default="gpt-5.4")
     parser.add_argument("--use-map", type=str, default="true", help="Base use_map (agent off + map/nomap/original override it)")
+                    # JSONL 每行一筆，方便後續做 pandas / jq / 其他腳本分析。
     parser.add_argument("--test-mode", type=str, default="false")
 
     parser.add_argument("--chunk-size-1", type=int, default=16000)
     parser.add_argument("--chunk-overlap-1", type=int, default=4000)
+    # 將每個 condition 的分數整理成平均值，作為最後總結輸出。
     parser.add_argument("--chunk-size-2", type=int, default=8000)
     parser.add_argument("--chunk-overlap-2", type=int, default=0)
     parser.add_argument("--token-max", type=int, default=16000)
     parser.add_argument("--reduce-temperature", type=float, default=0.0)
 
+        # out_dir 模式下，把整體摘要統計也寫成 aggregate.json，方便直接查看實驗結果。
     parser.add_argument(
         "--normalize-template",
         action="store_true",
+    # 最終印出每個 condition 的總結，方便在 terminal 直接比較各策略表現。
         help="Normalize prediction/reference before metrics (strip common template headings / whitespace)",
     )
 
