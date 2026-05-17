@@ -27,6 +27,9 @@ def summarize_with_agents(
 
     effective = EffectiveParams.from_request(request)
 
+    # Fast path for deterministic tests: skip planner/reviewer to keep snapshots stable.
+    # 理由：測試模式下我們希望整個流程可重現且不受外部 agent 回應波動影響。
+    # Planner/Reviewer 會呼叫外部模型，回傳可能不穩定，會使快照測試失敗。
     if getattr(request, "test_mode", False):
         summary = generate_summary(
             text=request.text,
@@ -48,8 +51,15 @@ def summarize_with_agents(
     plan: Optional[Plan] = None
     review: Optional[ReviewResult] = None
 
+    # Gate the optional planner/reviewer flow; "off" keeps legacy behavior.
+    # 理由：允許透過 `agent_mode` 控制是否啟用自動調參/審查，
+    # 方便在成本或延遲敏感時關閉這些額外步驟。
     enable_agents = agent_mode in {"on"}
 
+    # Planner may adjust chunking/limits; fall back to original params on invalid JSON.
+    # 理由：Planner 的目的是根據文字特性自動調整 `EffectiveParams`（例如 chunk_size），
+    # 但 planner 可能回傳格式錯誤或未知值，因此在 `Plan()`（空計畫）時保留原參數。
+    # 這樣可以避免 planner 錯誤導致整個摘要流程失敗。
     if enable_agents:
         plan = plan_parameters(text=request.text, effective=effective, planner_model=planner_model)
         if plan == Plan():
@@ -72,6 +82,9 @@ def summarize_with_agents(
         reduce_temperature=effective.reduce_temperature,
     )
 
+    # Reviewer runs only when explicitly enabled and allowed by iteration budget.
+    # 理由：Reviewer 會檢查並可能改寫摘要，這會增加成本與延遲；
+    # 因此只有在使用者允許（quality_check）且剩餘檢查次數（max_iters）大於 0 時才執行。
     if enable_agents and quality_check and max_iters > 0:
         review = review_summary(
             text=request.text,
